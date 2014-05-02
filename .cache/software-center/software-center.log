@@ -1,0 +1,135 @@
+2014-04-30 16:56:21,666 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2014-04-30 16:56:21,750 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (Нет такого файла или каталога)
+2014-04-30 16:56:24,231 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2014-04-30 16:56:24,426 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2014-04-30 16:56:24,451 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2014-04-30 16:56:24,497 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/lib/python2.7/dist-packages/gi/importer.py', 51, 'find_module')'
+2014-04-30 16:56:24,497 - root - ERROR - Could not find any typelib for LaunchpadIntegration
+2014-04-30 16:56:24,665 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-04-30 16:56:31,725 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2014-04-30 16:56:31,726 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2014-04-30 16:56:39,204 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0
+2014-04-30 16:56:39,207 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (Нет такого файла или каталога)
+2014-04-30 16:56:39,230 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 194, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3667, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (Нет такого файла или каталога)
+2014-05-01 15:33:16,628 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2014-05-01 15:33:19,205 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2014-05-01 15:33:19,854 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2014-05-01 15:33:19,877 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2014-05-01 15:33:19,925 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/lib/python2.7/dist-packages/gi/importer.py', 51, 'find_module')'
+2014-05-01 15:33:19,925 - root - ERROR - Could not find any typelib for LaunchpadIntegration
+2014-05-01 15:33:20,075 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 15:33:25,832 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2014-05-01 15:33:25,848 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2014-05-01 15:36:31,956 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2014-05-01 15:36:32,808 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2014-05-01 15:36:32,811 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2014-05-01 15:36:32,820 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/lib/python2.7/dist-packages/gi/importer.py', 51, 'find_module')'
+2014-05-01 15:36:32,820 - root - ERROR - Could not find any typelib for LaunchpadIntegration
+2014-05-01 15:36:32,911 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 15:36:33,701 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2014-05-01 15:36:33,702 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2014-05-01 15:36:43,125 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0
+2014-05-01 14:49:27,723 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2014-05-01 14:49:28,511 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2014-05-01 14:49:28,515 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2014-05-01 14:49:28,523 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/lib/python2.7/dist-packages/gi/importer.py', 51, 'find_module')'
+2014-05-01 14:49:28,523 - root - ERROR - Could not find any typelib for LaunchpadIntegration
+2014-05-01 14:49:28,632 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 14:49:29,407 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2014-05-01 14:49:29,408 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2014-05-01 14:49:36,038 - softwarecenter.db.pkginfo_impl.aptcache - ERROR - simulate failed
+None
+2014-05-01 14:49:40,822 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0
+2014-05-01 14:50:24,222 - softwarecenter.backend - ERROR - error in _on_trans_finished 'Ошибка: Не удалось открыть пакет
+Пожалуйста, скопируйте файл на ваш локальный компьютер и проверьте права на файл.
+
+/tmp/opera_12.16.1860_amd64.deb'
+2014-05-01 14:50:30,094 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 14:50:31,308 - softwarecenter.utils - WARNING - Could not determine the installed desktop file path for app-install desktop file: 'None'
+2014-05-01 14:50:31,309 - softwarecenter.backend.zeitgeist_logger - WARNING - Invalid desktop file provided, impossible to log event
+2014-05-01 14:50:31,312 - softwarecenter.backend - ERROR - error in _on_trans_finished 'Ошибка: Не удалось открыть пакет
+Пожалуйста, скопируйте файл на ваш локальный компьютер и проверьте права на файл.
+
+/tmp/opera_12.16.1860_amd64.deb'
+2014-05-01 14:50:33,842 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 14:50:35,032 - softwarecenter.backend - ERROR - error in _on_trans_finished 'Ошибка: Не удалось открыть пакет
+Пожалуйста, скопируйте файл на ваш локальный компьютер и проверьте права на файл.
+
+/tmp/opera_12.16.1860_amd64.deb'
+2014-05-01 14:50:40,043 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 14:52:46,799 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2014-05-01 14:52:47,586 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2014-05-01 14:52:47,589 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2014-05-01 14:52:47,597 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/lib/python2.7/dist-packages/gi/importer.py', 51, 'find_module')'
+2014-05-01 14:52:47,597 - root - ERROR - Could not find any typelib for LaunchpadIntegration
+2014-05-01 14:52:47,699 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 14:52:48,806 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2014-05-01 14:52:48,807 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, '\xd0\x9d\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xbf\xd1\x83\xd1\x81\xd1\x82\xd0\xb8\xd0\xbc\xd1\x8b\xd0\xb9 \xd0\xb0\xd1\x80\xd0\xb3\xd1\x83\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x82 -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2014-05-01 14:52:54,762 - softwarecenter.db.pkginfo_impl.aptcache - ERROR - simulate failed
+None
+2014-05-01 14:53:00,478 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0
+2014-05-01 14:56:05,197 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 14:56:08,072 - softwarecenter.utils - WARNING - Could not determine the installed desktop file path for app-install desktop file: 'None'
+2014-05-01 14:56:08,072 - softwarecenter.backend.zeitgeist_logger - WARNING - Invalid desktop file provided, impossible to log event
+2014-05-01 15:20:38,771 - softwarecenter.ui.gtk3.app - INFO - found a running software-center on dbus, reconnecting
+2014-05-01 15:20:40,280 - softwarecenter.db.pkginfo_impl.aptcache - ERROR - simulate failed
+None
+2014-05-01 15:20:41,803 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterRecommenderAPI', 'recommend_app', '{"pkgname": "teamviewer"}']'
+2014-05-01 15:20:41,804 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:404: {'status': '404', 'via': '1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)', 'x-cache': 'MISS from sumac.canonical.com', 'transfer-encoding': 'chunked', 'x-cache-lookup': 'HIT from sumac.canonical.com:3128', 'strict-transport-security': 'max-age=2592000', 'server': 'Apache/2.2.22 (Ubuntu)', 'etag': '"f471fbb3b337b36698bc75597ba960d1"', 'cache-control': 'max-age=300', 'date': 'Thu, 01 May 2014 12:20:41 GMT', 'content-type': 'text/html; charset=utf-8'}
+'
+2014-05-01 15:20:41,804 - softwarecenter.db.categories - WARNING - Error while accessing the recommender service: WARNING:__main__:404: {'status': '404', 'via': '1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)', 'x-cache': 'MISS from sumac.canonical.com', 'transfer-encoding': 'chunked', 'x-cache-lookup': 'HIT from sumac.canonical.com:3128', 'strict-transport-security': 'max-age=2592000', 'server': 'Apache/2.2.22 (Ubuntu)', 'etag': '"f471fbb3b337b36698bc75597ba960d1"', 'cache-control': 'max-age=300', 'date': 'Thu, 01 May 2014 12:20:41 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+2014-05-01 15:20:41,805 - softwarecenter.ui.gtk3.widgets.recommendations - WARNING - Error while accessing the recommender agent: WARNING:__main__:404: {'status': '404', 'via': '1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)', 'x-cache': 'MISS from sumac.canonical.com', 'transfer-encoding': 'chunked', 'x-cache-lookup': 'HIT from sumac.canonical.com:3128', 'strict-transport-security': 'max-age=2592000', 'server': 'Apache/2.2.22 (Ubuntu)', 'etag': '"f471fbb3b337b36698bc75597ba960d1"', 'cache-control': 'max-age=300', 'date': 'Thu, 01 May 2014 12:20:41 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+2014-05-01 15:22:15,655 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 15:22:23,123 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-05-01 15:22:25,704 - softwarecenter.utils - WARNING - Could not determine the installed desktop file path for app-install desktop file: 'None'
+2014-05-01 15:22:25,704 - softwarecenter.backend.zeitgeist_logger - WARNING - Invalid desktop file provided, impossible to log event

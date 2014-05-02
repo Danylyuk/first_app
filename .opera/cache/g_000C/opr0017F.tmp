@@ -1,0 +1,1240 @@
+Z˜1	í	KN(
+	H
+_!‚Ç/**
+ * Code Syntax Highlighter for C++(Windows Platform).
+ * Version 0.0.2
+ * Copyright (C) 2006 Shin, YoungJin.
+ * http://www.jiniya.net/lecture/techbox/test.html
+ * 
+ * This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General 
+ * Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) 
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied 
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more 
+ * details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to 
+ * the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+ */
+
+dp.sh.Brushes.Cpp = function()
+{
+	var datatypes = 
+	'ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR ' +
+	'DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH ' + 
+	'HCOLORSPACE HCONV HCONVLIST HCURSOR HDC HDDEDATA HDESK HDROP HDWP ' +
+	'HENHMETAFILE HFILE HFONT HGDIOBJ HGLOBAL HHOOK HICON HINSTANCE HKEY ' +
+	'HKL HLOCAL HMENU HMETAFILE HMODULE HMONITOR HPALETTE HPEN HRESULT ' +
+	'HRGN HRSRC HSZ HWINSTA HWND INT INT_PTR INT32 INT64 LANGID LCID LCTYPE ' +
+	'LGRPID LONG LONGLONG LONG_PTR LONG32 LONG64 LPARAM LPBOOL LPBYTE LPCOLORREF ' +
+	'LPCSTR LPCTSTR LPCVOID LPCWSTR LPDWORD LPHANDLE LPINT LPLONG LPSTR LPTSTR ' +
+	'LPVOID LPWORD LPWSTR LRESULT PBOOL PBOOLEAN PBYTE PCHAR PCSTR PCTSTR PCWSTR ' +
+	'PDWORDLONG PDWORD_PTR PDWORD32 PDWORD64 PFLOAT PHALF_PTR PHANDLE PHKEY PINT ' +
+	'PINT_PTR PINT32 PINT64 PLCID PLONG PLONGLONG PLONG_PTR PLONG32 PLONG64 POINTER_32 ' +
+	'POINTER_64 PSHORT PSIZE_T PSSIZE_T PSTR PTBYTE PTCHAR PTSTR PUCHAR PUHALF_PTR ' +
+	'PUINT PUINT_PTR PUINT32 PUINT64 PULONG PULONGLONG PULONG_PTR PULONG32 PULONG64 ' +
+	'PUSHORT PVOID PWCHAR PWORD PWSTR SC_HANDLE SC_LOCK SERVICE_STATUS_HANDLE SHORT ' + 
+	'SIZE_T SSIZE_T TBYTE TCHAR UCHAR UHALF_PTR UINT UINT_PTR UINT32 UINT64 ULONG ' +
+	'ULONGLONG ULONG_PTR ULONG32 ULONG64 USHORT USN VOID WCHAR WORD WPARAM WPARAM WPARAM ' +
+	'char bool short int __int32 __int64 __int8 __int16 long float double __wchar_t ' +
+	'clock_t _complex _dev_t _diskfree_t div_t ldiv_t _exception _EXCEPTION_POINTERS ' +
+	'FILE _finddata_t _finddatai64_t _wfinddata_t _wfinddatai64_t __finddata64_t ' +
+	'__wfinddata64_t _FPIEEE_RECORD fpos_t _HEAPINFO _HFILE lconv intptr_t ' +
+	'jmp_buf mbstate_t _off_t _onexit_t _PNH ptrdiff_t _purecall_handler ' +
+	'sig_atomic_t size_t _stat __stat64 _stati64 terminate_function ' +
+	'time_t __time64_t _timeb __timeb64 tm uintptr_t _utimbuf ' +
+	'va_list wchar_t wctrans_t wctype_t wint_t signed';
+
+	var keywords = 
+	'break case catch class const __finally __exception __try ' +
+	'const_cast continue private public protected __declspec ' + 
+	'default delete deprecated dllexport dllimport do dynamic_cast ' + 
+	'else enum explicit extern if for friend goto inline ' + 
+	'mutable naked namespace new noinline noreturn nothrow ' + 
+	'register reinterpret_cast return selectany ' + 
+	'sizeof static static_cast struct switch template this ' + 
+	'thread throw true false try typedef typeid typename union ' + 
+	'using uuid virtual void volatile whcar_t while';
+
+	this.regexList = [
+		{ regex: dp.sh.RegexLib.SingleLineCComments,				css: 'comment' },			// one line comments
+		{ regex: dp.sh.RegexLib.MultiLineCComments,					css: 'comment' },			// multiline comments
+		{ regex: dp.sh.RegexLib.DoubleQuotedString,					css: 'string' },			// strings
+		{ regex: dp.sh.RegexLib.SingleQuotedString,					css: 'string' },			// strings
+		{ regex: new RegExp('^ *#.*', 'gm'),						css: 'preprocessor' },
+		{ regex: new RegExp(this.GetKeywords(datatypes), 'gm'),		css: 'datatypes' },
+		{ regex: new RegExp(this.GetKeywords(keywords), 'gm'),		css: 'keyword' }
+		];
+
+	this.CssClass = 'dp-cpp';
+	this.Style =	'.dp-cpp .datatypes { color: #2E8B57; font-weight: bold; }';
+}
+
+dp.sh.Brushes.Cpp.prototype	= new dp.sh.Highlighter();
+dp.sh.Brushes.Cpp.Aliases	= ['cpp', 'c', 'c++'];
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/wiki/SyntaxHighlighter:Donate
+ *
+ * @version
+ * 2.0.296 (March 01 2009)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2009 Alex Gorbatchev.
+ *
+ * @license
+ * This file is part of SyntaxHighlighter.
+ * 
+ * SyntaxHighlighter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * SyntaxHighlighter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/licenses/>.
+ */
+SyntaxHighlighter.brushes.Bash = function()
+{
+	var keywords =	'if fi then elif else for do done until while break continue case function return in eq ne gt lt ge le';
+	var commands =  'alias apropos awk bash bc bg builtin bzip2 cal cat cd cfdisk chgrp chmod chown chroot' +
+					'cksum clear cmp comm command cp cron crontab csplit cut date dc dd ddrescue declare df ' +
+					'diff diff3 dig dir dircolors dirname dirs du echo egrep eject enable env ethtool eval ' +
+					'exec exit expand export expr false fdformat fdisk fg fgrep file find fmt fold format ' +
+					'free fsck ftp gawk getopts grep groups gzip hash head history hostname id ifconfig ' +
+					'import install join kill less let ln local locate logname logout look lpc lpr lprint ' +
+					'lprintd lprintq lprm ls lsof make man mkdir mkfifo mkisofs mknod more mount mtools ' +
+					'mv netstat nice nl nohup nslookup open op passwd paste pathchk ping popd pr printcap ' +
+					'printenv printf ps pushd pwd quota quotacheck quotactl ram rcp read readonly renice ' +
+					'remsync rm rmdir rsync screen scp sdiff sed select seq set sftp shift shopt shutdown ' +
+					'sleep sort source split ssh strace su sudo sum symlink sync tail tar tee test time ' +
+					'times touch top traceroute trap tr true tsort tty type ulimit umask umount unalias ' +
+					'uname unexpand uniq units unset unshar useradd usermod users uuencode uudecode v vdir ' +
+					'vi watch wc whereis which who whoami Wget xargs yes'
+					;
+    
+	this.regexList = [
+		{ regex: SyntaxHighlighter.regexLib.singleLinePerlComments,		css: 'comments' },		// one line comments
+		{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,			css: 'string' },		// double quoted strings
+		{ regex: new RegExp(this.getKeywords(keywords), 'gm'),			css: 'keyword' },		// keywords
+		{ regex: new RegExp(this.getKeywords(commands), 'gm'),			css: 'functions' }		// commands
+		];
+}
+
+SyntaxHighlighter.brushes.Bash.prototype	= new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Bash.aliases		= ['bash', 'shell'];
+
+dp.sh.Brushes.Sql = function()
+{
+	var funcs	=	'abs avg case cast coalesce convert count current_timestamp ' +
+					'current_user day isnull left lower month nullif replace right ' +
+					'session_user space substring sum system_user upper user year';
+
+	var keywords =	'absolute action add after alter as asc at authorization begin bigint ' +
+					'binary bit by cascade char character check checkpoint close collate ' +
+					'column commit committed connect connection constraint contains continue ' +
+					'create cube current current_date current_time cursor database date ' +
+					'deallocate dec decimal declare default delete desc distinct double drop ' +
+					'dynamic else end end-exec escape except exec execute false fetch first ' +
+					'float for force foreign forward free from full function global goto grant ' +
+					'group grouping having hour ignore index inner insensitive insert instead ' +
+					'int integer intersect into is isolation key last level load local max min ' +
+					'minute modify move name national nchar next no numeric of off on only ' +
+					'open option order out output partial password precision prepare primary ' +
+					'prior privileges procedure public read real references relative repeatable ' +
+					'restrict return returns revoke rollback rollup rows rule schema scroll ' +
+					'second section select sequence serializable set size smallint static ' +
+					'statistics table temp temporary then time timestamp to top transaction ' +
+					'translation trigger true truncate uncommitted union unique update values ' +
+					'varchar varying view when where with work';
+
+	var operators =	'all and any between cross in join like not null or outer some';
+
+	this.regexList = [
+		{ regex: new RegExp('--(.*)$', 'gm'),						css: 'comment' },			// one line and multiline comments
+		{ regex: dp.sh.RegexLib.DoubleQuotedString,					css: 'string' },			// double quoted strings
+		{ regex: dp.sh.RegexLib.SingleQuotedString,					css: 'string' },			// single quoted strings
+		{ regex: new RegExp(this.GetKeywords(funcs), 'gmi'),		css: 'func' },				// functions
+		{ regex: new RegExp(this.GetKeywords(operators), 'gmi'),	css: 'op' },				// operators and such
+		{ regex: new RegExp(this.GetKeywords(keywords), 'gmi'),		css: 'keyword' }			// keyword
+		];
+
+	this.CssClass = 'dp-sql';
+	this.Style =	'.dp-sql .func { color: #ff1493; }' +
+					'.dp-sql .op { color: #808080; }';
+}
+
+dp.sh.Brushes.Sql.prototype	= new dp.sh.Highlighter();
+dp.sh.Brushes.Sql.Aliases	= ['sql'];
+dp.sh.Brushes.Xml = function()
+{
+	this.CssClass = 'dp-xml';
+	this.Style =	'.dp-xml .cdata { color: #ff1493; }' +
+					'.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }' +
+					'.dp-xml .attribute { color: red; }' +
+					'.dp-xml .attribute-value { color: blue; }';
+}
+
+dp.sh.Brushes.Xml.prototype	= new dp.sh.Highlighter();
+dp.sh.Brushes.Xml.Aliases	= ['xml', 'xhtml', 'xslt', 'html', 'xhtml'];
+
+dp.sh.Brushes.Xml.prototype.ProcessRegexList = function()
+{
+	function push(array, value)
+	{
+		array[array.length] = value;
+	}
+	
+	/* If only there was a way to get index of a group within a match, the whole XML
+	   could be matched with the expression looking something like that:
+	
+	   (<!\[CDATA\[\s*.*\s*\]\]>)
+	   | (<!--\s*.*\s*?-->)
+	   | (<)*(\w+)*\s*(\w+)\s*=\s*(".*?"|'.*?'|\w+)(/*>)*
+	   | (</?)(.*?)(/?>)
+	*/
+	var index	= 0;
+	var match	= null;
+	var regex	= null;
+
+	// Match CDATA in the following format <![ ... [ ... ]]>
+	// (\&lt;|<)\!\[[\w\s]*?\[(.|\s)*?\]\](\&gt;|>)
+	this.GetMatches(new RegExp('(\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\&gt;|>)', 'gm'), 'cdata');
+	
+	// Match comments
+	// (\&lt;|<)!--\s*.*\s*?--(\&gt;|>)
+	this.GetMatches(new RegExp('(\&lt;|<)!--\\s*.*\\s*?--(\&gt;|>)', 'gm'), 'comments');
+
+	// Match attributes and their values
+	// (:|\w+)\s*=\s*(".*?"|\'.*?\'|\w+)*
+	regex = new RegExp('([:\\w-\.]+)\\s*=\\s*(".*?"|\'.*?\'|\\w+)*|(\\w+)', 'gm'); // Thanks to Tomi Blinnikka of Yahoo! for fixing namespaces in attributes
+	while((match = regex.exec(this.code)) != null)
+	{
+		if(match[1] == null)
+		{
+			continue;
+		}
+			
+		push(this.matches, new dp.sh.Match(match[1], match.index, 'attribute'));
+	
+		// if xml is invalid and attribute has no property value, ignore it	
+		if(match[2] != undefined)
+		{
+			push(this.matches, new dp.sh.Match(match[2], match.index + match[0].indexOf(match[2]), 'attribute-value'));
+		}
+	}
+
+	// Match opening and closing tag brackets
+	// (\&lt;|<)/*\?*(?!\!)|/*\?*(\&gt;|>)
+	this.GetMatches(new RegExp('(\&lt;|<)/*\\?*(?!\\!)|/*\\?*(\&gt;|>)', 'gm'), 'tag');
+
+	// Match tag names
+	// (\&lt;|<)/*\?*\s*(\w+)
+	regex = new RegExp('(?:\&lt;|<)/*\\?*\\s*([:\\w-\.]+)', 'gm');
+	while((match = regex.exec(this.code)) != null)
+	{
+		push(this.matches, new dp.sh.Match(match[1], match.index + match[0].indexOf(match[1]), 'tag-name'));
+	}
+}
+dp.sh.Brushes.Php = function()
+{
+	var funcs	=	'abs acos acosh addcslashes addslashes ' +
+					'array_change_key_case array_chunk array_combine array_count_values array_diff '+
+					'array_diff_assoc array_diff_key array_diff_uassoc array_diff_ukey array_fill '+
+					'array_filter array_flip array_intersect array_intersect_assoc array_intersect_key '+
+					'array_intersect_uassoc array_intersect_ukey array_key_exists array_keys array_map '+
+					'array_merge array_merge_recursive array_multisort array_pad array_pop array_product '+
+					'array_push array_rand array_reduce array_reverse array_search array_shift '+
+					'array_slice array_splice array_sum array_udiff array_udiff_assoc '+
+					'array_udiff_uassoc array_uintersect array_uintersect_assoc '+
+					'array_uintersect_uassoc array_unique array_unshift array_values array_walk '+
+					'array_walk_recursive atan atan2 atanh base64_decode base64_encode base_convert '+
+					'basename bcadd bccomp bcdiv bcmod bcmul bindec bindtextdomain bzclose bzcompress '+
+					'bzdecompress bzerrno bzerror bzerrstr bzflush bzopen bzread bzwrite ceil chdir '+
+					'checkdate checkdnsrr chgrp chmod chop chown chr chroot chunk_split class_exists '+
+					'closedir closelog copy cos cosh count count_chars date decbin dechex decoct '+
+					'deg2rad delete ebcdic2ascii echo empty end ereg ereg_replace eregi eregi_replace error_log '+
+					'error_reporting escapeshellarg escapeshellcmd eval exec exit exp explode extension_loaded '+
+					'feof fflush fgetc fgetcsv fgets fgetss file_exists file_get_contents file_put_contents '+
+					'fileatime filectime filegroup fileinode filemtime fileowner fileperms filesize filetype '+
+					'floatval flock floor flush fmod fnmatch fopen fpassthru fprintf fputcsv fputs fread fscanf '+
+					'fseek fsockopen fstat ftell ftok getallheaders getcwd getdate getenv gethostbyaddr gethostbyname '+
+					'gethostbynamel getimagesize getlastmod getmxrr getmygid getmyinode getmypid getmyuid getopt '+
+					'getprotobyname getprotobynumber getrandmax getrusage getservbyname getservbyport gettext '+
+					'gettimeofday gettype glob gmdate gmmktime ini_alter ini_get ini_get_all ini_restore ini_set '+
+					'interface_exists intval ip2long is_a is_array is_bool is_callable is_dir is_double '+
+					'is_executable is_file is_finite is_float is_infinite is_int is_integer is_link is_long '+
+					'is_nan is_null is_numeric is_object is_readable is_real is_resource is_scalar is_soap_fault '+
+					'is_string is_subclass_of is_uploaded_file is_writable is_writeable mkdir mktime nl2br '+
+					'parse_ini_file parse_str parse_url passthru pathinfo readlink realpath rewind rewinddir rmdir '+
+					'round str_ireplace str_pad str_repeat str_replace str_rot13 str_shuffle str_split '+
+					'str_word_count strcasecmp strchr strcmp strcoll strcspn strftime strip_tags stripcslashes '+
+					'stripos stripslashes stristr strlen strnatcasecmp strnatcmp strncasecmp strncmp strpbrk '+
+					'strpos strptime strrchr strrev strripos strrpos strspn strstr strtok strtolower strtotime '+
+					'strtoupper strtr strval substr substr_compare';
+
+	var keywords =	'and or xor __FILE__ __LINE__ array as break case ' +
+					'cfunction class const continue declare default die do else ' +
+					'elseif empty enddeclare endfor endforeach endif endswitch endwhile ' +
+					'extends for foreach function include include_once global if ' +
+					'new old_function return static switch use require require_once ' +
+					'var while __FUNCTION__ __CLASS__ ' +
+					'__METHOD__ abstract interface public implements extends private protected throw';
+
+	this.regexList = [
+		{ regex: dp.sh.RegexLib.SingleLineCComments,				css: 'comment' },			// one line comments
+		{ regex: dp.sh.RegexLib.MultiLineCComments,					css: 'comment' },			// multiline comments
+		{ regex: dp.sh.RegexLib.DoubleQuotedString,					css: 'string' },			// double quoted strings
+		{ regex: dp.sh.RegexLib.SingleQuotedString,					css: 'string' },			// single quoted strings
+		{ regex: new RegExp('\\$\\w+', 'g'),						css: 'vars' },				// variables
+		{ regex: new RegExp(this.GetKeywords(funcs), 'gmi'),		css: 'func' },				// functions
+		{ regex: new RegExp(this.GetKeywords(keywords), 'gm'),		css: 'keyword' }			// keyword
+		];
+
+	this.CssClass = 'dp-c';
+}
+
+dp.sh.Brushes.Php.prototype	= new dp.sh.Highlighter();
+dp.sh.Brushes.Php.Aliases	= ['php'];
+‰PNG
+
+   IHDR  J   C   úQLy   	pHYs     šœ   gAMA  ±|ûQ“    cHRM  z%  €ƒ  ùÿ  €é  u0  ê`  :˜  o’_ÅF  'yIDATxÚbüÿÿ?Ã(£`ŒÜ  €˜Fƒ`Œ‚Q0
+ğ€ -(GÁ`Œ@, Ä,P>'”@ê=‚Ê‚Q@3 @,£A0
+)`b ¶â6$q# V€²ñS Ö âó£A6
+h ˆqtŒrâå ÎC{¥e¡…¤w@Å*€øûh°Z € b"3«¿ñQh÷,JÃğQh7®r4	ZÀVH®âéH|Paùª„Ù‡Y%á€”^ÑÓo
+TŞp4™Ğ ©-JP¹ˆO qØğßDh&zÍXÈ€ˆ¥øÎh2” T‘½GjI*ñ2 …¶&C€øïb+ „ò‡øäY´–µ:´rø0šTh ˆ”%¨öº°Ğ!äÇcH]6dP0Äü1’A>”ŞÄ“ iğ9/d€ŒQg°‡8hÈÁ`4iĞ 1-JI ^Ä[€ØZ{Ãºƒñeh½5™
+ÄuĞ¸~4J šÉâ·ĞLRW<ˆ ñ9¤ÖÖpjQrB{; îõl,ò©Pq)h…1
+h ˆ…@×Çˆ×Aù²PüGm°ËĞÖz!YÄnPq‡Ñ‚rĞP·2‘2as)Aio3ßCJ— ^ÃÇaäwĞØë >‹ETIL„²ÕGJú € bÁQ›Æ}Î ‰Ë"ÑC¡ =>Â1„€\˜ê¶„@,7…fä›dfP/Æ)ÍÁ*ë^,àpZ¾ñˆB[ÌèÀ),Œ&9ú € Â6F©Ô½ÆLàR+@™66¹f4	P€
+Èo@üˆuØˆ÷C»Ì,ˆÅá)z2è•ÚD,ô´xµb@]Œ>À,iÄ–„úÄ¾;šìè [Ay)1¾À"fˆø-ÚÍf€v¯AìThBö AòÑCÊ#4¬¡á
+uHl¤Ân6´ÛLÌnP…6É\X+rµ?‡YËÜ š^e¡ô$hXÀÖç³Vô  „­f @,-(C[f¡4Ìh 5sŠP@cN÷¡49	b6bÆ;ZP‚&Ú¡•Á$:'üïĞğ¶a€L<L„f‚ hwªÚ
+¹Qˆ@»`ƒ€ZŒmXz%'ğè‘…vÉåğ¨ù	;Pá‰TX‚ZS0‡~`IWÉĞÖ­	T(Î@[ºƒ¹’d‡¦QXú…M<"ƒ÷£Åı @ ò¬à†aR©Ÿşøæßº‡a	Æ`ö`qƒzV-Ë!EıTêI'+
+œ|gxÆ«·açÚÎÂo4°¢Fgï
+¯¨ş·E}ÁğC;3ê7š«ŒÈpdvw<uøß°Æû¿á‡xAväô\ÑwÃw:ğŞ “&Ù1Î	96¯hú“yw•¥F9™QëH±:Z³¬ò¤g6wÌz—=r~““_ø#fåıl&³ÙÒAş²:O˜+ƒ†aŠ¶à‹n½úîºAVğ^¢ctìÑE´ˆKÂ!ÅqK¡ÜŒ,ıÿıt˜¨HGÃô%$	Ã­€Å: åC…å:Êí«¸£AÛMÍ
+‹•}ŸÉÖ¦hvÂ£‰%–¡)«>ş4€H1ù`5—]Â(gï ,
+˜²¬«¹W/î¤tgsÆ[D4 e Ï€²;ĞR4XmËŸ,¡wÉá™wJ˜ë¥ôÈ˜÷bjÌxr;	JñƒPîuŞˆ	i&:~Gì ûMh—xbK¡uP×S:FµÚ­²€v3vè·A1¨KıøcC»)çkÒª İš·8ü|:ñÈ€º}ì(´Ë<‘À„„
+ÒDÈş'¨Û>Aöƒfå/C‡dñ˜u j÷oh—q%ö5¬ ‰”YĞp}u{%êÖ·ÿHqT	xic@l@±:Ì²ŒûVUI¨ÙOP·Âüpm¬–¾ĞÁIÈòBqç ¥ İg½ aÂqÙñ/P=ºh“°b+¤ÉHd7ïa }M°8Cí8†ˆ“ a°i8©
+ê/^,ù€)­Bóç¤¼:‘v[wA«¶BñMè°ÌQ¨}Üá€”OnBı5*všwöCÕUĞ N •5²„ô ÅŒ†A(z)İ¥MïA´‚vğƒ5ØÃ‹°iÄİ?H*â$°ş¤/^lJT0Sè6Q™¨«èúÇêÑ„p,NÚA¿6•ïY¨êãHøÄ,Ã†ÏkÊL3S76ªËç=Û×™A•©Pe)”áÎìlŸÀ^\R¬-¬WÓr½àÎÕÑœ­’Vû–6zsgº‰&¥Š({2e4 /\9Pñ?c?åÔÆß{ñ9°½ÁG\¯ÓÆ;1›ª*:ı!Ê¯ bB›ad 0 Ï€4‹LÊì7ê¢aôV95m(tbWk`5––L‡Ö¬Pœƒj°uH³Š³±¸$^‚gi†(Z‹FJK#ÙmCDKfh( ­õ¶@+è¸SdÀ\2{9R­l»X&¥d‘ZáÇ°´ê a›Ìù€ævh‚N\!»[ËFg‘â"Mlx’šPumĞ0¬‚š“m¹LBKw‹p„'ò’$Y<qD	À6ƒÿÉİ8ì³„¦Eä5ªöˆ³Îc	÷ÕPq]Úœ´ô-í?Ç“·;ĞÊœP¨û$z. =›±Øs‚ˆ°ÿB?0Ö§úò @"2.R¢~ŒÖ„Åµ;ÂK@=f@¬É<FÀN\ò­Ğ™Ml j6z÷®
+:‹ŠoGÎ1¤½\Íä¸fâĞºM ³ùÈ	(‹È!ƒõĞJ[×UŞãxäĞÜr­{ü*_E¯šûb) e¡Ã(¡Ğ°ş%A/Å/8º©ĞYnX!©‹ævC,½R½mV~RŒ¼ìÈ€ˆ9ò°
+øŒ£À1g€lÆVÉäáˆc¤†LB”öè0O¼O8bñ×chÁš‡VpşÁÑH"ö<Ü÷œº @ 1‘P;ÂÆzVC=t ©Ö‡~‘7GÛ‚”1ñ%D+<ã³qŒr@3ê4?ÜÀÀ°šä)BTH:âYZÂˆ”@AÃè24qâ*C€*´
+á42u±´¶((-IÈÌgĞ
+&Øxå,j#¡vÃÖ7¢÷B¾#SA[˜ 
+EÊ‡ù—‡Ùè`=Ôÿ²Ğp¯CJo°Ã1BqŒg¯GKŸë¡zBÒù• µÁsR2%4½ÆÒj_VQàØÒ,\ôè³şò9–JÙ}«Ñ/ÈÀÏø.µ )ù‡ €˜ĞZ†=PúZ©;	šĞ‚ ™<ZhS›.ÄÓzkcÀ¿Şß ÷1­8ä¦}7Z+9G¡Í äÁQAœ`@¬Å<€Ç]ÊHlPX
+C'ÚĞü,‹” @Ç‡Í…&ŠÈñoÇ2ÆF,öä0à?Ñ[GFÁ–‰^ râ¨ÉÑ
+¥×XâÄ ©;Œçÿ‘
+ª&h÷ß
+G+Ü„Æß1¤x|ŒTğÉâxUl¦	'¢ÄÄdJ ¡	Nl½8~èğLZ8-ÇÒƒÅ'tØç1Ò0rØ€ÂÂˆ¾ëGóĞØÈ…£4ZØ#Ç¥ ÒÄ­âä )=2€ bBj½À
+¿<¤ÈA/Èc@Ì@`Û­òğ¨±@ªQ¸ ‘Î
+ÄªšÍÈ	¨Ë“$ÔY´1Hl…;Hü=4‚!5ûaaãwğo.RF[¡	€ºjxXá7.·‘ZnÑºkèİñ<=38
+$ä®+´`ÅÑ¶‡š›¼ƒ%S,"ĞÍ¬‡v}+ÑZIFĞ¸bÀÒB•E2=R¯æ$´à­‚öLĞ‡HdÑ
+Ğ-h-ì*´¡""Òó122e#nŞ½9é ÍƒwÊ"g!/ÒOe ıu„ô~”­pTÖg3¬4r§4­À;¾ ˆ	Om^Û#211héÁZ«‘ºO™P·|G£¹Ã€¹Ï¹U†,&‹ÖšƒÕXh[ª‰÷CÙ¡Î$¤ÂVHEÑe)€¶êP»^ e°*"Æ­Ì¡™§‰÷D×],ãœ³‘Â$G«	=ÓoA‹[X·N	G&€íIÅÒÂÌ$È Ôšù-ˆ'A+Ãphşƒ%~„¶ºC ½™P}Ï¡ã°pôAÃ”‡úY
+)ÌR¡C.Ğ±WØ8µRœXá¨ÌÈlDNs¯ñÈ¿ÇböOh8[`1[¼´!å7G(õ“4ŒæĞ¡‰ÜP0Á’ŞÖcÇ|ŒÖš¿UìNè“´äL¦‘|Ò@ ± u1àŸÙÃ6pê1Xëâ¡&,RwÔR›<A…„„-á: µr`‰DZ€2˜Z¨­•(‹TàA›¼Ì@ÜvÂÿXº6 ÌmÄo‡¶âàè|„&ü]Ğ0’`@=ázÔnXO >ó¡…Èè°C4-`ó+òúÄ·H]©4¤8º@De2[÷±C1,]¢Ï>ÃÖ N†ø[Ğ
+ƒçĞ‚ÛêŞ‰Ğğü-$AìÄÖFXö?Z…|Œõä,lyƒxKb¾dg@;{v†*´B[ùûĞÒ4(ír@+ÿIĞ¼VÅ@_€-ÁÑ «‚¦qPº{õójÜ7À.°‰`Y|-Aà3	Ã! ¸ø€v;¶¢0;Va”Û%ãÖ`aM^.w<1RXXB û~›¥¥ÀQjà¸˜©êPô u«dœ8<Ï7âw'Ì#ƒÜ.›÷jŸ,. 6x×!{´fU¡ªñ¬:klN0›À©ÙÏÇø	xÕôCÚŠ–0G+pfep~<û™‰½Ó ş˜u”JÖQœqS:E´‡)÷?bõ¶ÊL²ìÓ«fªswwâ¡YåÔ>$Ï˜>¾r”— bÂÒÂ¶;Æ„ˆhtÀ-í÷C™óPgvC¡ò„Ñ`™€˜N u	ëbÁÆıJ -ô./¨Õ6m¼.A[*qP½o¨\ã"§‚–7ÖI>„ÖÂêP¿H#MüÈâïAÒÄ2üi˜c=ROÎìg>ÒXÙ{hø€ÀYèØµ&~B»’Ç İnX—²
+êh+ñ=TÍæèBı<­û–@„Ğ[‹[¨œ&1`ŸÅşOo¡-Ê:Ì¥rwP'
+a+B[ÓË¡úè};å,­IY¤!ä|ø‡øÃ_H™p#tÙœ <„µ‡ @,$4›­H«QDëÂÀN%>°íMy„O¿‹eµÏlzF}ævh†„f2+4¿g2 –Àfã©0slLIšñĞır:¾öGx_FŠ;|kÌ&£±$€
+2ıñ± ylï3t’æ •2Ûwèï¤Ê9Ë$Íc…>Ì=È+¦A+ğÇ$;úécÜç¸À3Tr©RB>á4ùšG_Ær)ş—CNYÄéUôè“NyHi6”ñêRzœ‘{ªY$‚ëÈ ÄDä@gáÇ’a-ÌhoÄ€}½ú¸_*‘ãBÈã¡æ»a	P!¹:&;Ê
+6	"‹4ÀœÇ€z © yF´s´ßõ6bÖÏ‹¿¸‘
+É ,~=Mø½hâRP÷Ãî'2éh«ŒÔŒk©† oZ¢äKS¹ÕÛß¿u'SÔO' bL–\†²°IºE¸/Ã×K!÷,V7<zpˆCıi‚elYš‘Zf‘*İÕĞ–>lI½
+É,=ĞÇHnš„Ä6!3_ÉRÉ­¡xi­|€ bÂSÀÁf©ˆIPÄÖÈ53(cª f	À5	­+ÜÜÍ‚ßÀ2\KÃ
+ï8(†Í¨Å1 ¶‚I0"7r¡Â‚Ô­gA²=Ñ#shAŠÜÌGsûhë½‹Û8Ÿ@+”¹“™°!M(le@,¤mÉR1Ó¡W´Èñø ê˜¿î0ë)4cæ!gXa	ÿ$tÃI;\-m,æ³@‡®öCKôp˜ˆd®4´‡ŸIˆí¨ ¾ı€2–!ŠÇHCEPw=g Şà”Ä‹
+Êd6x+$@ á»®Ö
+Éc¡…r¡Dê}²8¹×§B[
+¸šŞ¼ĞnlbWH4Ó¢¹k?´•1ZĞÀ9Ã¶‹‰2Â¨;	­õe¡|_Ç``kàÔPw¬ÈB[Ø¯±ø[©õÂÀ€:ÖŒ¾Ğ—œ‹¸`Ë‰`-îHq
+juk0Pÿ.¥ $» %ŞÌ8 õ³Ê½÷B«Œª'ŸaËˆÕ°
+|5êâl˜şıĞŞÑ|¨#¡jÏ@+3z]“‘µ×G+¼‰‚*.p‚ˆŞ%±-GÌS…À[!ˆØ–ÒS¤Å$h&¹Cçd¡™K–¸Íë‘÷sh!;K"EœÄDH<d™Ğm¨9ØZ>MHãVÓ¡|Úuy­µ‰Aã„ùÏzØØích+ÊÚBº"ECUV¸
+Y,áòmŒì>qmµ>††òºÕãĞŠ&ˆ–6±}d@ì·ß‚Ôb–Eb€ù4oIË0l·™%î1oôÛx¢,~Fd€kçÉ_Ää#¨õZ Õ8ÜvqÛSh¥K3°Í´Ş•s€±ä
+Ûøï[¤4€JvÇÑXbÇ3äˆeˆ /  &º°ÚÖ}!ÔÂº‰¥EK Mˆ=×<DØ¯ mì‚¶,æã¨	¾cÉ VÉBhí„§µÛÚ–õßeèĞÀ9Ítt 3§1«‰+C€äÃ€Ø‰±Öò´5ñ˜1£ŒÜ*tÀÑ¢ªGÊè8H5;¹Ã}g@Ì @+\`k	7{C[7 IŸUPºê'´Š›‰½€u!¨7|h7‘#R˜ä!ó¥â‰ä–¶Vócy!O+êaX!š½~ÓTìëga‡`ÀvN…B+€ıH•¿Z”ë‘ÒW–ÂH)LÈ½Ê}Ş‡û©/DT^²
+R8 ÀÛÂPô,ílíYÀ\X‚1Xƒ=X„E´òî_ü$ÁBà $TïŞ·ì¿YáÇ6'uö0eÁÁc2f2Ó53ŒwÁÍUÂOUÁ]vÂ{%§OšÕ#áÊNÃ®€é”†wä¼X½+a*û„‘[»[&çÂŞØ^ô‰_Ğ<€xŸûJ—%ÖÔâA1£cL«K™p£®`+xÌÌî¢®S³O,›×ã'–Rò¡åC¯heu¾IPúğ2^ÿÜ- mWP y `"‚…y˜‰É˜ù¨‘#MÓ+İ°¤-wı\ïP< ;¦·Q¢ÜDÔÁõaáî	N#¢cÂõfÄ\B€Ş”™2Ô|€ai£ÖÀµƒwFr.¬úf°A}1k%‰Ej¶Mô5yï=òĞ&´cÉ£ıLÁŒ”jd@Õ	¢dpì€Äîy”ét#Ö¢<¸ µäå?Æ±¥×¯¾xÄq:b"G0ê)¿˜¿¶®·:R“t´Ë§Ê€¸2“ÔƒÜ‚šê½xäpïí…Û€Æ°& éãD_EÖëÒî‡véœºèNH]\lã™øÛ£ëy€Ö…{ˆ‰ÿÀ¢´[à€ÖÕhg@=Ğã‘Ã²há6ü%<°[¡q6™±2 mÛA ŠøÏ}d@R€]°©Û|~¤,ÒÄ,<“‚HşÏDsµb@]RCÌØ:¶%%±t¿9Ñ†NHŒĞaˆÇXÒ<l¿=èT©èPÑSÔù™8º•ˆ¿î…Z]qô4¸š©¹‰ã)¼ŠíšŒ\fa]€·3¸„¡hL WÆ`Vp—`Ö`a¼¨ùiZ(šxó&h|ïPŸµPÖX,ÇhA_6%‘`”oôx§°ø×µäh%Ø‘æ9Eq¥òc˜¨{eY†ÂâK7i‘pßy’ëÈh¡İí
+)¤kgâz· ªV…ëÚÊèUHûïô‚”ä'&fQo‚‘Ğ6 Ğ"Ğì1±·?ˆ²1ƒ‘ŞÛ7k#™wVkôÌÈº1ñ<W§ "´àÜ­6…Nnì‡.yáD+­Ñ)³l+¡­5ØÙz*HË{B¡ƒÃU8jtPk}—
+hçÉ>èlc–IÒŒ02¸O Õ¬L Å!‹ÖBÉB³» ÚJfÄÒòµÄª‘–áäAİˆ¾;g=–	 ä¼,õÖª!OÆÀ–a;¦Ê‚qJ(Ş~C[†Ï»jğÍş£ƒ¨§Y#ï:A^WIèĞ‡6,é”Î[‘zè‡+¿Ç1‘pOoâ6Ô¯³qL&ÃÑãÀ–oÎBW>ä#…Í$$÷Â&vĞİyÏ’%+â/å£EÊ_'¨`®Õ&xü»'¸ÎÏEAlÇX!5¡ÑÈâoˆ›Õ~ãˆ„ âZ7úÔÜ…H“€&>C¨[RÑÃ,ö‚º¶JĞ„%
+>€+¶Ú¶`À~,¾,®>®.9lfì‚~°ÓN"eÚÙĞ‚œê'XWvÜ›%TORáJhRĞ¥YmP5È3{ğğÔ:=æ´zÌ€}Ú	hzG˜>Æ±,ä1`h\CËhï¡³UĞ0!f=òZàÙĞ! äÓgĞïí¹‰E?IKJ°øß
+‹ÿpPêAóh©Z%ï“Dø˜3xN3~â¨`ŸR`¦1•@ 1‘8­NØ€Y»8æcÉà¡ĞÂ$:øZcÛóüŸq0´u¹ªg4³¬gÀ\dü÷ÉÙ°åDŒõ¼…fhØºClûÕB[èh-¤²ß_#µ°£ù;©µó)³Á*jĞql­*7h«Æ’‘Oàè‘,€ ó{À–òœ†…:–£û±d&ØÌ¡X*6ØecÈ½ÀQĞYQvèé	ß9•ÆsaW¯Gçe@¬•Doè ï\CoE©@+g†’h«cÔ=¥ü;ö-º¡T´Ûu6 h;c a64A¼BvÈB^#{x‘,bš Y–í8²ÀK(îOùì¼æXğ¦×¤ó»ÑÓš^	• *ˆÔ<9­Øp8XWXa uÁéPÍvfÏ)æa-~É†TsYüˆE‘Ó¨³Ã5Ìbn‡¡‹”€I_"£ÎÜèİ£D»i)+mƒQòâÛ°2ÁávefW¥…=Ï°ÊZ¡*Z_à®YÓÙŞ¿ãml0ÊÌÁ£¼)ç¾¡úˆÈû‘‘b‘˜ˆÍ`¬C.¼Wá(dqL¨0âp_ e6Ñ–æ OÂ¢­$yØ&Ã*ñ„µ³CÑïZ¦F¦0ÄR‰`;³=Ñ‘²q"³±d@2Ö*¤3U‘+F"ÖğıOÚıóÈáâ@dA)€ß†XÒ,OHâ˜ À3ÑöÏr:J1®õªØâ‘ñ?ùç·>Â³\ŒØØ*"+/pº &<]•Çø÷±’z ¨K‡g†,1„´Amh×›Ğé#ë¡K&B‘ºy©P³@İ™Ï˜;n`wØ /I‚]U‹<HÍ¦·˜q±ò6FØIé—°tİ£…{Òä#Z÷yí,]*\c]²Hc•¡ÔÙû{->î AG¢ùïš ã‹ßñŒ‡NÆÒÅïYÈºÁÎC»‰*Hæ`†ùƒÅÍV$¤}PXÌEââG|Œc©J’Aã°:t e^à;–á3ØUµmH~xMƒî·tHÄK4A/'÷˜¿ÿĞqÖÇÆñÙF!™¢o[¢©‹®‚ò.Âù¸$"3+,áƒÃÈ»¤	´V­j·q{Í×£EÚcèØ$l+ÕWìë¹8Ñ¾‰óï@,şÆN‘İ -ä°UÈaÜ«|uòA
+“ÑÆb¢™£‹6NuH…5ìjjŒC‡&8G´ÉØ‰6¡HaÇ€–C'×ğğsBÕcl‡]0vŒL·¯†ïsEÃ´	IbÁ‚¦õÿhf!›ˆ6Ñ….0`®Cöa@\†÷:‰Ê€#-Àìyeæ”.J©\Pêb©`ë>­P‚[@áÄ?é‡°A+—?xf¹ÑNpøR[­@„óœˆ€"T#XCgñHñ((1m„ÖDÄÎ İDJhÈ‡a´!ø<™©ŠqŸ46÷øc¿Ã€zwt Ò ñ­àËĞ–¢Ôm™h-AdpÇ@z(w®f@=Ùü•2Æ¤‚ä’`…[*–‰ÇĞ
+ƒØCU¡ÍŞ#Å)­ˆIH“A 
+2ZÁ*şË*\#¤É,| ª[õêu»„&59ÑÒ#l2)©eŒ-.?#ù7û¦Pº˜@£	Yi³àç¡e1eÈ$¤8ùeryCˆ
+š»Á›: <N€€–¯ØCU(R³y5´VÓ…fXíö‚Œ 0„Îü¡µş`—–}„vóH=|ô´ö¸	MÜçÑjÕ*Ü¬WB»&ºĞ‚®	‰-K¤ nRØÁNJa@½1Ñ	Úªı€æĞš¶®´dJêarh'È,³Ü ]8h·m=2#t–Ö)^A-Îƒˆ³A³×k -ZbkXËú>Ôß u¬Øî_?‚ÃLP<°"¥¿ š®0v€,,½"gÂPsp¥S¨›/ U(¯‘Ü+	ÛHÃ.™Ğ|vZø&¢¦øN³z- [¡év}zIì‰X¤’'‘Ò×hZ”„¶àa§Ô¯gÀ['eÈFÔ5ÌË¡åÒIqó'ĞrF ©çKwæĞôû €”èá?Ã(J gŒh-zz PôÚ’ş0#>2 ¥Ã!W )å(£`ŒH @L£A0
+FÁ(ø@ ”£`Œ‚Q@  ĞhA9
+FÁ( ¸|ÿ•+©Öˆ†‚¿ ˆe4jGÁ( ¯@`@]^³ J'àÑV «(va˜(L qjAç6P{æ&  €FÊQ0
+È ¾ôq!4³+ ezt©]#’ÑÙÿ!
+ htÖ{P³•åÀ YŸëN
+	ÀVÔ¨üÄ©= ±XKŞRªY Us ¹U5ï_ å@íw@*Ì@ê? å@f_ ™…¬Èw Æl<ş·Š€ê`“Š3vĞ°‚¹të"€º9É_ 0¼ Uÿ É¨¿ …ø¤°/€š€rü@nÚ›€ä.hë¹ -î ñn ÷PºÍP7‚äA6¢Ç3Tr|ÁÒØN¨›â®¶h-àPwÃ+6€ £ÔĞÌr šØ
+PÏû„µ¸Ğ[_P}öHò |$5ö°BšñãP¯– e´zÄvY$y$³6@İu€³i`ş‡²ë¡bĞZ¨°BT8\€ñAİ|)üP·	ÂôÁâ¦ZÀ0 Å	rÁôÙ£…1rXÁì3€ÒÌt€ÚÅ€æ/$ñPö|håÄ€%¾í„Š ùÍ —‘õCÍõP=Èaû Éß	è•6@ v½GÕ °n@kİ`i¡ eH}PæAn¡™Q§õR÷Í>Pe"R+°}² Z8Øck"™İÏ€zÒ?µ[İh-fä— 4“Š i?ˆÔ²Û mÍ Œò	PùH…(\ f@ñGXAs¨ÛPâ ÍíX*}üĞİ¨ –Z´¥º¦ĞÖ'ÈÜ‡H~¨‡úÿ ıÿø.±á;ÿ¡/Ãê_¬e	+4‘+h€ -(G-
+ØIía­¤–‡>_¤ĞšP³ĞZ°Ö"ráŒ<.+xb+$‘ÌŞÈ@–°´‚rš<ì gEæ\@jÅƒü"jqÃ9=> Ñh‹ô#r+„x…U ¨[`Aáô¹°G
+{½Ğ
+óÔïğøG©P%7í¶F:"¥Ad sÄRyN€ø¡~BO Ñ®÷( 6¸À€¸iì§ šQÁ€ûÄ€¨9è­h&6°Z@3>±fS³ÕjA9 aôB!-Üp¤..€ZÓŒhø ´µ*$|hkŠÔÂ\ õb+èøq\
+h…ú<Ã°Ö-¹« nœˆ§l„V°Äûhx90`9Ù €FÊQ@ÍÖd´v )s 6€µ[N u›ĞZŠ°Ê°.$¨«ˆV >€‚àñ(,…%V³é<|*ˆ¡­Côc€†_ZëT$ ù]›~¤”Q®–-¨Ëí5€°Ò„rA	¢Aë,†D nN`@Lìô¡i_s Ú×Ç6Ğ°uÀ–6h´ ÔîV‚Æ¤şC»H	w4!ß‡br[møZhnèÇR}€fXa©@¤Ùø†öC+	ªµ:‘
+Ë	h…Á{hø[åH…:¬€ùı>,ÃC»Å ‚´*GÎñj	Ø*hÁŞµÿ=ÔñP6¨œˆÔ-/€¦ƒõHCë¡á¨€¥—s/r8ÿ‡¡Øc™­O TÉA+TôŠşP7íÇ6ì@£ËƒFµ[•
+Hİ¨8
+˜´\xkU1@–—|&áÚ -àaË¯°úÚJÀÆHqCõpAš(j`@Ìãr#¬rºjø€ey•şqâ	P}Tvÿlã­ 4ZP‚Q0„
+Jj4t'¸Ä5s¦Tø8ÛŠGÓ;ZĞÃ_ 4:ë=
+FÁĞ pÜ9=ÈÀÜÙH®ŸèU@Â @ ¶(GÁ(£€   ÑÉœQ0
+FÁ(   h´ £`Œ  €FÊQ0
+FÁ(    š2‘¸øáŞ!    IEND®B`‚/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/wiki/SyntaxHighlighter:Donate
+ *
+ * @version
+ * 2.0.296 (March 01 2009)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2009 Alex Gorbatchev.
+ *
+ * @license
+ * This file is part of SyntaxHighlighter.
+ * 
+ * SyntaxHighlighter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * SyntaxHighlighter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/licenses/>.
+ */
+.syntaxhighlighter,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter span
+{
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	outline: 0 !important;
+	background: none !important;
+	text-align: left !important;
+	float: none !important;
+	vertical-align: baseline !important;
+	position: static !important;
+	left: auto !important;
+	top: auto !important;
+	right: auto !important;
+	bottom: auto !important;
+	height: auto !important;
+	width: auto !important;
+	line-height: 1.1em !important;
+	font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+	font-weight: normal !important;
+	font-style: normal !important;
+	font-size: 1em !important;
+}
+
+.syntaxhighlighter
+{
+	width: 100% !important;
+	margin: 1em 0 1em 0 !important;
+	padding: 1px !important; /* adds a little border on top and bottom */
+	position: relative !important;
+}
+
+.syntaxhighlighter .bold {
+	font-weight: bold !important;
+}
+
+.syntaxhighlighter .italic {
+	font-style: italic !important;
+}
+
+.syntaxhighlighter .line .number
+{
+	float: left !important; 
+	width: 3em !important; 
+	padding-right: .3em !important;
+	text-align: right !important;
+	display: block !important;
+}
+
+/* Disable numbers when no gutter option is set */
+.syntaxhighlighter.nogutter .line .number
+{
+	display: none !important;
+}
+
+.syntaxhighlighter .line .content
+{
+	margin-left: 3.3em !important; 
+	padding-left: .5em !important;
+	display: block !important;
+}
+
+.syntaxhighlighter .line .content .block
+{
+	display: block !important;
+	padding-left: 1.5em !important;
+	text-indent: -1.5em !important;
+}
+
+.syntaxhighlighter .line .content .spaces
+{
+	display: none !important;
+}
+
+/* Disable border and margin on the lines when no gutter option is set */
+.syntaxhighlighter.nogutter .line .content
+{
+	margin-left: 0 !important; 
+	border-left: none !important;
+}
+
+.syntaxhighlighter .bar
+{
+}
+
+.syntaxhighlighter.collapsed .bar
+{
+
+}
+
+.syntaxhighlighter.nogutter .ruler
+{
+	margin-left: 0 !important;
+	padding-left: 0 !important;
+}
+
+.syntaxhighlighter .ruler
+{
+	padding: 0 0 .5em .5em !important;
+	margin-left: 3.3em !important;
+	overflow: hidden !important;
+}
+
+/* Adjust some properties when collapsed */
+
+.syntaxhighlighter.collapsed .lines,
+.syntaxhighlighter.collapsed .ruler
+{
+	display: none !important;
+}
+
+/* Styles for the toolbar */
+
+.syntaxhighlighter .toolbar
+{
+	position: absolute !important;
+	right: 0px !important;
+	top: 0px !important;
+	font-size: 1px !important;
+	padding: 8px 8px 8px 0 !important; /* in px because images don't scale with ems */
+}
+
+.syntaxhighlighter.collapsed .toolbar
+{
+	font-size: 80% !important;
+	padding: .2em 0 .5em .5em !important;
+	position: static !important;
+}
+
+.syntaxhighlighter .toolbar a.item,
+.syntaxhighlighter .toolbar .item
+{
+	display: block !important;
+	float: left !important;
+	margin-left: 8px !important;
+	background-repeat: no-repeat !important;
+	overflow: hidden !important;
+	text-indent: -5000px !important;
+}
+
+.syntaxhighlighter.collapsed .toolbar .item
+{
+	display: none !important;
+}
+
+.syntaxhighlighter.collapsed .toolbar .item.expandSource
+{
+	background-image: url(magnifier.png) !important;
+	display: inline !important;
+	text-indent: 0 !important;
+	width: auto !important;
+	float: none !important;
+	height: 16px !important;
+	padding-left: 20px !important;
+}
+
+.syntaxhighlighter .toolbar .item.viewSource
+{
+	background-image: url(page_white_code.png) !important;
+}
+
+.syntaxhighlighter .toolbar .item.printSource
+{
+	background-image: url(printer.png) !important;
+}
+
+.syntaxhighlighter .toolbar .item.copyToClipboard
+{
+	text-indent: 0 !important;
+	background: none !important;
+	overflow: visible !important;
+}
+
+.syntaxhighlighter .toolbar .item.about
+{
+	background-image: url(help.png) !important;
+}
+
+/** 
+ * Print view.
+ * Colors are based on the default theme without background.
+ */
+
+.syntaxhighlighter.printing,
+.syntaxhighlighter.printing .line.alt1 .content,
+.syntaxhighlighter.printing .line.alt2 .content,
+.syntaxhighlighter.printing .line.highlighted .number,
+.syntaxhighlighter.printing .line.highlighted.alt1 .content,
+.syntaxhighlighter.printing .line.highlighted.alt2 .content,
+.syntaxhighlighter.printing .line .content .block
+{
+	background: none !important;
+}
+
+/* Gutter line numbers */
+.syntaxhighlighter.printing .line .number
+{
+	color: #bbb !important;
+}
+
+/* Add border to the lines */
+.syntaxhighlighter.printing .line .content
+{
+	color: #000 !important;
+}
+
+/* Toolbar when visible */
+.syntaxhighlighter.printing .toolbar,
+.syntaxhighlighter.printing .ruler
+{
+	display: none !important;
+}
+
+.syntaxhighlighter.printing a
+{
+	text-decoration: none !important;
+}
+
+.syntaxhighlighter.printing .plain,
+.syntaxhighlighter.printing .plain a
+{ 
+	color: #000 !important;
+}
+
+.syntaxhighlighter.printing .comments,
+.syntaxhighlighter.printing .comments a
+{ 
+	color: #008200 !important;
+}
+
+.syntaxhighlighter.printing .string,
+.syntaxhighlighter.printing .string a
+{
+	color: blue !important; 
+}
+
+.syntaxhighlighter.printing .keyword
+{ 
+	color: #069 !important; 
+	font-weight: bold !important; 
+}
+
+.syntaxhighlighter.printing .preprocessor 
+{ 
+	color: gray !important; 
+}
+
+.syntaxhighlighter.printing .variable 
+{ 
+	color: #a70 !important; 
+}
+
+.syntaxhighlighter.printing .value
+{ 
+	color: #090 !important; 
+}
+
+.syntaxhighlighter.printing .functions
+{ 
+	color: #ff1493 !important; 
+}
+
+.syntaxhighlighter.printing .constants
+{ 
+	color: #0066CC !important; 
+}
+
+.syntaxhighlighter.printing .script
+{
+	font-weight: bold !important;
+}
+
+.syntaxhighlighter.printing .color1,
+.syntaxhighlighter.printing .color1 a
+{ 
+	color: #808080 !important; 
+}
+
+.syntaxhighlighter.printing .color2,
+.syntaxhighlighter.printing .color2 a
+{ 
+	color: #ff1493 !important; 
+}
+
+.syntaxhighlighter.printing .color3,
+.syntaxhighlighter.printing .color3 a
+{ 
+	color: red !important; 
+}
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/wiki/SyntaxHighlighter:Donate
+ *
+ * @version
+ * 2.0.296 (March 01 2009)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2009 Alex Gorbatchev.
+ *
+ * @license
+ * This file is part of SyntaxHighlighter.
+ * 
+ * SyntaxHighlighter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * SyntaxHighlighter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/licenses/>.
+ */
+SyntaxHighlighter.brushes.Ruby = function()
+{
+	// Contributed by Erik Peterson.
+	
+	var keywords =	'alias and BEGIN begin break case class def define_method defined do each else elsif ' +
+					'END end ensure false for if in module new next nil not or raise redo rescue retry return ' +
+					'self super then throw true undef unless until when while yield';
+
+	var builtins =	'Array Bignum Binding Class Continuation Dir Exception FalseClass File::Stat File Fixnum Fload ' +
+					'Hash Integer IO MatchData Method Module NilClass Numeric Object Proc Range Regexp String Struct::TMS Symbol ' +
+					'ThreadGroup Thread Time TrueClass';
+
+	this.regexList = [
+		{ regex: SyntaxHighlighter.regexLib.singleLinePerlComments,	css: 'comments' },		// one line comments
+		{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },		// double quoted strings
+		{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },		// single quoted strings
+		{ regex: /\b[A-Z0-9_]+\b/g,									css: 'constants' },		// constants
+		{ regex: /:[a-z][A-Za-z0-9_]*/g,							css: 'color2' },		// symbols
+		{ regex: /(\$|@@|@)\w+/g,									css: 'variable bold' },	// $global, @instance, and @@class variables
+		{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword' },		// keywords
+		{ regex: new RegExp(this.getKeywords(builtins), 'gm'),		css: 'color1' }			// builtins
+		];
+
+	this.forHtmlScript(SyntaxHighlighter.regexLib.aspScriptTags);
+};
+
+SyntaxHighlighter.brushes.Ruby.prototype	= new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Ruby.aliases		= ['ruby', 'rails', 'ror'];
+/*
+ * Superfish v1.4.8 - jQuery menu widget
+ * Copyright (c) 2008 Joel Birch
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ * 	http://www.opensource.org/licenses/mit-license.php
+ * 	http://www.gnu.org/licenses/gpl.html
+ *
+ * CHANGELOG: http://users.tpg.com.au/j_birch/plugins/superfish/changelog.txt
+ */
+
+;(function($){
+	$.fn.superfish = function(op){
+
+		var sf = $.fn.superfish,
+			c = sf.c,
+			$arrow = $(['<span class="',c.arrowClass,'"> &#187;</span>'].join('')),
+			over = function(){
+				var $$ = $(this), menu = getMenu($$);
+				clearTimeout(menu.sfTimer);
+				$$.showSuperfishUl().siblings().hideSuperfishUl();
+			},
+			out = function(){
+				var $$ = $(this), menu = getMenu($$), o = sf.op;
+				clearTimeout(menu.sfTimer);
+				menu.sfTimer=setTimeout(function(){
+					o.retainPath=($.inArray($$[0],o.$path)>-1);
+					$$.hideSuperfishUl();
+					if (o.$path.length && $$.parents(['li.',o.hoverClass].join('')).length<1){over.call(o.$path);}
+				},o.delay);	
+			},
+			getMenu = function($menu){
+				var menu = $menu.parents(['ul.',c.menuClass,':first'].join(''))[0];
+				sf.op = sf.o[menu.serial];
+				return menu;
+			},
+			addArrow = function($a){ $a.addClass(c.anchorClass).append($arrow.clone()); };
+			
+		return this.each(function() {
+			var s = this.serial = sf.o.length;
+			var o = $.extend({},sf.defaults,op);
+			o.$path = $('li.'+o.pathClass,this).slice(0,o.pathLevels).each(function(){
+				$(this).addClass([o.hoverClass,c.bcClass].join(' '))
+					.filter('li:has(ul)').removeClass(o.pathClass);
+			});
+			sf.o[s] = sf.op = o;
+			
+			$('li:has(ul)',this)[($.fn.hoverIntent && !o.disableHI) ? 'hoverIntent' : 'hover'](over,out).each(function() {
+				if (o.autoArrows) addArrow( $('>a:first-child',this) );
+			})
+			.not('.'+c.bcClass)
+				.hideSuperfishUl();
+			
+			var $a = $('a',this);
+			$a.each(function(i){
+				var $li = $a.eq(i).parents('li');
+				$a.eq(i).focus(function(){over.call($li);}).blur(function(){out.call($li);});
+			});
+			o.onInit.call(this);
+			
+		}).each(function() {
+			var menuClasses = [c.menuClass];
+			if (sf.op.dropShadows  && !($.browser.msie && $.browser.version < 7)) menuClasses.push(c.shadowClass);
+			$(this).addClass(menuClasses.join(' '));
+		});
+	};
+
+	var sf = $.fn.superfish;
+	sf.o = [];
+	sf.op = {};
+	sf.IE7fix = function(){
+		var o = sf.op;
+		if ($.browser.msie && $.browser.version > 6 && o.dropShadows && o.animation.opacity!=undefined)
+			this.toggleClass(sf.c.shadowClass+'-off');
+		};
+	sf.c = {
+		bcClass     : 'sf-breadcrumb',
+		menuClass   : 'sf-js-enabled',
+		anchorClass : 'sf-with-ul',
+		arrowClass  : 'sf-sub-indicator',
+		shadowClass : 'sf-shadow'
+	};
+	sf.defaults = {
+		hoverClass	: 'sfHover',
+		pathClass	: 'overideThisToUse',
+		pathLevels	: 1,
+		delay		: 800,
+		animation	: {opacity:'show'},
+		speed		: 'normal',
+		autoArrows	: true,
+		dropShadows : true,
+		disableHI	: false,		// true disables hoverIntent detection
+		onInit		: function(){}, // callback functions
+		onBeforeShow: function(){},
+		onShow		: function(){},
+		onHide		: function(){}
+	};
+	$.fn.extend({
+		hideSuperfishUl : function(){
+			var o = sf.op,
+				not = (o.retainPath===true) ? o.$path : '';
+			o.retainPath = false;
+			var $ul = $(['li.',o.hoverClass].join(''),this).add(this).not(not).removeClass(o.hoverClass)
+					.find('>ul').hide().css('visibility','hidden');
+			o.onHide.call($ul);
+			return this;
+		},
+		showSuperfishUl : function(){
+			var o = sf.op,
+				sh = sf.c.shadowClass+'-off',
+				$ul = this.addClass(o.hoverClass)
+					.find('>ul:hidden').css('visibility','visible');
+			sf.IE7fix.call($ul);
+			o.onBeforeShow.call($ul);
+			$ul.animate(o.animation,o.speed,function(){ sf.IE7fix.call($ul); o.onShow.call($ul); });
+			return this;
+		}
+	});
+
+})(jQuery);
+
+jQuery(document).ready(function() { 
+	jQuery('ul#nav').superfish(); 
+}); 
+/* 
+WOO CUSTOM STYLESHEET
+---------------------
+
+Instructions:
+
+Add your custom styles here instead of style.css so it 
+is easier to update the theme. Simply copy an existing 
+style from style.css to this file, and modify it to 
+your liking.
+*/
+
+.post p {
+	font-size: 14px;
+}
+
+#lifestream li h2 {
+	font-size: 14px;
+}
+
+#lifestream p {
+	margin: 0px;
+}
+
+#loginza_comment {
+  padding-top: 30px;
+}
+
+.addthis_toolbox {
+  position: absolute; 
+  right: 0px; 
+  top: 100px;
+}
+
+.addtoany_list a {
+  margin-left: -13px;
+}
+
+.vk-button {
+  margin-bottom: -20px;
+}
+
+body#woothemes  {
+	color: #000000;
+}
+
+ul#footerNav li a, p#copy {
+	color: #777777;
+	text-decoration: none;
+}
+
+/* Ğ¡Ñ‚Ğ¸Ğ»Ğ¸ Ğ´Ğ»Ñ Ğ²ÑĞµĞ³Ğ¾ ÑĞ°Ğ¹Ñ‚Ğ° Ğ¸ ÑÑ‚Ñ€Ğ°Ğ½Ğ¸Ñ†Ñ‹ Ğ¿Ğ¾ÑÑ‚Ğ° */
+div.box1, ol.commentlist li, form#comments { 
+	background: none !important; 
+	background: #FFFFFF !important;
+}
+
+ul.idTabs li a.selected, ul.idTabs li a:hover {
+	background: none !important;
+	background: #FFFFFF !important;
+}
+
+.txt0, .txt0 a, .continue {
+	color: #D0D0D0;
+}
+
+div#content.home #main div.box1 .txt0, div#content.home #main div.box1 .txt0 a, div#content.home #main div.box1 .txt0 .continue {
+	color: #6099FF;
+}
+
+
+#tabs .inside {
+	background: none !important;
+	background: #FFFFFF !important;	
+}
+
+a, a:link, a:visited {
+	color: #000000;
+	text-decoration: underline;
+}
+a:hover, a:active, a.active {
+	text-decoration: underline;
+}
+
+div#content #sidebar #tabs a, div#content #sidebar #tag_cloud-3 a, div #srssfetcher-1 a, div#content #sidebar .box1 ol li p a {
+	text-decoration: none;
+}
+
+#wp-calendar caption {
+	color: #000000;
+}
+#footer {
+	color: #FFFFFF;
+}
+
+h4 {
+	color: #6099FF;
+}
+
+
+input.text, select.select, textarea.textarea {
+	background-color: #D0D0D0;
+}
+
+/* Ğ¡Ñ‚Ğ¸Ğ»Ğ¸ Ğ´Ğ»Ñ Ğ³Ğ»Ğ°Ğ²Ğ½Ğ¾Ğ¹ (Ñ‚Ñ‘Ğ¼Ğ½Ñ‹Ğµ) */
+div#content.home #main div.box1 {
+	background: url(images/bg-box.png) repeat !important; 
+}
+
+div#content.home #sidebar div.box1 {
+	background: url(images/bg-box.png) repeat !important; 
+	color: #FFFFFF;
+}
+
+div#content.home #sidebar #tabs .inside, div#content.home #sidebar #tabs li a.selected {
+	background: url(images/bg-box.png) repeat !important; 
+	color: #FFFFFF;
+}
+
+div#content.home #main div.box1, div#content.home #main div.box1 a,  div#content.home #sidebar #myfavblog a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+/* Ğ”Ğ¾Ğ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ¸Ñ Ğ´Ğ»Ñ Ğ³Ğ»Ğ°Ğ²Ğ½Ğ¾Ğ¹ */
+h3#followMe {
+	background: url(images/bg-h2-follow.png) no-repeat;
+	width: 160px; height: 34px;
+	margin: 0 0 10px 12px;
+}
+
+/* Ğ¨Ğ¸Ñ€Ğ¾ĞºĞ°Ñ ÑÑ‚Ñ€Ğ°Ğ½Ğ¸Ñ†Ğ° Ğ¿Ğ¾ÑÑ‚Ğ° */
+#sidebar {
+	width: 200px;
+}
+
+#main {
+	float: left;
+	width: 748px;
+}
+
+/* Reformal Ğ¿Ğ¾Ğ²ĞµÑ€Ñ… Ğ²ÑĞµÑ… */
+#myotziv_box {
+	z-index: 9999;
+}
+
+/* ĞœĞµĞ½ÑĞµĞ¼ Ğ¼ĞµÑÑ‚Ğ°Ğ¼Ğ¸ Ñ‚Ğ°Ğ±Ñ‹ Ğ²Ğ½Ğ¸Ğ·Ñƒ Ğ½Ğ° Ğ³Ğ»Ğ°Ğ²Ğ½Ğ¾Ğ¹ Ğ¸ myFavBlog */
+.home #tabs {
+        float: right;
+}
+.home div#myfavblog {
+        float: left;
+}
+/* Navigation in archive page */
+.fl a, .fr a {
+    color: #ffffff;
+}
+
+h3#zf {
+	background: url(images/bg-h2-zf.png) no-repeat;
+	width: 220px; height: 40px;
+	margin: 0 0 10px;
+}
+
+
+‰PNG
+
+   IHDR   È   d   Ã†   	pHYs     šœ   gAMA  ±|ûQ“    cHRM  z%  €ƒ  ùÿ  €é  u0  ê`  :˜  o’_ÅF   øIDATxÚbüÿÿ?Ã(£ ;  ¦Ñ £ 7  dÎ©òÄêÓb¶ÑàCÜâ„qd?Dá‘†+q‡ ±ÜhX‚!
+¾ñA ÄkˆÑ @„šX Z¢ˆo qÑhæCp±¯â3Ğ–^ @ø2?ï‚fŒÑæÔ(nÀˆOq >E Ä„§æXÄö£á8
+†y²ˆ-q)  \¤ˆFÃoŒ Àmrñ`“ lti .·Q0 £ 2‹v³^CxÖâïõUÿcø{s=zšÏâVtõ „-ƒ$ãÊM£€ş€IÊœ‘[ˆÅy¤Øùşÿƒ¦`‚øõ…áÿwÿ?=føÿõ%Ã¿'GGFÆ`çg`”4e`s›ÄÀÀÊM´>fÍ0&yôiØ2@ aË ÄXÄ‘yO¬=ş÷‡áÏ†ÿß^1ü{~†áï­ÿÍ°ÈRg&Y;Há Nãï¯aø÷pÃ¿gş¿»=|ÃHLÍ{.Yzÿ^˜M4Bk Ä[JÖ%Ê<™àÿŒl<¸Õ€Äò 5ÌJà\ŠÌß‡ëGL	ˆ3cˆh30¤00‰ÿ?Ücø{o‹Q¸$eVrã÷w3ü¹²Xğ~áÄ%ÆÀjßJ–ŞOO0ü†`†A ½ÑÆCióêÿ—ç¿÷1ü\áäü%)q°ù/c`uhc``á‘™ƒE/‰Õu"Ñ™\ii6Ö éFÔ2HÑ•	XÊËf'°‰ÄÈ/O–Ş¿7×•û¸¤EÑ =ƒ0Sêø?ÇÚş=ØËğÿı]`›øÉú™µ£!UçÊ$ŒBê¬V5@¿G‘^ }}®}ÿ=>Ìğçâ¤”ğXDÖ†ÌÒû°F=„OFå @T]¬øçx'¸£i¼q‚;Rd€Œ5«]ÓˆÈ$àÌaS.É
++aMHÜ3Éßk+àMÔ?—‚û!Ã2ƒª×œökoOgø½¯Ø/ÛÏğçÂ`ú|A’] ÄB-Gÿ½²!ÿ„ÔòÀ61Ùæú%ÿ€Î¿·7ïf•n°D´%?œTış½¾Î  üçT?ó÷ÿîl¾¥
+—0}³û¿wå1üÿ	YŸŞ% U2ÈŸ‹sşİÛ	ÏŒì|,¶›Ëb×,ö=ùix–„À¾³NÅíqf`óê/´ù÷ü4ëZ—ˆa]PK–9( DQù{{x´<ş”9ØB620r‹S‚ÀËğçìÔáÉ"š,æ%T1‹ØDûøÃ?h&„§ˆ D¶)¿÷—ƒ«1XÆ€õ;À™C@‰jşdÖ')ƒ€š-Œ¬À¾;sAFÒ~×Bÿßİ4ñÇ,cÃÀÈ+M5óXmşmaøCFa’4ÀÃÀÈÂ)}ÿşÏ©ü{vŠ²B Ôe–öÿ€ç¼0äy¥ÀCÓ bç7†–üÿMH‚µ	#¨ø @ ‘A@BÏòË3°®¦JÍj®¸Óo~„ITÜÙeRrm‚gœ1ğïM»; ÍW`˜ÆÀÈ'ìÕáT&f†ÿ¿¾‚;zÿÀá ıI=\æ ûd şÂ¿§Ç˜Ó©Ÿé´£€ÑÙ„3„˜>§³œ=“´Ğïò˜ıÅ¿¿ş~ÈÍ¥üÿü”áßËó¸ã‰Wâw`Ø3kGF-`gZ¼äïÅyàahF!`á©ÀÀ¤ì´ÛÈVÄ(éÿ|Èğ÷ş.†¿W—¢Ç‚2³²7ĞİÂŒœÂD”,&¹À@a‡
+0A;îQu  €¨ÖIgv6©9 >c`’2ÃšAÀkÆ,iàˆÀß\ /M`bĞÒŒ?g&ƒ‡FAMFq#`à{îkı|3ƒ€"!„ÚÆ¿>10k3F.Qª‡Ô_":æLÀ„É¬îÜãPVpK 6‘ûïñ!`¡¸¼¤¹pÕ>,VÕàLkÔ‘IÆ
+Ò¤4-``Vò P Êã3•E7á×L†ÿÀÂ\£ k#ëšçBX›°¿ß“VÃÕ†yÿ^˜K³ö/(QcmÃë§0°:vÌØÕ¦¬”Éş^_Iœ>`FÂíF3¢Ìø÷è0xÚ Tò‚æŸğÕÌZá¬®glúeíXİ§‚GÜÀ5R³šIÂï<£°{ø‚™5ƒ²çÃ@ññ uù÷öIêˆj5Èÿ/Ï~®ö—Ä,–’‘^ \l‚Úš¿¾ 5ıA¬À-À-?abƒT÷H+3ù1«OÃfµ Êj=­ {~‡“AK6õ@Í&iKp	5h5yõïåpßÜæGOÜ µSÀšá÷w´€ınÇC,Šƒ\4º³ÿŸŸ€‡uq5@	Ôäauì ¼MnQÊğêPMnıút/M
+Gã†ß{Š¨Ò§ ×D_^’¤ €X¨ê›?ßşŞ\ÆèÕ:h5êÿooÀé–V fhòLÜŞ<BÎÌê!gx&Ñ‰–*·ş^Y
+¶“P§¼Ä=ƒ b&Àë¢€‘JìˆLsáÏ¡z”fÕ©ÂêTÉğDcšÏğûËSPfÎÿ_^ ã…6„	4Ÿš÷ -p¥4ƒ¼¹)„H  D—c@3šàuøDd°z`iúçô$¤á@8˜Áó¨YJ™‚ÛÜÄDzé)¡õˆFAÔH-Éùóv£ >‚Q&õKv£,xS‹ÔDGr"0RTñ2à ÄÂ0@ 4ê^ñ,•™„TyeÁ£EŒÌà¦J¿8 ‘ªÿ;˜¡D—ÿŞ^¥‚–Œê“ u€gí™Õƒ	¶ÅAâß«KHM/sÂ‘¬uş›OL<’¨5˜Fx/8‘1±€‡0Á{<€µ-¨¶5]ÁË#€zÉ©e@%01µ¸vr<!<º¨ ]Õ"ßßÒ6­ğH0üö@5à¦&‘}NPz‚Y[* ˆ…‚Y= Ü†gP6WxQû&„<ûç#§Q\Ğ²—?—@F¨@M2_p³ oBRñaøÿüa€úH#PLâŒ¢:„3Èı=ÀfXP¿Ë€¡ %BP„ÿ}°<lJTæ² vÈı‡-0SşŞ•ÎÄàÎ¼f(x‚–pæ³g`87á;i5¸púÜ|"²ÃjÊıÚnæÂğÚñì$Ãïm©Ï¦İNVdµ(TËÀ~h¶”ÌNDÀf“„!ı om€¨ñİÛ.‰ñ„¨.Ã`gÔY'¥™Åë×@øİôïù)xd“UÀp
+ƒKlĞ’x¢õ€2á“š@Ã·°P Z!ßµˆ7ÌôÀ¶I@\µ:(‘ÿŞÃğ{7°³¿Œ¼61Í-`ÍA¥& D·ä/¨ƒ
+¬¾ÁZP§œPHÈ$¬<ÀBÜHúZ$pçìÃ}¬ˆ(ê¾¾f¦àŒŒ7a€nm×L"Z„ı~7¢IFDÂC”ìï€%çsHGøóc`©û¨LjßäÔÒ÷¸obÅ'\æ‘è_»²Áæ"âê"Ã` D¿lö€0J"ã“ö?Ôl{ [É lC‚ÆÓ	FöÇàˆE“óAÃÊ„°éÎÈ„20S0²r2€FæE	g÷wßü Í´›àL¾}z‚üæò|¡R£I÷X|©Q³kOĞ2Bà÷WĞL+šfFğÈç`ŞÖ @ÖI‡u˜şÂ«kmğL7h<”ÊÈŒ™AˆXb šÛ`Võ…Å ,º‰ÛØìĞƒ^¾¾^:‚¿“*ÏÀÄÌÁ›ø@‡)¼¿KpÔÔÄ×|ß^í¿Jùè¸s®Hdéõ‹|‹@ë­ˆib1±‚3<zÍÏƒ İ2³š?ä Pg¼pğZÉ	L@ü÷ÒğcPƒÙ(:òRÚ;ÔGÂ)(‰W
+ÜÜ -« ˜A@òÀ„EhSØß»Ûş½¹†½krnÃ?`§›)AMX
+†F‰m¿ƒüO¶ş` D·ÂbUŸ µÇACŠà9 Ğl0¨ûøÒã+`_`'°¹sˆÍw!¸ÍÈÂEWB´=6³Òğ.™uPÿ~~J¸¦D[»Z‹<¸¹¥)^8Êp &híhbRHºùŒ›”Ó÷)o¶ ã„¸2¼oĞ  ºe?‡ cş
+.àÎ#JXƒÆúÿ|Ä÷ş;Ôà% 9`éô÷ñaºF(Qƒ20¨Ÿ„3]ûN2xi	°É„’A |ÈÑ>–Æ6h^ØÇÂµˆ‘äÉ8ğH!%U>Ûh€ ¢_'ÔÔx{“ñülf/f`_92@Ã‘à!IYøÉ É+F.ğnğí³Â½··àÏ  	N'óİ(Š`?}x€h	Ú7W¸€šb÷vèÊÖ.} ¨yE…e ƒ M3³Š¸© :]4<	Ç &°ùÄjYnBàŒ$`æ '*Ğeb«|JRßÔQ•öø–¥ãMD 4Ğ†OÁÂÀZ|n‡Áš NOšsµ)&ªÍÀ¤ä	ùû{aöN=£vÔ à&2•6'F @´Í z‰àI5p†8?‹áïÃıÀH¿Ï(¿¾<e`Vtc`1ÉÃİŞ­ş5e@#- ’ŠÀVJĞˆĞß;[@»HHÌŒ(Ç;ëw¶BÎ|%k”î Öåç ÎøÿWåğœÿû+ÃŸó3ú÷‡}áN­FPp†ì;npú{a*›Â…Ø&h%/Ë°Í  D¶Ï@“iÿÁcÛß!ãà~‚'ÙPâèö&pJ6»0)º0ü9;2ñÊ(o®3ü­™fPÿ¼Šõh"ĞAÃ åè°Ò—àaÀ’“Ø¥›…ÀNvº{æ9ûÁÈ<ßß2ü½ºr RÆ RğJ30ë'¡¬+5½ş#eğsÀš	ÜŸ-›m+ æd¤Å `s@Ëã9„‰ò'è @¢‡“‡   ò3°y„^Ò3#t(0xaÙ³“ÃÌNöÀwvÖ±1xu/h'h4´¥DñŸ+KÀ›˜@{à‰ôş¤fÏef|¦­¸!Á•›àÒXÍœIA5Vğıd}’´%‰Íà&ÎŒf´fÖ¿‡~kCîe"Ğ¢Mfğ²3nm€‚Á,­7ÍlƒÎ¯~}	æ+OA´@d†ì'äO`Ë ”‰™Àª  €¨W7«YPÂá?Àæd4è$x(#èx%w¤ˆw cĞÈhïÈ¿Û›Á#> ¹‘?çg@&ú€%ßÿOş#%tP†÷k”†à³~ÁºÃœ˜€nM(‚öÀNFÇ¶R4ñ÷î6’3¨öÀµ5ÖÌú{i‹Y"Áƒ7‚fPÆ 5=Áº°4_@îÕ’ğÌô«S7RáU. ş==ITíØ>‚şOnLW @4i<‚Aøóû"“œ›ÆÀ,cÑ|ïÖÿUşİİ
+^>éÚ,øsi>Ê(Ğÿ·7ÁÍB3ê Ã@kğ¢EèP,È\FPçèä% 7€š.ÿÏNÁš¡ÀK¦AMI&‘çtpÖ"÷w›”°&#h_=hß—00s¸c4{PFµNõ!³ *Jæ û	>àeÀZ
+¼ö‹ÀP,è¸Wğl?;øğfKm£tĞ>Ö Ÿ§ ÍzW Òñ÷ápW¼ôøp=«s/ÎÑ*Ğ°/òĞ/h†Ôì@‰`©*9AÛ>	–Š Ã›AKã‰èØƒ¨4ü‹%ƒ€2-¨ÕJD5¯>>7	ªõ¿Nt—nÃ20(£ÌX@ÿÃú' š†Õ¥{øç0üZ>„˜¥ë,6uD…¢I¸¼îm¸€ ¢é,«mä8`¿àß‹sDIkÛ‚ĞÄ¶rõRS„Ø¦q}ªJ¬‡CÀ2	Ñµèh KK0Ôı:ËŠøš	Ø§»¶\ÓÏ/e<5‹Y!¸o¾¢bXúÊ¨¯.û@4ŸM†w„î±¸º¼„æxÃğ{g.ÎN.hÌÿÏÉ>ªON:Ì¸ú7 yb3å_v­—› ÕƒšLÄÔL·ƒİj"‚šU„ššàME~kªNª†ø"š‘Ã ]Ö	°XT€|g¤%ï˜	ædgÛ3üK¼AÃÉ ‘jfPs´[«ÜËå.üMğ$x2Éİm4ãİ+>æX8€´ph%êTFĞ ÿ¿½÷İ@'ïSü9ÒÄğÏŞBm«,úÈÜ` D—Ğ!«KãeC”Ñ,x"f]Y
+éT¿¿C\I}sXx—¢”9ÙnuNÁ5ÛãƒxÏõÏkè§àwtÉn ÊEúp¼ÜŸIs	hD4ÓŞ;C`O6x”ëÒ?ı>Plv€ç¥Hv#Ğ_àyĞq³hM+Fbšf¸Öv±æÃ|Jì# ı¦@‘‹|	¨¶øZÍ¹ .$§Ôÿıù)¸)ª¡HÉ(àãGA3ÕÀšyRgÖ µU¸öÄƒç>Sv–-Ü?w¶BhfFèŒ6hTo'´´åÉQ°èG«‚ÍñA, 33h CÅ›¨ı5 8h´* ÔÄî÷„ÍíA¯!ÿÿŠ?#8ç‚¾Ù¨C"¾½¢J² ÆÿH'Öı˜*Z\ôàı$gGNp|Ù$©‹ïy´–WrÚ°„eä–„ƒ†–Aû-@CµÀÈøêO€ÖC<©{0À'¢OªAŠ8ğŠ|³çdµAx‚ÏÜR„,æ•üĞÃø@‡X€V;ƒW%€6e6Z‘p¿#ètpx	¨00fÂA‡h€†²á9ÇøäÎPÁ@ É>——S_ vï,§‚÷ÍƒÎÏÅÕ¼éMH~~†ÒTcT‡Oè|Õ°€ì‡•È Dv£`Œ@L£a2
+Fn @£dŒ<  €F3È(x @ fQ0
+ğ € Í £`à 4šAFÁ(À h4ƒŒ‚Q€ Ğh£   Ñ2
+F @£dŒ<  €F3È(x @ Qm5/ø<ĞAj £B¯.òƒüºä÷Î,’üºí¤¼¸_áÏñğ"F8è0…¿ç¦uŸ9³Š7˜Æ¦d6“˜.ävŞa|pô`  Dq:]=ö0xù4Ø@ Ír‰¨k‘m Àóµe$rÎ¶…Õ}˜ÿt03üYJ>éˆYÚ‰:ÖdÃ2
+2€Ù3”Ãx¨ € ¢¸EèĞé_›¢!ÇbÀD J`¿ûÍ@e`ÉMLI/ñA5è?Wá¾Õ	T›€N\©±	Pæ©Ev-n¬¸@ QœA@¥¨‚’€%'¨VÁww(Î½©Eß*±ª%P‚™*¡‘õƒJVX“—= ½ Àl¢ ƒ_«|M$Q]†Ÿ;²°×,†™ğ’û´– %`Û@á€ÜÔDv€Ôƒì'&ƒÀÔ‚jX&g¨8ºÛ@~…İIjæÂÂ9ãƒD‚†(œ@n†Õ˜ÈaÀ¬n"ÂÄ@a‹’y…â ù°øE·ÿ?´©MŒ?3 ÀÜ¤ Ã@ğäwü_ĞzéA0³tKZ½
+¢ØÚ4É¦M.ÛOŠt i£İ¦$ 4¥ZYq^nîC›€NáœvxUŠÎ.}éåË®ovÜğïŠ²ÓcDı Âº¢C“BÍ»E@ş±ú·²Ò ú {‘h@ É5Æ“E9Tvï}à!“¹1¶æ¶M°Mp„L OÃsS}²ÓÄ3É¡}m7j ÷Ëºa—ê´zşùºÅT
+Jô#µŠL|[_A¼wZ’‚hPB!µÉŠhX©Âèœ^]ÆÚ„B®‰şCkˆ?ĞÄ«…@¥6¨ÔüL¤ Œ‰œaú@˜Ø0™r(¡Ájl
+ x€»èN;`µLHæ_zx³Í,PGobÂ2,¶æ'Ì~d¿Ô3Šêé@7±@%¨TæÈ~Nàä\ÉÒùB¯uÀÕ?C8‘üFK 0#ZaRöF‰ô„¶CÙwÿ‚ƒl.¶æ¡>	²¿ÁMPí*AÑİJ¤DŞ¿K”,ĞÚ [³:¢…`ÑkqXí…3€v€2(Sb‹CXØ‚k ¿›Öà¦+H?´Æ §ÊÁ ˆâ
+HPÉ	ŠP J_PÛ\åÑÉ…•X¿AX:t@Áı`s”¡©ĞpiJsA	–]å0ÍÛóÄlàZ˜q‘bÀMW ÿAÍ;X-…ŞoŠ  €¨6‚\‚± ¼àkî€2¨ªÇ9àª:úƒ^"øèú@gü"Û^#ç´€}`dÂ26J[úöæ¨SÊ„£¹ ²Õ2Ä\Jƒİ‡¥¹6Ÿ„Z”à@a„ëPÛ°…Ø¿HöƒüŠï`	pº6 €^[¡„íqp!@ ×ğ 9#´&ëP ¨;ƒ A&>ÂÿÿÓ‹›ÔVQ/râBhèºsás“.c6é'¬R§K¢Â3Áòm­ü¦m8C¸$uKæ ‚h–µâáJ‡í1d¦SÏ/û4CÍÇœ¼4/…4ıo$bc¯›=s\ÍU+|Uä„sšA¯uV_¥xÊ…ÂÕ_Æ. -ç’ QÜ¸ô‚â}¼gğ`ê›&4X
+±KÑ¶i~3S0¥ƒp1(BFÅ´j÷& pÚ¦îU7æg-1d¢şvà É±Wrô•J°Ïl‰]b˜Ö¢d×â_R¤—]ß±?aùÛ9Ä„ÊÍŞ¬C¹D+h¹Í‚Aî+öwt¤hÁ5˜/v®ryYa–ŠŒÙ‡­$¥ş·eP³@P‘mÿ{œˆ*ÇşÀ;f¯.Ó¼Š…/³ ¡] „j¶ Ïï û[DÃûb8–€(­æÀgYø½Ãf?.³AµÈßÄŠ 0ı j•`ôàQgBP$‚Kã»ØG»ğù_SÖ¶ÿK£BLéLËğÃg?¼P!±I<Ğ  €FWóâĞŠ"ş:d"ú[à>¾ÏH ¿‡ ßhôdÅQ0
+ğ4± h´£   Ñ2
+F @”ïŠà/uÌb¹h˜y¡hTjtïÄ(  Å¶Ê›8xÃÚb=z Ø¤Ìm LJí«	FÁÈ  D“&luî@ĞP&hM|Â´²vŒ2 @ Ñä†)PÍ¾ty³€gÑ‘–™€7Ûˆé‚g|aC Îê1¼*6¹[q
+à!ÙóÓáæÀfÁaËÎabLĞ½ÈîaB[ò Z7ÛdÎäHÛZa›‹`nÃ¦¼y-3FÁà Ø7c @¾BÿÿS¥5…ÅÅÁÁ&”bŒ×ë7†—)Ã’È#Ö‹0†Ñ!A,sÆ‘j9ğ$”E¡¥ap¤gÜ}û¸¥ ?«ãozx£‡ú$:µÔc‰‰ZØ[çèñõ¼¦ ¢j5­°­AB/]aë™Ğû°åï°Î?zMªI÷:ü‡®ËÂY›yLÃ¹6ó‹¾q
+¶rVÚƒ×và!-ND×¾|‚X3FÁà DÕ&¬i…o­¬´¯tE[[u
+N\ ÅˆÀ…>úïx±"¦¼+m{(¾rp§K¦Bß«`™”Q`™—X3FÁà DµWÓ
+gG´<KÉj®0C÷2£¯Y‰j(8lï5®EàˆĞ•»X3–]x ›Œà%î£µÃ° D•_Ó
+À4ã9~ÈÒu´àÍ7ÊŞà¦zg”¡ˆY"ëÃ°í?À»i	Çqt=à=êH”tLtï<±fŒ‚Á ˆ*5¬9·i…4‚+Áa5	: µÕ±šMt(§q(cOü —{˜¡{p­<%pğkä¨ûq­F÷-€æ‚:ûäš1
+  ªõA5­@¥?l³8gB7‘ÒÌŸ L„°MIø& qíå õX ·áªíÀûì7Eƒ—¼ÃšL »Ğ·ƒü€¼·ÜY‡6éˆ5c*ğ]  €ĞWó²ÊiZÙÛPî¬Rp®,lS=ö¡àÛEO3F]@°ÀëF  ô¢ ±ôhX‚Bd² @ aëƒŒ.Z#µyµ] €°e•£a5
+F  UïĞ[ÙÄFÃkŒ0Ğ„M €˜pT5¹@ük4ÌFÁk°5¯@  €˜ğT7£á6
+F 8Äq¸$ßD!h–tü÷÷Ñ0Ãì b|i €Í¤ƒ¦|õ UĞ(Ã€fˆØˆ¿àS@ÄÌ¤ßâP Vâ@ VbĞ"#ÑÑpC€@£T¡5Ç_b4ÊDá(£  Ğè±?£`à  0àå*3¥Î    IEND®B`‚.dp-highlighter
+{
+	font-family: "Consolas", "Courier New", Courier, mono;
+	font-size: 12px;
+	background-color: #E7E5DC;
+	width: 99%;
+	overflow: auto;
+	margin: 18px 0px 18px 0px;
+	padding-top: 1px; /* adds a little border on top when controls are hidden */
+}
+
+.dp-highlighter .bar
+{
+	padding-left: 45px;
+}
+
+.dp-highlighter.collapsed .bar, 
+.dp-highlighter.nogutter .bar 
+{
+	padding-left: 0px;
+}
+
+.dp-highlighter ol 
+{
+	list-style: decimal; /* for ie */
+	list-style: decimal-leading-zero; /* better look for others */
+	background-color: #fff;
+	margin: 0px 0px 1px 45px; /* 1px bottom margin seems to fix occasional Firefox scrolling */
+	padding: 0px;
+	color: #5C5C5C;
+}
+
+.dp-highlighter.nogutter ol
+{
+	list-style-type: none !important; 
+	margin-left: 0px; 
+}
+
+.dp-highlighter ol li,
+.dp-highlighter .columns div
+{
+	border-left: 3px solid #6CE26C;
+	background-color: #f8f8f8;
+	padding-left: 10px;
+	line-height: 14px;
+}
+
+.dp-highlighter.nogutter ol li,
+.dp-highlighter.nogutter .columns div
+{
+	border: 0;
+}
+
+.dp-highlighter .columns 
+{
+	color: gray;
+	overflow: hidden;
+	width: 100%;
+}
+
+.dp-highlighter .columns div 
+{
+	padding-bottom: 5px;
+}
+
+.dp-highlighter ol li.alt 
+{
+	background-color: #fff; 
+}
+
+.dp-highlighter ol li span 
+{
+	color: Black;
+}
+
+/* Adjust some properties when collapsed */
+
+.dp-highlighter.collapsed ol 
+{
+	margin: 0px;
+}
+
+.dp-highlighter.collapsed ol li 
+{ 
+	display: none;
+}
+
+/* Additional modifications when in print-view */
+
+.dp-highlighter.printing 
+{
+	border: none;
+}
+
+.dp-highlighter.printing .tools 
+{
+	display: none !important;
+}
+
+.dp-highlighter.printing li 
+{
+	display: list-item !important;
+}
+
+/* Styles for the tools */
+
+.dp-highlighter .tools 
+{
+	padding: 3px 8px 3px 10px;
+	font: 9px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: silver;
+	background-color: #f8f8f8;
+	text-align1: right;
+	padding-bottom: 10px;
+	border-left: 3px solid #6CE26C;
+}
+
+.dp-highlighter.nogutter .tools
+{
+	border-left: 0;
+}
+
+.dp-highlighter.collapsed .tools
+{
+	border-bottom: 0;
+}
+
+.dp-highlighter .tools a
+{
+	font-size: 9px;
+	color: #a0a0a0;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+.dp-highlighter .tools a:hover
+{
+	color: red;
+	text-decoration: underline;
+}
+
+/* About dialog styles */
+
+.dp-about { background-color: #fff; margin: 0px; padding: 0px; }
+.dp-about table { width: 100%; height: 100%; font-size: 11px; font-family: Tahoma, Verdana, Arial, sans-serif !important; }
+.dp-about td { padding: 10px; vertical-align: top; }
+.dp-about .copy { border-bottom: 1px solid #ACA899; height: 95%; }
+.dp-about .title { color: red; font-weight: bold; }
+.dp-about .para { margin: 0 0 4px 0; }
+.dp-about .footer { background-color: #ECEADB; border-top: 1px solid #fff; text-align: right; }
+.dp-about .close { font-size: 11px; font-family: Tahoma, Verdana, Arial, sans-serif !important; background-color: #ECEADB; width: 60px; height: 22px; }
+
+/* Language specific styles */
+
+.dp-highlighter .comment, .dp-highlighter .comments { color: #008200; }
+.dp-highlighter .string { color: blue; }
+.dp-highlighter .keyword { color: #069; font-weight: bold; }
+.dp-highlighter .preprocessor { color: gray; }

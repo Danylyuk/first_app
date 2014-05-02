@@ -1,0 +1,571 @@
+2014/05/01 15:24:25.468    33    40 G0!! SetProcessStartupOptions(): SetProcessDEPPolicy() failed! LE=120, Errorcode=12180
+2014/05/01 15:24:25.944    33    40 G0   X ErrorHandler org f6d8586e, def f6c238f0 cur f5fcacac
+2014/05/01 15:24:25.950    33    40 G0   XTest extension: base 0, error 0, version 2.2
+2014/05/01 15:24:25.951    33    40 G0   XClipboard: Initialised XFixes (base=87, error=140)
+2014/05/01 15:24:25.952    33    40 G0   Wine: Wine DLL initialized
+2014/05/01 15:24:25.953    33    40 G0   Wine: wine-1.6
+
+2014/05/01 15:24:25.989    33    40 G0!! CFile::fopen /home/sparks/.config/teamviewer9/config/client.conf (rb) failed: 2, Errorcode=12180
+2014/05/01 15:24:25.989    33    40 G0!! StorageTextfile: Unable to open configuration file '/home/sparks/.config/teamviewer9/config/client.conf' (RO), Errorcode=12180
+2014/05/01 15:24:26.147    33    40 G0   Win32_GUI::FontReallyExists: 'Segoe UI' found 0 matches.
+2014/05/01 15:24:26.147    33    40 G0   Win32_GUI::FontReallyExists: 'Liberation Sans' found 0 matches.
+2014/05/01 15:24:26.162    33    40 G0   Monitors: X11 Windowing System, \\.\DISPLAY1, 1280x800 (0,0), flags=21
+2014/05/01 15:24:26.164    33    40 G0   Opening local TCP connection to 127.0.0.1:5939
+2014/05/01 15:24:26.166    33    40 G0   Local TCP connection established
+2014/05/01 15:24:26.168    33    40 G0   Process ID:  L 8672 /  W 33
+2014/05/01 15:24:26.259    33    40 G0   Received Control_InitIPC_Response processtype=1
+2014/05/01 15:24:26.259    33    40 G0   Received Control_InitIPC_Response runningProcesses=3
+2014/05/01 15:24:26.259    33    40 G0   Control_InitIPC_Response: all processes 3 completely initialized
+2014/05/01 15:24:26.270    33    40 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 15:24:26.270    33    40 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 15:24:29.079    33    34 G0!! GetSimpleDisplayCertNameFromFile: File 'C:\TeamViewer\tv_w32.dll' does not exist., Errorcode=2
+2014/05/01 15:24:29.079    33    34 G0!! VerifyTeamViewerSignature() : WinVerifyTrust failed, result=2, Errorcode=2
+2014/05/01 15:24:29.080    33    34 G0!! MachineHooks: Library not found, Errorcode=2
+2014/05/01 15:24:29.118    33    34 G0   MachineID m=1 - 0
+2014/05/01 15:24:29.358    33    34 G0   X Error 8 on ???, Req 42.0 (#400 r79691787): BadMatch (invalid parameter attributes)
+2014/05/01 15:24:29.537    33    34 G0!! DragDropRegistration: could not register window, HR=80040155
+2014/05/01 15:24:29.538    33    34 G0!! GetIEVersion() exception: Couldn't find Registry Key Software\Microsoft\Internet Explorer
+2014/05/01 15:24:29.538    33    34 G0!  IntroScreen: not available because IE version is invalid
+2014/05/01 15:24:29.657    33    34 G0   Tray created!
+2014/05/01 15:24:29.697    33    34 G0   P_FORCE_WINSTATE_ONCE = WinState_Undefined
+2014/05/01 15:24:29.758    33    44 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 15:24:29.759    33    44 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 15:24:29.761    33    45 G0   AudioDriver: Thread Running
+2014/05/01 15:24:29.761    33    44 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 15:24:29.762    33    44 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 15:24:29.762    33    44 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 15:24:29.930    33    46 G0   TAF: Proxy received: IP:Port=
+2014/05/01 15:24:30.353    33    46 G0   TAF: Received answer is empty.
+2014/05/01 15:25:03.406    33    34 G0   Trying connection to 647650217, mode = 1
+2014/05/01 15:25:03.418    33    48 G0   CLogin::run()
+2014/05/01 15:25:03.739    33    48 G0   CLoginClient::NegotiateVersionClient()
+2014/05/01 15:25:06.553    33    48 G0   CLoginClient::AuthenticateClient()
+2014/05/01 15:25:12.829    33    48 G0   RA: RemoteAudioReceiver::Factory started
+2014/05/01 15:25:12.836    33    50 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 15:25:12.837    33    50 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 15:25:12.848    33    51 G0   AudioDriver: Thread Running
+2014/05/01 15:25:12.863    33    50 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 15:25:12.863    33    50 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 15:25:12.863    33    50 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 15:25:12.918    33    48 G0   Default keyboard layout: 04190419
+2014/05/01 15:25:12.918    33    48 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 15:25:12.918    33    48 G0   Client: RemoteDesktop 017D7328 created (id = 0)
+2014/05/01 15:25:12.928    33    34 G0   X Error 8 on ???, Req 42.0 (#1082 r79691800): BadMatch (invalid parameter attributes)
+2014/05/01 15:25:12.963    33    34 G0   CClientWindow::OnCreate(): Local display is 1280x800
+2014/05/01 15:25:12.974    33    34 G0   X Error 8 on ???, Req 42.0 (#1414 r79691810): BadMatch (invalid parameter attributes)
+2014/05/01 15:25:12.981    33    34 G0   X Error 8 on ???, Req 42.0 (#1444 r79691811): BadMatch (invalid parameter attributes)
+2014/05/01 15:25:12.996    33    34 G0   X Error 8 on ???, Req 42.0 (#1474 r79691812): BadMatch (invalid parameter attributes)
+2014/05/01 15:25:13.072    33    52 G0   ClientThread started
+2014/05/01 15:25:13.074    33    52 G0   ClientThread: Waiting for ParticipantManager synchronization
+2014/05/01 15:25:13.077    33    48 G0!! Audio: Could not open Input Mixer. EC 6
+2014/05/01 15:25:13.077    33    48 G0!! Audio: Could not open Output Mixer. EC 6
+2014/05/01 15:25:13.077    33    48 G0   WaveOutSystemMixer: Mixer Lines are 4294967295 4294967295 4294967295 4294967295 
+2014/05/01 15:25:13.078    33    48 G0!  CAudioManager request audio mute state failed
+2014/05/01 15:25:13.078    33    48 G0   CLogin::run() leave
+2014/05/01 15:25:13.118    33    37 G0   CParticipantManagerBase participant  (ID [292866170,-1343594871]) was added with the role 6
+2014/05/01 15:25:13.118    33    37 G0   New Participant added in CParticipantManager  ([292866170,-1343594871])
+2014/05/01 15:25:13.118    33    37 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 15:25:13.119    33    37 G0   CParticipantManagerBase participant KASSA (ID [647650217,793178407]) was added with the role 3
+2014/05/01 15:25:13.119    33    37 G0   New Participant added in CParticipantManager KASSA ([647650217,793178407])
+2014/05/01 15:25:13.119    33    37 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 15:25:13.128    33    37 G0   CParticipantManagerBase::CheckAndSubscribeNewStream(): Subscribe stream now streamID=1 type=5 required=1 supported=1
+2014/05/01 15:25:13.693    33    52 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,793178407]
+2014/05/01 15:25:13.724    33    52 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 15:25:13.725    33    52 G0   ConnectionAccessSettings: CAccessControl: RemoteControl: Allowed FileTransfer: Allowed ControlRemoteTV: Allowed SwitchSides: Allowed AllowDisableRemoteInput: Allowed AllowVPN: Allowed AllowPartnerViewDesktop: Allowed ShareMyFiles: Allowed ShareFilesWithMe: Allowed PrintOnMyPrinters: Allowed PrintOnRemotePrinters: Allowed
+2014/05/01 15:25:13.728    33    37 G0   CClipboardChangeListener::RegisterForClipboardChanges
+2014/05/01 15:25:14.554    33    52 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,793178407]
+2014/05/01 15:25:14.556    33    52 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 15:25:14.698    33    37 G0   RemoteDesktop 017D7328: StreamID=4
+2014/05/01 15:25:15.193    33    52 G0   Server display is 1280x800x8, quali=100, monitors=0/1, sw=0, tilsize=0
+2014/05/01 15:25:15.354    33    52 G0   Compress: Caching active, partners version is 2, own version is 2
+2014/05/01 15:25:16.805    33    52 G0   Server display is 1280x800x32, quali=95, monitors=0/1, sw=0, tilsize=64
+2014/05/01 15:25:44.079    33    34 G0!! MainWindow.OnDestroy: WTSUnRegisterSessionNotification failed with error 0
+2014/05/01 15:25:44.079    33    34 G0   Closing TeamViewer
+2014/05/01 15:25:44.104    33    34 G0   CClipboardChangeListener::UnregisterFromClipboardChanges
+2014/05/01 15:25:44.199    33    37 G0   CTcpProcessConnector::HandleRead(): Socket gracefully closed (PID=8579)
+2014/05/01 15:25:44.199    33    37 G0   CTcpProcessConnector::CloseConnection(): PID=8579
+2014/05/01 15:25:44.199    33    37 G0!  CInterProcess::EventFunction(): IPC-Connection Closed
+2014/05/01 15:25:44.199    33    37 G0   CTcpProcessConnector::CloseConnection(): PID=8579
+2014/05/01 15:25:44.200    33    37 G0!! CTcpProcessConnector::CloseConnection(): Shutdown socket returned error 10058: Unknown error, Errorcode=317
+2014/05/01 15:25:44.200    33    37 G0!! CTcpProcessConnector::CloseConnection(): Shutdown socket returned error 10009: Unknown error, Errorcode=317
+2014/05/01 15:25:44.202    33    34 G0!! CMainThreadCall::~CMainThreadCall(): m_PostCallbacks not empty
+2014/05/01 15:25:44.223    33    35 G0   XClipboard: Shutting down event loop
+2014/05/01 15:25:44.225    33    34 G0   Wine: Wine DLL freed
+2014/05/01 15:25:50.224     8     9 G0!! SetProcessStartupOptions(): SetProcessDEPPolicy() failed! LE=120, Errorcode=2
+2014/05/01 15:25:50.712     8     9 G0   X ErrorHandler org f6de286e, def f6c808f0 cur f6027cac
+2014/05/01 15:25:50.718     8     9 G0   XTest extension: base 0, error 0, version 2.2
+2014/05/01 15:25:50.720     8     9 G0   XClipboard: Initialised XFixes (base=87, error=140)
+2014/05/01 15:25:50.721     8     9 G0   Wine: Wine DLL initialized
+2014/05/01 15:25:50.721     8     9 G0   Wine: wine-1.6
+
+2014/05/01 15:25:50.880     8     9 G0   Win32_GUI::FontReallyExists: 'Segoe UI' found 0 matches.
+2014/05/01 15:25:50.881     8     9 G0   Win32_GUI::FontReallyExists: 'Liberation Sans' found 0 matches.
+2014/05/01 15:25:50.895     8     9 G0   Monitors: X11 Windowing System, \\.\DISPLAY1, 1280x800 (0,0), flags=21
+2014/05/01 15:25:50.896     8     9 G0   Opening local TCP connection to 127.0.0.1:5939
+2014/05/01 15:25:50.899     8     9 G0   Local TCP connection established
+2014/05/01 15:25:50.900     8     9 G0   Process ID:  L 8878 /  W 8
+2014/05/01 15:25:50.986     8     9 G0   Received Control_InitIPC_Response processtype=1
+2014/05/01 15:25:50.986     8     9 G0   Received Control_InitIPC_Response runningProcesses=3
+2014/05/01 15:25:50.986     8     9 G0   Control_InitIPC_Response: all processes 3 completely initialized
+2014/05/01 15:25:50.999     8     9 G0!! GetSimpleDisplayCertNameFromFile: File 'C:\TeamViewer\tv_w32.dll' does not exist., Errorcode=2
+2014/05/01 15:25:51.000     8     9 G0!! VerifyTeamViewerSignature() : WinVerifyTrust failed, result=2, Errorcode=2
+2014/05/01 15:25:51.000     8     9 G0!! MachineHooks: Library not found, Errorcode=2
+2014/05/01 15:25:51.000     8    26 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 15:25:51.000     8    26 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 15:25:51.018     8     9 G0   MachineID m=1 - 0
+2014/05/01 15:25:51.150     8     9 G0   X Error 8 on ???, Req 42.0 (#304 r77594633): BadMatch (invalid parameter attributes)
+2014/05/01 15:25:51.294     8     9 G0!! DragDropRegistration: could not register window, HR=80040155
+2014/05/01 15:25:51.294     8     9 G0!! GetIEVersion() exception: Couldn't find Registry Key Software\Microsoft\Internet Explorer
+2014/05/01 15:25:51.295     8     9 G0!  IntroScreen: not available because IE version is invalid
+2014/05/01 15:25:51.397     8     9 G0   Tray created!
+2014/05/01 15:25:51.397     8     9 G0   CMainWindow::ShouldShowDynamicPassword(): dynPw=1 allowIncoming=1 id=292866170 ka=0 lanAllowed=0 lanOnly=0 networkState=1
+2014/05/01 15:25:51.454     8     9 G0   P_FORCE_WINSTATE_ONCE = WinState_Undefined
+2014/05/01 15:25:51.558     8    30 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 15:25:51.559     8    30 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 15:25:51.559     8    31 G0   AudioDriver: Thread Running
+2014/05/01 15:25:51.560     8    30 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 15:25:51.560     8    30 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 15:25:51.560     8    30 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 15:25:51.947     8    32 G0   TAF: Proxy received: IP:Port=
+2014/05/01 15:25:52.367     8    32 G0   TAF: Received answer is empty.
+2014/05/01 15:26:06.047     8     9 G0   Trying connection to 647650217, mode = 1
+2014/05/01 15:26:06.062     8    34 G0   CLogin::run()
+2014/05/01 15:26:06.342     8    34 G0   CLoginClient::NegotiateVersionClient()
+2014/05/01 15:26:07.142     8    34 G0   CLoginClient::AuthenticateClient()
+2014/05/01 15:26:10.253     8    34 G0   RA: RemoteAudioReceiver::Factory started
+2014/05/01 15:26:10.260     8    36 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 15:26:10.261     8    36 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 15:26:10.289     8    37 G0   AudioDriver: Thread Running
+2014/05/01 15:26:10.293     8    36 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 15:26:10.297     8    36 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 15:26:10.298     8    36 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 15:26:10.350     8    34 G0   Default keyboard layout: 04190419
+2014/05/01 15:26:10.350     8    34 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 15:26:10.350     8    34 G0   Client: RemoteDesktop 017D7560 created (id = 0)
+2014/05/01 15:26:10.359     8     9 G0   X Error 8 on ???, Req 42.0 (#990 r77594648): BadMatch (invalid parameter attributes)
+2014/05/01 15:26:10.401     8     9 G0   CClientWindow::OnCreate(): Local display is 1280x800
+2014/05/01 15:26:10.413     8     9 G0   X Error 8 on ???, Req 42.0 (#1322 r77594658): BadMatch (invalid parameter attributes)
+2014/05/01 15:26:10.419     8     9 G0   X Error 8 on ???, Req 42.0 (#1352 r77594659): BadMatch (invalid parameter attributes)
+2014/05/01 15:26:10.431     8     9 G0   X Error 8 on ???, Req 42.0 (#1382 r77594660): BadMatch (invalid parameter attributes)
+2014/05/01 15:26:10.504     8    38 G0   ClientThread started
+2014/05/01 15:26:10.504     8    38 G0   ClientThread: Waiting for ParticipantManager synchronization
+2014/05/01 15:26:10.506     8    34 G0!! Audio: Could not open Input Mixer. EC 6
+2014/05/01 15:26:10.506     8    34 G0!! Audio: Could not open Output Mixer. EC 6
+2014/05/01 15:26:10.506     8    34 G0   WaveOutSystemMixer: Mixer Lines are 4294967295 4294967295 4294967295 4294967295 
+2014/05/01 15:26:10.507     8    34 G0!  CAudioManager request audio mute state failed
+2014/05/01 15:26:10.507     8    34 G0   CLogin::run() leave
+2014/05/01 15:26:10.550     8    23 G0   CParticipantManagerBase participant  (ID [292866170,2057138280]) was added with the role 6
+2014/05/01 15:26:10.550     8    23 G0   New Participant added in CParticipantManager  ([292866170,2057138280])
+2014/05/01 15:26:10.551     8    23 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 15:26:10.551     8    23 G0   CParticipantManagerBase participant KASSA (ID [647650217,1331639275]) was added with the role 3
+2014/05/01 15:26:10.551     8    23 G0   New Participant added in CParticipantManager KASSA ([647650217,1331639275])
+2014/05/01 15:26:10.552     8    23 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 15:26:10.560     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,1331639275]
+2014/05/01 15:26:10.560     8    23 G0   CParticipantManagerBase::CheckAndSubscribeNewStream(): Subscribe stream now streamID=1 type=5 required=1 supported=1
+2014/05/01 15:26:10.590     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 15:26:10.591     8    38 G0   ConnectionAccessSettings: CAccessControl: RemoteControl: Allowed FileTransfer: Allowed ControlRemoteTV: Allowed SwitchSides: Allowed AllowDisableRemoteInput: Allowed AllowVPN: Allowed AllowPartnerViewDesktop: Allowed ShareMyFiles: Allowed ShareFilesWithMe: Allowed PrintOnMyPrinters: Allowed PrintOnRemotePrinters: Allowed
+2014/05/01 15:26:10.592     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,1331639275]
+2014/05/01 15:26:10.593     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 15:26:10.642     8    22 G0   CClipboardChangeListener::RegisterForClipboardChanges
+2014/05/01 15:26:10.749     8    23 G0   RemoteDesktop 017D7560: StreamID=4
+2014/05/01 15:26:11.109     8    38 G0   Server display is 1280x800x8, quali=100, monitors=0/1, sw=0, tilsize=0
+2014/05/01 15:26:11.287     8    38 G0   Compress: Caching active, partners version is 2, own version is 2
+2014/05/01 15:26:16.036     8    38 G0   Server display is 1280x800x32, quali=95, monitors=0/1, sw=0, tilsize=64
+2014/05/01 15:31:51.293     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1398947511 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/01 15:48:51.294     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1398948531 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/01 16:17:51.294     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1398950271 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/01 16:28:57.801     8    21 G0   XClipboard: RequestClipboard as TARGETS
+2014/05/01 16:28:57.805     8    21 G0   XClipboard: RequestClipboard as UTF8_STRING
+2014/05/01 16:28:57.843     8    21 G0   XClipboard: Got clipboard as 'UTF8_STRING', size (n=23, c=28)
+2014/05/01 16:28:57.844     8    28 G0   CClipboardSource::SendClipboardContent: (1 data formats)
+2014/05/01 16:32:51.294     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1398951171 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/01 16:33:46.581     8    21 G0   XClipboard: RequestClipboard as TARGETS
+2014/05/01 16:33:46.583     8    21 G0   XClipboard: RequestClipboard as UTF8_STRING
+2014/05/01 16:33:46.585     8    21 G0   XClipboard: Got clipboard as 'UTF8_STRING', size (n=82, c=164)
+2014/05/01 16:33:46.586     8    28 G0   CClipboardSource::SendClipboardContent: (1 data formats)
+2014/05/01 16:36:17.356     8    21 G0   XClipboard: RequestClipboard as TARGETS
+2014/05/01 16:36:17.358     8    21 G0   XClipboard: RequestClipboard as UTF8_STRING
+2014/05/01 16:36:17.359     8    21 G0   XClipboard: Got clipboard as 'UTF8_STRING', size (n=28, c=56)
+2014/05/01 16:36:17.360     8    28 G0   CClipboardSource::SendClipboardContent: (1 data formats)
+2014/05/01 16:40:20.928     8     9 G0   Connection closed by user
+2014/05/01 16:40:20.938     8    38 G0   CClipboardChangeListener::UnregisterFromClipboardChanges
+2014/05/01 16:40:27.458     8     9 G0!! MainWindow.OnDestroy: WTSUnRegisterSessionNotification failed with error 0
+2014/05/01 16:40:27.458     8     9 G0   Closing TeamViewer
+2014/05/01 16:40:27.526     8    23 G0   CTcpProcessConnector::HandleRead(): Socket gracefully closed (PID=8579)
+2014/05/01 16:40:27.526     8    23 G0   CTcpProcessConnector::CloseConnection(): PID=8579
+2014/05/01 16:40:27.526     8    23 G0!  CInterProcess::EventFunction(): IPC-Connection Closed
+2014/05/01 16:40:27.527     8    23 G0   CTcpProcessConnector::CloseConnection(): PID=8579
+2014/05/01 16:40:27.527     8    23 G0!! CTcpProcessConnector::CloseConnection(): Shutdown socket returned error 10058: Unknown error, Errorcode=317
+2014/05/01 16:40:27.527     8    23 G0!! CTcpProcessConnector::CloseConnection(): Shutdown socket returned error 10009: Unknown error, Errorcode=317
+2014/05/01 16:40:27.579     8    21 G0   XClipboard: Shutting down event loop
+2014/05/01 16:40:27.580     8     9 G0   Wine: Wine DLL freed
+2014/05/01 16:46:18.099     8     9 G0!! SetProcessStartupOptions(): SetProcessDEPPolicy() failed! LE=120, Errorcode=2
+2014/05/01 16:46:18.657     8     9 G0   X ErrorHandler org f6dc786e, def f6c658f0 cur f600ccac
+2014/05/01 16:46:18.664     8     9 G0   XTest extension: base 0, error 0, version 2.2
+2014/05/01 16:46:18.665     8     9 G0   XClipboard: Initialised XFixes (base=87, error=140)
+2014/05/01 16:46:18.667     8     9 G0   Wine: Wine DLL initialized
+2014/05/01 16:46:18.667     8     9 G0   Wine: wine-1.6
+
+2014/05/01 16:46:18.814     8     9 G0   Win32_GUI::FontReallyExists: 'Segoe UI' found 0 matches.
+2014/05/01 16:46:18.814     8     9 G0   Win32_GUI::FontReallyExists: 'Liberation Sans' found 0 matches.
+2014/05/01 16:46:18.832     8     9 G0   Monitors: X11 Windowing System, \\.\DISPLAY1, 1280x800 (0,0), flags=21
+2014/05/01 16:46:18.834     8     9 G0   Opening local TCP connection to 127.0.0.1:5939
+2014/05/01 16:46:18.836     8     9 G0   Local TCP connection established
+2014/05/01 16:46:18.838     8     9 G0   Process ID:  L 25930 /  W 8
+2014/05/01 16:46:18.927     8     9 G0   Received Control_InitIPC_Response processtype=1
+2014/05/01 16:46:18.927     8     9 G0   Received Control_InitIPC_Response runningProcesses=3
+2014/05/01 16:46:18.928     8     9 G0   Control_InitIPC_Response: all processes 3 completely initialized
+2014/05/01 16:46:18.933     8     9 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 16:46:18.934     8     9 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 16:46:18.961     8     9 G0!! GetSimpleDisplayCertNameFromFile: File 'C:\TeamViewer\tv_w32.dll' does not exist., Errorcode=2
+2014/05/01 16:46:18.961     8     9 G0!! VerifyTeamViewerSignature() : WinVerifyTrust failed, result=2, Errorcode=2
+2014/05/01 16:46:18.961     8     9 G0!! MachineHooks: Library not found, Errorcode=2
+2014/05/01 16:46:18.995     8     9 G0   MachineID m=1 - 0
+2014/05/01 16:46:19.134     8     9 G0   X Error 8 on ???, Req 42.0 (#304 r77594633): BadMatch (invalid parameter attributes)
+2014/05/01 16:46:19.270     8     9 G0!! DragDropRegistration: could not register window, HR=80040155
+2014/05/01 16:46:19.271     8     9 G0!! GetIEVersion() exception: Couldn't find Registry Key Software\Microsoft\Internet Explorer
+2014/05/01 16:46:19.271     8     9 G0!  IntroScreen: not available because IE version is invalid
+2014/05/01 16:46:19.381     8     9 G0   Tray created!
+2014/05/01 16:46:19.382     8     9 G0   CMainWindow::ShouldShowDynamicPassword(): dynPw=1 allowIncoming=1 id=292866170 ka=0 lanAllowed=0 lanOnly=0 networkState=1
+2014/05/01 16:46:19.422     8     9 G0   P_FORCE_WINSTATE_ONCE = WinState_Undefined
+2014/05/01 16:46:19.518     8    30 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 16:46:19.518     8    30 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 16:46:19.520     8    31 G0   AudioDriver: Thread Running
+2014/05/01 16:46:19.520     8    30 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 16:46:19.521     8    30 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 16:46:19.522     8    30 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 16:46:20.793     8    32 G0   TAF: Proxy received: IP:Port=
+2014/05/01 16:46:21.278     8     9 G0   Trying connection to 647650217, mode = 1
+2014/05/01 16:46:21.293     8    34 G0   CLogin::run()
+2014/05/01 16:46:21.511     8    34 G0   CLoginClient::NegotiateVersionClient()
+2014/05/01 16:46:22.220     8    34 G0   CLoginClient::AuthenticateClient()
+2014/05/01 16:46:22.470     8    32 G0   TAF: Received answer is empty.
+2014/05/01 16:46:27.262     8    34 G0   RA: RemoteAudioReceiver::Factory started
+2014/05/01 16:46:27.273     8    36 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 16:46:27.273     8    36 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 16:46:27.274     8    37 G0   AudioDriver: Thread Running
+2014/05/01 16:46:27.275     8    36 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 16:46:27.275     8    36 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 16:46:27.276     8    36 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 16:46:27.328     8    34 G0   Default keyboard layout: 04190419
+2014/05/01 16:46:27.328     8    34 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 16:46:27.328     8    34 G0   Client: RemoteDesktop 0179BD08 created (id = 0)
+2014/05/01 16:46:27.337     8     9 G0   X Error 8 on ???, Req 42.0 (#911 r77594647): BadMatch (invalid parameter attributes)
+2014/05/01 16:46:27.384     8     9 G0   CClientWindow::OnCreate(): Local display is 1280x800
+2014/05/01 16:46:27.394     8     9 G0   X Error 8 on ???, Req 42.0 (#1243 r77594657): BadMatch (invalid parameter attributes)
+2014/05/01 16:46:27.399     8     9 G0   X Error 8 on ???, Req 42.0 (#1273 r77594658): BadMatch (invalid parameter attributes)
+2014/05/01 16:46:27.412     8     9 G0   X Error 8 on ???, Req 42.0 (#1303 r77594659): BadMatch (invalid parameter attributes)
+2014/05/01 16:46:27.496     8    38 G0   ClientThread started
+2014/05/01 16:46:27.497     8    38 G0   ClientThread: Waiting for ParticipantManager synchronization
+2014/05/01 16:46:27.506     8    34 G0!! Audio: Could not open Input Mixer. EC 6
+2014/05/01 16:46:27.506     8    34 G0!! Audio: Could not open Output Mixer. EC 6
+2014/05/01 16:46:27.506     8    34 G0   WaveOutSystemMixer: Mixer Lines are 4294967295 4294967295 4294967295 4294967295 
+2014/05/01 16:46:27.506     8    34 G0!  CAudioManager request audio mute state failed
+2014/05/01 16:46:27.508     8    34 G0   CLogin::run() leave
+2014/05/01 16:46:27.550     8    23 G0   CParticipantManagerBase participant  (ID [292866170,2075026410]) was added with the role 6
+2014/05/01 16:46:27.550     8    23 G0   New Participant added in CParticipantManager  ([292866170,2075026410])
+2014/05/01 16:46:27.550     8    23 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 16:46:27.551     8    23 G0   CParticipantManagerBase participant KASSA (ID [647650217,-518665793]) was added with the role 3
+2014/05/01 16:46:27.551     8    23 G0   New Participant added in CParticipantManager KASSA ([647650217,-518665793])
+2014/05/01 16:46:27.551     8    23 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 16:46:27.559     8    23 G0   CParticipantManagerBase::CheckAndSubscribeNewStream(): Subscribe stream now streamID=1 type=5 required=1 supported=1
+2014/05/01 16:46:27.564     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,-518665793]
+2014/05/01 16:46:27.594     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 16:46:27.594     8    38 G0   ConnectionAccessSettings: CAccessControl: RemoteControl: Allowed FileTransfer: Allowed ControlRemoteTV: Allowed SwitchSides: Allowed AllowDisableRemoteInput: Allowed AllowVPN: Allowed AllowPartnerViewDesktop: Allowed ShareMyFiles: Allowed ShareFilesWithMe: Allowed PrintOnMyPrinters: Allowed PrintOnRemotePrinters: Allowed
+2014/05/01 16:46:27.599     8    23 G0   CClipboardChangeListener::RegisterForClipboardChanges
+2014/05/01 16:46:27.642     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,-518665793]
+2014/05/01 16:46:27.644     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 16:46:27.740     8    23 G0   RemoteDesktop 0179BD08: StreamID=4
+2014/05/01 16:46:28.117     8    38 G0   Server display is 1280x800x8, quali=100, monitors=0/1, sw=0, tilsize=0
+2014/05/01 16:46:28.314     8    38 G0   Compress: Caching active, partners version is 2, own version is 2
+2014/05/01 16:46:32.364     8    38 G0   Server display is 1280x800x32, quali=95, monitors=0/1, sw=0, tilsize=64
+2014/05/01 16:52:19.270     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1398952339 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/01 17:10:19.270     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1398953419 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/01 17:11:37.915     8     9 G0   X Error 3 on ???, Req 2.0 (#11094 r77594663): BadWindow (invalid Window parameter)
+2014/05/01 17:13:28.732     8     9 G0   Connection closed by user
+2014/05/01 17:13:28.740     8    38 G0   CClipboardChangeListener::UnregisterFromClipboardChanges
+2014/05/01 17:13:28.830     8     9 G0!! BuddyWindow.SaveUserSettings: GetWindowText(m_name) failed, Errorcode=1400
+2014/05/01 17:13:47.939     8     9 G0!! BuddyWindow.SaveUserSettings: GetWindowText(m_name) failed, Errorcode=1400
+2014/05/01 17:13:47.950     8     9 G0!! MainWindow.OnDestroy: WTSUnRegisterSessionNotification failed with error 0
+2014/05/01 17:13:47.951     8     9 G0   Closing TeamViewer
+2014/05/01 17:13:48.015     8    22 G0   CTcpProcessConnector::HandleRead(): Socket gracefully closed (PID=8579)
+2014/05/01 17:13:48.016     8    22 G0   CTcpProcessConnector::CloseConnection(): PID=8579
+2014/05/01 17:13:48.016     8    22 G0!  CInterProcess::EventFunction(): IPC-Connection Closed
+2014/05/01 17:13:48.016     8    22 G0   CTcpProcessConnector::CloseConnection(): PID=8579
+2014/05/01 17:13:48.016     8    22 G0!! CTcpProcessConnector::CloseConnection(): Shutdown socket returned error 10058: Unknown error, Errorcode=317
+2014/05/01 17:13:48.017     8    22 G0!! CTcpProcessConnector::CloseConnection(): Shutdown socket returned error 10009: Unknown error, Errorcode=317
+2014/05/01 17:13:48.045     8    21 G0   XClipboard: Shutting down event loop
+2014/05/01 17:13:48.047     8     9 G0   Wine: Wine DLL freed
+2014/05/01 17:33:12.502     8     9 G0!! SetProcessStartupOptions(): SetProcessDEPPolicy() failed! LE=120, Errorcode=2
+2014/05/01 17:33:13.341     8     9 G0   X ErrorHandler org f6d6586e, def f6c038f0 cur f5faacac
+2014/05/01 17:33:13.354     8     9 G0   XTest extension: base 0, error 0, version 2.2
+2014/05/01 17:33:13.358     8     9 G0   XClipboard: Initialised XFixes (base=87, error=140)
+2014/05/01 17:33:13.359     8     9 G0   Wine: Wine DLL initialized
+2014/05/01 17:33:13.359     8     9 G0   Wine: wine-1.6
+
+2014/05/01 17:33:13.599     8     9 G0   Win32_GUI::FontReallyExists: 'Segoe UI' found 0 matches.
+2014/05/01 17:33:13.600     8     9 G0   Win32_GUI::FontReallyExists: 'Liberation Sans' found 0 matches.
+2014/05/01 17:33:13.623     8     9 G0   Monitors: X11 Windowing System, \\.\DISPLAY1, 1280x800 (0,0), flags=21
+2014/05/01 17:33:13.624     8     9 G0   Opening local TCP connection to 127.0.0.1:5939
+2014/05/01 17:33:13.631     8     9 G0   Local TCP connection established
+2014/05/01 17:33:13.636     8     9 G0   Process ID:  L 11181 /  W 8
+2014/05/01 17:33:13.721     8     9 G0   Received Control_InitIPC_Response processtype=1
+2014/05/01 17:33:13.721     8     9 G0   Received Control_InitIPC_Response runningProcesses=3
+2014/05/01 17:33:13.722     8     9 G0   Control_InitIPC_Response: all processes 3 completely initialized
+2014/05/01 17:33:13.741     8     9 G0!! GetSimpleDisplayCertNameFromFile: File 'C:\TeamViewer\tv_w32.dll' does not exist., Errorcode=2
+2014/05/01 17:33:13.741     8     9 G0!! VerifyTeamViewerSignature() : WinVerifyTrust failed, result=2, Errorcode=2
+2014/05/01 17:33:13.741     8     9 G0!! MachineHooks: Library not found, Errorcode=2
+2014/05/01 17:33:13.758     8    26 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 17:33:13.761     8    26 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 17:33:13.781     8     9 G0   MachineID m=1 - 0
+2014/05/01 17:33:14.035     8     9 G0   X Error 8 on ???, Req 42.0 (#304 r77594633): BadMatch (invalid parameter attributes)
+2014/05/01 17:33:14.210     8     9 G0!! DragDropRegistration: could not register window, HR=80040155
+2014/05/01 17:33:14.211     8     9 G0!! GetIEVersion() exception: Couldn't find Registry Key Software\Microsoft\Internet Explorer
+2014/05/01 17:33:14.211     8     9 G0!  IntroScreen: not available because IE version is invalid
+2014/05/01 17:33:14.475     8     9 G0   Tray created!
+2014/05/01 17:33:14.476     8     9 G0   CMainWindow::ShouldShowDynamicPassword(): dynPw=1 allowIncoming=1 id=292866170 ka=0 lanAllowed=0 lanOnly=0 networkState=1
+2014/05/01 17:33:14.595     8     9 G0   P_FORCE_WINSTATE_ONCE = WinState_Undefined
+2014/05/01 17:33:14.823     8    30 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 17:33:14.823     8    30 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 17:33:14.835     8    31 G0   AudioDriver: Thread Running
+2014/05/01 17:33:14.837     8    30 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 17:33:14.837     8    30 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 17:33:14.837     8    30 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 17:33:15.915     8    32 G0   TAF: Proxy received: IP:Port=
+2014/05/01 17:33:16.594     8    32 G0   TAF: Received answer is empty.
+2014/05/01 17:33:17.593     8     9 G0   Trying connection to 647650217, mode = 1
+2014/05/01 17:33:17.623     8    34 G0   CLogin::run()
+2014/05/01 17:33:17.880     8    34 G0   CLoginClient::NegotiateVersionClient()
+2014/05/01 17:33:18.646     8    34 G0   CLoginClient::AuthenticateClient()
+2014/05/01 17:33:21.885     8    34 G0   RA: RemoteAudioReceiver::Factory started
+2014/05/01 17:33:21.929     8    36 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 17:33:21.929     8    36 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 17:33:21.941     8    37 G0   AudioDriver: Thread Running
+2014/05/01 17:33:21.954     8    36 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 17:33:21.958     8    36 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 17:33:21.963     8    36 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 17:33:22.017     8    34 G0   Default keyboard layout: 04190419
+2014/05/01 17:33:22.017     8    34 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 17:33:22.018     8    34 G0   Client: RemoteDesktop 017D72E0 created (id = 0)
+2014/05/01 17:33:22.027     8     9 G0   X Error 8 on ???, Req 42.0 (#859 r77594645): BadMatch (invalid parameter attributes)
+2014/05/01 17:33:22.107     8     9 G0   CClientWindow::OnCreate(): Local display is 1280x800
+2014/05/01 17:33:22.120     8     9 G0   X Error 8 on ???, Req 42.0 (#1191 r77594655): BadMatch (invalid parameter attributes)
+2014/05/01 17:33:22.124     8     9 G0   X Error 8 on ???, Req 42.0 (#1221 r77594656): BadMatch (invalid parameter attributes)
+2014/05/01 17:33:22.132     8     9 G0   X Error 8 on ???, Req 42.0 (#1251 r77594657): BadMatch (invalid parameter attributes)
+2014/05/01 17:33:22.304     8    38 G0   ClientThread started
+2014/05/01 17:33:22.305     8    38 G0   ClientThread: Waiting for ParticipantManager synchronization
+2014/05/01 17:33:22.316     8    34 G0!! Audio: Could not open Input Mixer. EC 6
+2014/05/01 17:33:22.316     8    34 G0!! Audio: Could not open Output Mixer. EC 6
+2014/05/01 17:33:22.316     8    34 G0   WaveOutSystemMixer: Mixer Lines are 4294967295 4294967295 4294967295 4294967295 
+2014/05/01 17:33:22.316     8    34 G0!  CAudioManager request audio mute state failed
+2014/05/01 17:33:22.321     8    34 G0   CLogin::run() leave
+2014/05/01 17:33:22.324     8    22 G0   CParticipantManagerBase participant  (ID [292866170,1004148289]) was added with the role 6
+2014/05/01 17:33:22.325     8    22 G0   New Participant added in CParticipantManager  ([292866170,1004148289])
+2014/05/01 17:33:22.325     8    22 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 17:33:22.325     8    22 G0   CParticipantManagerBase participant KASSA (ID [647650217,1182579124]) was added with the role 3
+2014/05/01 17:33:22.325     8    22 G0   New Participant added in CParticipantManager KASSA ([647650217,1182579124])
+2014/05/01 17:33:22.326     8    22 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 17:33:22.340     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,1182579124]
+2014/05/01 17:33:22.375     8    22 G0   CParticipantManagerBase::CheckAndSubscribeNewStream(): Subscribe stream now streamID=1 type=5 required=1 supported=1
+2014/05/01 17:33:22.378     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 17:33:22.379     8    38 G0   ConnectionAccessSettings: CAccessControl: RemoteControl: Allowed FileTransfer: Allowed ControlRemoteTV: Allowed SwitchSides: Allowed AllowDisableRemoteInput: Allowed AllowVPN: Allowed AllowPartnerViewDesktop: Allowed ShareMyFiles: Allowed ShareFilesWithMe: Allowed PrintOnMyPrinters: Allowed PrintOnRemotePrinters: Allowed
+2014/05/01 17:33:22.380     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,1182579124]
+2014/05/01 17:33:22.382     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 17:33:22.494     8    23 G0   CClipboardChangeListener::RegisterForClipboardChanges
+2014/05/01 17:33:22.654     8    22 G0   RemoteDesktop 017D72E0: StreamID=4
+2014/05/01 17:33:22.957     8    38 G0   Server display is 1280x800x8, quali=100, monitors=0/1, sw=0, tilsize=0
+2014/05/01 17:33:23.232     8    38 G0   Compress: Caching active, partners version is 2, own version is 2
+2014/05/01 17:33:27.692     8    38 G0   Server display is 1280x800x32, quali=95, monitors=0/1, sw=0, tilsize=64
+2014/05/01 17:41:14.209     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1398955274 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/01 17:48:14.209     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1398955694 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/01 19:12:14.208     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1398960734 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/01 19:32:55.442     8     9 G0   CMainWindow::ShouldShowDynamicPassword(): dynPw=1 allowIncoming=1 id=292866170 ka=0 lanAllowed=0 lanOnly=0 networkState=1
+2014/05/01 19:34:54.576     8    26 G0!! SetProcessStartupOptions(): SetProcessDEPPolicy() failed! LE=120, Errorcode=12180
+2014/05/01 19:34:55.220     8    26 G0   X ErrorHandler org f6e4586e, def f6ce38f0 cur f608acac
+2014/05/01 19:34:55.229     8    26 G0   XTest extension: base 0, error 0, version 2.2
+2014/05/01 19:34:55.230     8    26 G0   XClipboard: Initialised XFixes (base=87, error=140)
+2014/05/01 19:34:55.231     8    26 G0   Wine: Wine DLL initialized
+2014/05/01 19:34:55.231     8    26 G0   Wine: wine-1.6
+
+2014/05/01 19:34:55.524     8    26 G0   Win32_GUI::FontReallyExists: 'Segoe UI' found 0 matches.
+2014/05/01 19:34:55.524     8    26 G0   Win32_GUI::FontReallyExists: 'Liberation Sans' found 0 matches.
+2014/05/01 19:34:55.540     8    26 G0   Monitors: X11 Windowing System, \\.\DISPLAY1, 1280x800 (0,0), flags=21
+2014/05/01 19:34:55.541     8    26 G0   Opening local TCP connection to 127.0.0.1:5939
+2014/05/01 19:34:55.544     8    26 G0   Local TCP connection established
+2014/05/01 19:34:55.545     8    26 G0   Process ID:  L 2239 /  W 8
+2014/05/01 19:34:55.638     8    26 G0   Received Control_InitIPC_Response processtype=1
+2014/05/01 19:34:55.638     8    26 G0   Received Control_InitIPC_Response runningProcesses=3
+2014/05/01 19:34:55.639     8    26 G0   Control_InitIPC_Response: all processes 3 completely initialized
+2014/05/01 19:34:55.696     8    26 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 19:34:55.696     8     9 G0!! GetSimpleDisplayCertNameFromFile: File 'C:\TeamViewer\tv_w32.dll' does not exist., Errorcode=2
+2014/05/01 19:34:55.696     8     9 G0!! VerifyTeamViewerSignature() : WinVerifyTrust failed, result=2
+2014/05/01 19:34:55.696     8    26 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/01 19:34:55.696     8     9 G0!! MachineHooks: Library not found
+2014/05/01 19:34:55.754     8     9 G0   MachineID m=1 - 0
+2014/05/01 19:34:55.962     8     9 G0   X Error 8 on ???, Req 42.0 (#304 r77594633): BadMatch (invalid parameter attributes)
+2014/05/01 19:34:56.098     8     9 G0!! DragDropRegistration: could not register window, HR=80040155
+2014/05/01 19:34:56.099     8     9 G0!! GetIEVersion() exception: Couldn't find Registry Key Software\Microsoft\Internet Explorer
+2014/05/01 19:34:56.099     8     9 G0!  IntroScreen: not available because IE version is invalid
+2014/05/01 19:34:56.217     8     9 G0   Tray created!
+2014/05/01 19:34:56.219     8     9 G0   CMainWindow::ShouldShowDynamicPassword(): dynPw=1 allowIncoming=1 id=292866170 ka=0 lanAllowed=0 lanOnly=0 networkState=1
+2014/05/01 19:34:56.271     8     9 G0   P_FORCE_WINSTATE_ONCE = WinState_Undefined
+2014/05/01 19:34:56.350     8    30 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 19:34:56.350     8    30 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 19:34:56.351     8    31 G0   AudioDriver: Thread Running
+2014/05/01 19:34:56.352     8    30 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 19:34:56.352     8    30 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 19:34:56.352     8    30 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 19:34:58.032     8    32 G0   TAF: Proxy received: IP:Port=
+2014/05/01 19:34:58.449     8     9 G0   Trying connection to 647650217, mode = 1
+2014/05/01 19:34:58.458     8    34 G0   CLogin::run()
+2014/05/01 19:34:58.768     8    34 G0   CLoginClient::NegotiateVersionClient()
+2014/05/01 19:34:59.712     8    32 G0   TAF: Received answer is empty.
+2014/05/01 19:35:00.438     8    34 G0   CLoginClient::AuthenticateClient()
+2014/05/01 19:35:03.638     8    34 G0   RA: RemoteAudioReceiver::Factory started
+2014/05/01 19:35:03.648     8    36 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/01 19:35:03.648     8    36 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/01 19:35:03.650     8    37 G0   AudioDriver: Thread Running
+2014/05/01 19:35:03.650     8    36 G0   AudioDriver: Direct Sound Initialized
+2014/05/01 19:35:03.651     8    36 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/01 19:35:03.652     8    36 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/01 19:35:03.704     8    34 G0   Default keyboard layout: 04190419
+2014/05/01 19:35:03.705     8    34 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 19:35:03.705     8    34 G0   Client: RemoteDesktop 017CFE28 created (id = 0)
+2014/05/01 19:35:03.720     8     9 G0   X Error 8 on ???, Req 42.0 (#848 r77594645): BadMatch (invalid parameter attributes)
+2014/05/01 19:35:03.757     8     9 G0   CClientWindow::OnCreate(): Local display is 1280x800
+2014/05/01 19:35:03.765     8     9 G0   X Error 8 on ???, Req 42.0 (#1180 r77594655): BadMatch (invalid parameter attributes)
+2014/05/01 19:35:03.769     8     9 G0   X Error 8 on ???, Req 42.0 (#1210 r77594656): BadMatch (invalid parameter attributes)
+2014/05/01 19:35:03.809     8     9 G0   X Error 8 on ???, Req 42.0 (#1240 r77594657): BadMatch (invalid parameter attributes)
+2014/05/01 19:35:03.857     8    38 G0   ClientThread started
+2014/05/01 19:35:03.858     8    38 G0   ClientThread: Waiting for ParticipantManager synchronization
+2014/05/01 19:35:03.860     8    34 G0!! Audio: Could not open Input Mixer. EC 6
+2014/05/01 19:35:03.861     8    34 G0!! Audio: Could not open Output Mixer. EC 6
+2014/05/01 19:35:03.861     8    34 G0   WaveOutSystemMixer: Mixer Lines are 4294967295 4294967295 4294967295 4294967295 
+2014/05/01 19:35:03.861     8    34 G0!  CAudioManager request audio mute state failed
+2014/05/01 19:35:03.862     8    34 G0   CLogin::run() leave
+2014/05/01 19:35:03.901     8    23 G0   CParticipantManagerBase participant  (ID [292866170,980950321]) was added with the role 6
+2014/05/01 19:35:03.902     8    23 G0   New Participant added in CParticipantManager  ([292866170,980950321])
+2014/05/01 19:35:03.902     8    23 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 19:35:03.902     8    23 G0   CParticipantManagerBase participant KASSA (ID [647650217,401879324]) was added with the role 3
+2014/05/01 19:35:03.902     8    23 G0   New Participant added in CParticipantManager KASSA ([647650217,401879324])
+2014/05/01 19:35:03.902     8    23 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/01 19:35:03.910     8    23 G0   CParticipantManagerBase::CheckAndSubscribeNewStream(): Subscribe stream now streamID=1 type=5 required=1 supported=1
+2014/05/01 19:35:04.169     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,401879324]
+2014/05/01 19:35:04.205     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 19:35:04.205     8    38 G0   ConnectionAccessSettings: CAccessControl: RemoteControl: Allowed FileTransfer: Allowed ControlRemoteTV: Allowed SwitchSides: Allowed AllowDisableRemoteInput: Allowed AllowVPN: Allowed AllowPartnerViewDesktop: Allowed ShareMyFiles: Allowed ShareFilesWithMe: Allowed PrintOnMyPrinters: Allowed PrintOnRemotePrinters: Allowed
+2014/05/01 19:35:04.206     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,401879324]
+2014/05/01 19:35:04.208     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/01 19:35:04.212     8    22 G0   CClipboardChangeListener::RegisterForClipboardChanges
+2014/05/01 19:35:04.253     8    23 G0   RemoteDesktop 017CFE28: StreamID=4
+2014/05/01 19:35:04.705     8    38 G0   Server display is 1280x800x8, quali=100, monitors=0/1, sw=0, tilsize=0
+2014/05/01 19:35:04.889     8    38 G0   Compress: Caching active, partners version is 2, own version is 2
+2014/05/01 19:35:09.042     8    38 G0   Server display is 1280x800x32, quali=95, monitors=0/1, sw=0, tilsize=64
+2014/05/01 19:36:04.157     8     9 G0   Connection closed by user
+2014/05/01 19:36:04.162     8    38 G0   CClipboardChangeListener::UnregisterFromClipboardChanges
+2014/05/02 11:11:38.002     8     9 G0!! SetProcessStartupOptions(): SetProcessDEPPolicy() failed! LE=120, Errorcode=2
+2014/05/02 11:11:38.646     8     9 G0   X ErrorHandler org f6dd786e, def f6c758f0 cur f601ccac
+2014/05/02 11:11:38.653     8     9 G0   XTest extension: base 0, error 0, version 2.2
+2014/05/02 11:11:38.656     8     9 G0   XClipboard: Initialised XFixes (base=87, error=140)
+2014/05/02 11:11:38.657     8     9 G0   Wine: Wine DLL initialized
+2014/05/02 11:11:38.657     8     9 G0   Wine: wine-1.6
+
+2014/05/02 11:11:38.911     8     9 G0   Win32_GUI::FontReallyExists: 'Segoe UI' found 0 matches.
+2014/05/02 11:11:38.912     8     9 G0   Win32_GUI::FontReallyExists: 'Liberation Sans' found 0 matches.
+2014/05/02 11:11:38.925     8     9 G0   Monitors: X11 Windowing System, \\.\DISPLAY1, 1280x800 (0,0), flags=21
+2014/05/02 11:11:38.927     8     9 G0   Opening local TCP connection to 127.0.0.1:5939
+2014/05/02 11:11:38.929     8     9 G0   Local TCP connection established
+2014/05/02 11:11:38.931     8     9 G0   Process ID:  L 2243 /  W 8
+2014/05/02 11:11:39.017     8     9 G0   Received Control_InitIPC_Response processtype=1
+2014/05/02 11:11:39.018     8     9 G0   Received Control_InitIPC_Response runningProcesses=3
+2014/05/02 11:11:39.018     8     9 G0   Control_InitIPC_Response: all processes 3 completely initialized
+2014/05/02 11:11:39.090     8     9 G0!! GetSimpleDisplayCertNameFromFile: File 'C:\TeamViewer\tv_w32.dll' does not exist., Errorcode=2
+2014/05/02 11:11:39.090     8    26 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/02 11:11:39.090     8     9 G0!! VerifyTeamViewerSignature() : WinVerifyTrust failed, result=2, Errorcode=2
+2014/05/02 11:11:39.090     8     9 G0!! MachineHooks: Library not found, Errorcode=2
+2014/05/02 11:11:39.091     8    26 G0   ProxySearch: no PAC script detected via WPAD
+2014/05/02 11:11:39.134     8     9 G0   MachineID m=1 - 0
+2014/05/02 11:11:39.355     8     9 G0   X Error 8 on ???, Req 42.0 (#304 r71303177): BadMatch (invalid parameter attributes)
+2014/05/02 11:11:39.489     8     9 G0!! DragDropRegistration: could not register window, HR=80040155
+2014/05/02 11:11:39.490     8     9 G0!! GetIEVersion() exception: Couldn't find Registry Key Software\Microsoft\Internet Explorer
+2014/05/02 11:11:39.490     8     9 G0!  IntroScreen: not available because IE version is invalid
+2014/05/02 11:11:39.606     8     9 G0   Tray created!
+2014/05/02 11:11:39.607     8     9 G0   CMainWindow::ShouldShowDynamicPassword(): dynPw=1 allowIncoming=1 id=292866170 ka=0 lanAllowed=0 lanOnly=0 networkState=1
+2014/05/02 11:11:39.660     8     9 G0   P_FORCE_WINSTATE_ONCE = WinState_Undefined
+2014/05/02 11:11:39.750     8    30 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/02 11:11:39.751     8    30 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/02 11:11:39.752     8    31 G0   AudioDriver: Thread Running
+2014/05/02 11:11:39.752     8    30 G0   AudioDriver: Direct Sound Initialized
+2014/05/02 11:11:39.753     8    30 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/02 11:11:39.753     8    30 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/02 11:11:40.349     8     9 G0   X Error 3 on ???, Req 2.0 (#2648 r71303187): BadWindow (invalid Window parameter)
+2014/05/02 11:11:41.273     8    32 G0   TAF: Proxy received: IP:Port=
+2014/05/02 11:11:42.951     8    32 G0   TAF: Received answer is empty.
+2014/05/02 11:11:48.110     8     9 G0   Trying connection to 647650217, mode = 1
+2014/05/02 11:11:48.131     8    34 G0   CLogin::run()
+2014/05/02 11:11:48.377     8    34 G0   CLoginClient::NegotiateVersionClient()
+2014/05/02 11:11:49.516     8    34 G0   CLoginClient::AuthenticateClient()
+2014/05/02 11:11:52.847     8    34 G0   RA: RemoteAudioReceiver::Factory started
+2014/05/02 11:11:52.853     8    36 G0!  CoreAudioSystemMixer::EnumerateDevices MMDeviceEnumerator failed with error = 80040154
+2014/05/02 11:11:52.854     8    36 G0   AudioDriver: Initializing Direct Sound 8
+2014/05/02 11:11:52.855     8    37 G0   AudioDriver: Thread Running
+2014/05/02 11:11:52.856     8    36 G0   AudioDriver: Direct Sound Initialized
+2014/05/02 11:11:52.856     8    36 G0!! AudioDriver: Could not enumerate Direct Sound devices
+2014/05/02 11:11:52.860     8    36 G0!! AudioDriver: Could not enumerate Direct Sound capture devices
+2014/05/02 11:11:52.911     8    34 G0   Default keyboard layout: 04190419
+2014/05/02 11:11:52.911     8    34 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/02 11:11:52.911     8    34 G0   Client: RemoteDesktop 017D73C8 created (id = 0)
+2014/05/02 11:11:52.920     8     9 G0   X Error 8 on ???, Req 42.0 (#950 r71303190): BadMatch (invalid parameter attributes)
+2014/05/02 11:11:52.964     8     9 G0   CClientWindow::OnCreate(): Local display is 1280x800
+2014/05/02 11:11:52.973     8     9 G0   X Error 8 on ???, Req 42.0 (#1282 r71303200): BadMatch (invalid parameter attributes)
+2014/05/02 11:11:52.979     8     9 G0   X Error 8 on ???, Req 42.0 (#1312 r71303201): BadMatch (invalid parameter attributes)
+2014/05/02 11:11:52.990     8     9 G0   X Error 8 on ???, Req 42.0 (#1342 r71303202): BadMatch (invalid parameter attributes)
+2014/05/02 11:11:53.067     8    38 G0   ClientThread started
+2014/05/02 11:11:53.068     8    38 G0   ClientThread: Waiting for ParticipantManager synchronization
+2014/05/02 11:11:53.070     8    34 G0!! Audio: Could not open Input Mixer. EC 6
+2014/05/02 11:11:53.071     8    34 G0!! Audio: Could not open Output Mixer. EC 6
+2014/05/02 11:11:53.071     8    34 G0   WaveOutSystemMixer: Mixer Lines are 4294967295 4294967295 4294967295 4294967295 
+2014/05/02 11:11:53.071     8    34 G0!  CAudioManager request audio mute state failed
+2014/05/02 11:11:53.072     8    34 G0   CLogin::run() leave
+2014/05/02 11:11:53.113     8    22 G0   CParticipantManagerBase participant  (ID [292866170,485506850]) was added with the role 6
+2014/05/02 11:11:53.113     8    22 G0   New Participant added in CParticipantManager  ([292866170,485506850])
+2014/05/02 11:11:53.113     8    22 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/02 11:11:53.114     8    22 G0   CParticipantManagerBase participant  (ID [647650217,246379136]) was added with the role 3
+2014/05/02 11:11:53.114     8    22 G0   New Participant added in CParticipantManager  ([647650217,246379136])
+2014/05/02 11:11:53.115     8    22 G0   ClientSessionrecorder: Autostart recording function called but not activated.
+2014/05/02 11:11:53.122     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,246379136]
+2014/05/02 11:11:53.122     8    22 G0   CParticipantManagerBase::CheckAndSubscribeNewStream(): Subscribe stream now streamID=1 type=5 required=1 supported=1
+2014/05/02 11:11:53.150     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/02 11:11:53.152     8    38 G0   ConnectionAccessSettings: CAccessControl: RemoteControl: Allowed FileTransfer: Allowed ControlRemoteTV: Allowed SwitchSides: Allowed AllowDisableRemoteInput: Allowed AllowVPN: Allowed AllowPartnerViewDesktop: Allowed ShareMyFiles: Allowed ShareFilesWithMe: Allowed PrintOnMyPrinters: Allowed PrintOnRemotePrinters: Allowed
+2014/05/02 11:11:53.197     8    23 G0   CClipboardChangeListener::RegisterForClipboardChanges
+2014/05/02 11:11:53.208     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,246379136]
+2014/05/02 11:11:53.209     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/02 11:11:53.349     8    23 G0   RemoteDesktop 017D73C8: StreamID=4
+2014/05/02 11:11:53.354     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,246379136]
+2014/05/02 11:11:53.356     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/02 11:11:53.717     8    38 G0   Server display is 1280x800x8, quali=100, monitors=0/1, sw=0, tilsize=0
+2014/05/02 11:11:53.890     8    38 G0   Compress: Caching active, partners version is 2, own version is 2
+2014/05/02 11:11:58.920     8    38 G0   Server display is 1280x800x32, quali=95, monitors=0/1, sw=0, tilsize=64
+2014/05/02 11:12:09.971     8    38 G0   ConnectionAccessSettings: CAccessControl: RemoteControl: Allowed FileTransfer: Allowed ControlRemoteTV: Allowed SwitchSides: Allowed AllowDisableRemoteInput: Allowed AllowVPN: Allowed AllowPartnerViewDesktop: Allowed ShareMyFiles: Allowed ShareFilesWithMe: Allowed PrintOnMyPrinters: Allowed PrintOnRemotePrinters: Allowed
+2014/05/02 11:12:11.143     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,246379136]
+2014/05/02 11:12:11.145     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/02 11:12:14.061     8    38 G0   ConnectionAccessSettings: CAccessControl: RemoteControl: Allowed FileTransfer: Allowed ControlRemoteTV: Allowed SwitchSides: Allowed AllowDisableRemoteInput: Allowed AllowVPN: Allowed AllowPartnerViewDesktop: Allowed ShareMyFiles: Allowed ShareFilesWithMe: Allowed PrintOnMyPrinters: Allowed PrintOnRemotePrinters: Allowed
+2014/05/02 11:12:14.078     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,246379136]
+2014/05/02 11:12:14.080     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/02 11:12:14.086     8    38 G0   Client connection to 647650217, server version is 9.0.27614 , OS=8 Participant=[647650217,246379136]
+2014/05/02 11:12:14.088     8    38 G0   Client::SendInfo, resolution settings: mode = 1, width = 0, height = 0, selected monitor = 0
+2014/05/02 11:12:15.979     8    38 G0   Server display is 1280x800x32, quali=95, monitors=0/1, sw=0, tilsize=64
+2014/05/02 11:12:16.456     8    38 G0   ConnectionAccessSettings: CAccessControl: RemoteControl: Allowed FileTransfer: Allowed ControlRemoteTV: Allowed SwitchSides: Allowed AllowDisableRemoteInput: Allowed AllowVPN: Allowed AllowPartnerViewDesktop: Allowed ShareMyFiles: Allowed ShareFilesWithMe: Allowed PrintOnMyPrinters: Allowed PrintOnRemotePrinters: Allowed
+2014/05/02 11:23:39.490     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1399019019 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/02 11:27:11.551     8    21 G0   XClipboard: RequestClipboard as TARGETS
+2014/05/02 11:27:11.554     8    21 G0   XClipboard: RequestClipboard as UTF8_STRING
+2014/05/02 11:27:11.583     8    21 G0   XClipboard: Got clipboard as 'UTF8_STRING', size (n=11, c=22)
+2014/05/02 11:27:11.584     8    28 G0   CClipboardSource::SendClipboardContent: (1 data formats)
+2014/05/02 11:28:09.642     8    21 G0   XClipboard: RequestClipboard as TARGETS
+2014/05/02 11:28:09.644     8    21 G0   XClipboard: RequestClipboard as UTF8_STRING
+2014/05/02 11:28:09.645     8    21 G0   XClipboard: Got clipboard as 'UTF8_STRING', size (n=28, c=52)
+2014/05/02 11:28:09.646     8    28 G0   CClipboardSource::SendClipboardContent: (1 data formats)
+2014/05/02 11:36:39.489     8     9 G0   CMainWindow::TrackIdleTime(): System goes idle. AdminRights:1 SystemTime:1399019799 LastAutoUpdate:0 AutoUpdateMode:3
+2014/05/02 11:44:59.912     8    21 G0   XClipboard: RequestClipboard as TARGETS
+2014/05/02 11:44:59.916     8    21 G0   XClipboard: RequestClipboard as UTF8_STRING
+2014/05/02 11:44:59.918     8    21 G0   XClipboard: Got clipboard as 'UTF8_STRING', size (n=412, c=578)
+2014/05/02 11:44:59.919     8    28 G0   CClipboardSource::SendClipboardContent: (1 data formats)

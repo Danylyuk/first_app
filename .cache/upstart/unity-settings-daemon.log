@@ -1,0 +1,6 @@
+
+(gnome-terminal:2381): GLib-GIO-CRITICAL **: g_settings_get: the format string may not contain '&' (key 'monospace-font-name' from schema 'org.gnome.desktop.interface'). This call will probably stop working with a future version of glib.
+
+(unity-settings-daemon:1251): color-plugin-WARNING **: unable to get EDID for xrandr-LVDS1: unable to get EDID for output
+
+(gnome-terminal:3196): GLib-GIO-CRITICAL **: g_settings_get: the format string may not contain '&' (key 'monospace-font-name' from schema 'org.gnome.desktop.interface'). This call will probably stop working with a future version of glib.

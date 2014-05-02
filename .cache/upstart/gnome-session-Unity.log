@@ -1,0 +1,92 @@
+ERROR 2014-05-02 11:11:34 unity.settings UnitySettings.cpp:366 Invalid monitor index: -1. Returning index 0 monitor instead.
+
+Init...
+Checking setup...
+Launching TeamViewer ...
+ERROR 2014-05-02 11:11:41 unityet_related_action <unknown>:0 gtk_window_resize: assertion 'width > 0' failed
+
+(opera:2360): Gtk-WARNING **: Загружаемый модуль тем не найден в module_path: «pixmap»,
+WARN  2014-05-02 11:19:04 unity.iconloader IconLoader.cpp:755 Unable to load icon file:/// at size -1x22: Не удалось открыть каталог
+
+(process:2832): GLib-CRITICAL **: g_slice_set_config: assertion 'sys_page_size == 0' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2014-05-02 11:27:38 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2014-05-02 11:27:38 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2014-05-02 11:28:18 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2014-05-02 11:28:18 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2014-05-02 11:28:18 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2014-05-02 11:28:19 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:19 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:19 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:19 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:19 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:19 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:19 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:20 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2014-05-02 11:28:21 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+Nautilus-Share-Message: Called "net usershare info" but it failed: Ошибка 255 при запуске 'net usershare': net usershare: cannot open usershare directory /var/lib/samba/usershares. Error Нет такого файла или каталога
+Please ask your system administrator to enable user sharing.
+
+Nautilus-Share-Message: Called "net usershare info" but it failed: Ошибка 255 при запуске 'net usershare': net usershare: cannot open usershare directory /var/lib/samba/usershares. Error Нет такого файла или каталога
+Please ask your system administrator to enable user sharing.
+
+Nautilus-Share-Message: Called "net usershare info" but it failed: Ошибка 255 при запуске 'net usershare': net usershare: cannot open usershare directory /var/lib/samba/usershares. Error Нет такого файла или каталога
+Please ask your system administrator to enable user sharing.
+

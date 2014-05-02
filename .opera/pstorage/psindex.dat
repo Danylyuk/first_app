@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preferences>
+  <section id="111A6C3D967E5BACA58792E53926FFE02E0A3753">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://slando.ua</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/03/00000000</value>
+  </section>
+  <section id="07D115673E9D39364D8BED174C00209894F0566D">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://www.yandex.ua</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/0C/00000000</value>
+  </section>
+  <section id="202FEA64AF14D05DB8F93CD41C3A37D7EA12E5E9">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://aukro.ua</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/1A/00000000</value>
+  </section>
+  <section id="595CFA8F7866E1ABEEAA3761506300E4FA437D6D">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://kinogo.net</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/0C/00000001</value>
+  </section>
+  <section id="939DD2547F5A0B10052CF0CD44E0700D44A984C8">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">https://www.google.com.ua</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/08/00000000</value>
+  </section>
+  <section id="88E279CC28769DC96F8EB0E4B1CD913BFBA869DA">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://www.gismeteo.ua</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/0E/00000000</value>
+  </section>
+  <section id="CB85B250CFCDA8ED8415C1015AC511570745AA96">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://sinoptik.ua</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/11/00000000</value>
+  </section>
+  <section id="C29E3B25083D856612EBFE32E50FC9D101BFB942">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://www.kinokopilka.tv</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/13/00000000</value>
+  </section>
+  <section id="31E0181E979C4E42BCBCC963842FAC80B55D8996">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://railstutorial.ru</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/1D/00000000</value>
+  </section>
+  <section id="13CAC8CC5237C6D00D02F48C389E2BA7728C3E12">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://www.youtube.com</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/19/00000000</value>
+  </section>
+  <section id="EB5B434BE645CCBFDB6E2A813754F445854EB78A">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://railsapps.github.io</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/15/00000000</value>
+  </section>
+  <section id="98B317EF39522E7AE68E1DF192A0DD0E1BA21042">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://disqus.com</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/09/00000000</value>
+  </section>
+  <section id="7D2D808B5BEBA46539F34ABE6BF447D9C13BC0BE">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://ubuntulinux.ru</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/04/00000000</value>
+  </section>
+  <section id="1F3A56823315B7DADC869003A92CEB6BE09F1F93">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://ru.wikipedia.org</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/02/00000000</value>
+  </section>
+  <section id="F237C30F8ACB2C6B73D0C7C1A5D99293397C6D6E">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://ubuntovod.ru</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/08/00000001</value>
+  </section>
+  <section id="EB5136E3E4CAFC20C9D01FC2487C26462EA464A2">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://tokarchuk.ru</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/14/00000000</value>
+  </section>
+  <section id="6BE881B51EEFF231FD9F4719BD6753399040ACC7">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">https://money.yandex.ru</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/17/00000000</value>
+  </section>
+  <section id="6F188F47E021AC1D2F87F9294B2EC0FE9C34F2DC">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://itshaman.ru</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/09/00000001</value>
+  </section>
+  <section id="6C6F1F34E8D3FF109CB9D803A34242064C0860FB">
+    <value id="Type" xml:space="preserve">localstorage</value>
+    <value id="Origin" xml:space="preserve">http://habrahabr.ru</value>
+    <value id="DataFile" xml:space="preserve">pstorage/00/03/00000001</value>
+  </section>
+</preferences>

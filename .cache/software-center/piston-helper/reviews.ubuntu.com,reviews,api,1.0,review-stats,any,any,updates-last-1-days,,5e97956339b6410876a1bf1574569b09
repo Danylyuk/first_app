@@ -1,0 +1,16 @@
+status: 200
+content-length: 2
+via: 1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)
+content-location: http://reviews.ubuntu.com/reviews/api/1.0/review-stats/any/any/updates-last-1-days/
+x-cache: HIT from sumac.canonical.com
+age: 8
+expires: Thu, 01 May 2014 15:33:14 GMT
+server: Apache/2.2.22 (Ubuntu)
+last-modified: Thu, 01 May 2014 11:33:14 GMT
+connection: close
+cache-control: max-age=14400
+date: Thu, 01 May 2014 11:33:14 GMT
+content-type: application/json; charset=utf-8
+x-cache-lookup: HIT from sumac.canonical.com:3128
+
+[]

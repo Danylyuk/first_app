@@ -1,0 +1,218 @@
+{
+	"folder_history":
+	[
+	],
+	"last_version": 3059,
+	"last_window_id": 1,
+	"log_indexing": false,
+	"settings":
+	{
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"contents": "source 'https://rubygems.org'\n\n# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'\ngem 'rails', '4.0.2'\n\n# Use sqlite3 as the database for Active Record\ngem 'sqlite3'\n\n# Use SCSS for stylesheets\ngem 'sass-rails', '~> 4.0.0'\n\n# Use Uglifier as compressor for JavaScript assets\ngem 'uglifier', '>= 1.3.0'\n\n# Use CoffeeScript for .js.coffee assets and views\ngem 'coffee-rails', '~> 4.0.0'\n\n# See https://github.com/sstephenson/execjs#readme for more supported runtimes\n# gem 'therubyracer', platforms: :ruby\n\n# Use jquery as the JavaScript library\ngem 'jquery-rails'\n\n# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks\ngem 'turbolinks'\n\n# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder\ngem 'jbuilder', '~> 1.2'\n\ngroup :doc do\n  # bundle exec rake doc:rails generates the API under doc/api.\n  gem 'sdoc', require: false\nend\n\n# Use ActiveModel has_secure_password\n# gem 'bcrypt-ruby', '~> 3.1.2'\n\n# Use unicorn as the app server\n# gem 'unicorn'\n\n# Use Capistrano for deployment\n# gem 'capistrano', group: :development\n\n# Use debugger\n# gem 'debugger', group: [:development, :test]\nruby '2.0.0'\n#ruby-gemset=railstutorial_rails_4_0\ngroup :development do\n	gem 'sqlite3', '1.3.8'\nend\n.gitignore\n# Игнорирование конфига bundler\n/.bundle\n\n# Игнорирование дефолтной базы данных SQLite.\n/db/*.sqlite3\n/db/*.sqlite3-journal\n\n# Игнорирование всех логов и временных файлов.\n/log/*.log\n/tmp\n\n# Игнорирование прочих ненужных файлов.\ndatabase.yml\ndoc/\n*.swp\n*~\n.project\n.DS_Store\n.idea\n.secret\n",
+					"file": "/home/sparks/rails_projects/first_app/Gemfile",
+					"file_size": 1176,
+					"file_write_time": 130434348569876925,
+					"settings":
+					{
+						"buffer_size": 1576,
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/sparks/first_app/Gemfile"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"selected": 0,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/sparks/rails_projects/first_app/Gemfile",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1576,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1576,
+										1576
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Ruby/Ruby.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 1000.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"position": "0,0,0,0,0,635,475,1275,772,1280,800",
+			"project": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

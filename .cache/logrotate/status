@@ -1,0 +1,20 @@
+logrotate state -- version 2
+"/home/sparks/.cache/upstart/upstart-event-bridge.log" 2014-5-1-20:23:28
+"/home/sparks/.cache/upstart/unity-settings-daemon.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/indicator-sound.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/at-spi2-registryd.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/update-notifier-release.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/update-notifier-crash-_var_crash_susres.2014-05-02_10:59:04.681999.crash.log" 2014-5-2-11:0:0
+"/home/sparks/.cache/upstart/gnome-session-Unity.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/window-stack-bridge.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/dbus.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/indicator-application.log" 2014-5-2-0:5:3
+"/home/sparks/.cache/upstart/hud.log" 2014-5-2-0:5:3
+"/home/sparks/.cache/upstart/update-notifier-crash-_var_crash_susres.2014-05-01_15:33:17.645959.crash.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/update-notifier-crash-_var_crash_susres.2014-05-01_21:16:15.672221.crash.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/indicator-bluetooth.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/indicator-printers.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/unity7.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/unity-panel-service.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/im-config.log" 2014-5-2-11:0:5
+"/home/sparks/.cache/upstart/update-notifier-crash-_var_crash_susres.2014-05-01_14:24:48.014500.crash.log" 2014-5-2-11:0:5

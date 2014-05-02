@@ -1,0 +1,57 @@
+[2014-05-01 17:27:08] __rvm_package_extract
+__rvm_package_extract () 
+{ 
+    rvm_debug __rvm_package_extract:$#: "$@";
+    typeset __tempdir __path __file __return;
+    __return=0;
+    __tempdir="$( TMPDIR="${rvm_tmp_path}" mktemp -d -t rvm-tmp.XXXXXXXXX )";
+    __rvm_package_extract_run "$1" "$__tempdir" || __return=$?;
+    if (( __return == 0 )); then
+        for __path in "$__tempdir"/*;
+        do
+            __file="${__path##*/}";
+            if [[ -n "${__file}" && -e "$2/${__file}" ]]; then
+                \rm -rf "$2/${__file}" || __return=$?;
+            fi;
+            \mv -f "${__path}" "$2/" || __return=$?;
+        done;
+    fi;
+    if [[ -n "$__tempdir" ]]; then
+        \rm -rf "$__tempdir";
+    fi;
+    return $__return
+}
+current path: /home/sparks/.rvm/src
+GEM_HOME=/home/sparks/.rvm/gems/ruby-2.1.1
+PATH=/home/sparks/.rvm/gems/ruby-2.1.1/bin:/home/sparks/.rvm/gems/ruby-2.1.1@global/bin:/home/sparks/.rvm/rubies/ruby-2.1.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin
+GEM_PATH=/home/sparks/.rvm/gems/ruby-2.1.1:/home/sparks/.rvm/gems/ruby-2.1.1@global
+command(3): __rvm_package_extract /home/sparks/.rvm/archives/ruby-2.0.0-p451.tar.bz2 /home/sparks/.rvm/tmp/rvm_src_30625
+++ rvm_debug __rvm_package_extract:2: /home/sparks/.rvm/archives/ruby-2.0.0-p451.tar.bz2 /home/sparks/.rvm/tmp/rvm_src_30625
+++ ((  0  ))
+++ return 0
+++ typeset __tempdir __path __file __return
+++ __return=0
++++ TMPDIR=/home/sparks/.rvm/tmp
++++ mktemp -d -t rvm-tmp.XXXXXXXXX
+++ __tempdir=/home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w
+++ __rvm_package_extract_run /home/sparks/.rvm/archives/ruby-2.0.0-p451.tar.bz2 /home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w
+++ [[ -d /home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w ]]
+++ case "$1" in
+++ [[ -n '' ]]
+++ __rvm_tar xjf /home/sparks/.rvm/archives/ruby-2.0.0-p451.tar.bz2 -C /home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w --no-same-owner
+++ tar xjf /home/sparks/.rvm/archives/ruby-2.0.0-p451.tar.bz2 -C /home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w --no-same-owner
+++ __rvm_fix_group_permissions /home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w/ruby-2.0.0-p451
+++ umask -S
+++ __rvm_grep g=rw
+++ GREP_OPTIONS=
+++ grep g=rw
+++ chmod -R g+rwX /home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w/ruby-2.0.0-p451
+++ ((  __return == 0  ))
+++ for __path in '"$__tempdir"/*'
+++ __file=ruby-2.0.0-p451
+++ [[ -n ruby-2.0.0-p451 ]]
+++ [[ -e /home/sparks/.rvm/tmp/rvm_src_30625/ruby-2.0.0-p451 ]]
+++ mv -f /home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w/ruby-2.0.0-p451 /home/sparks/.rvm/tmp/rvm_src_30625/
+++ [[ -n /home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w ]]
+++ rm -rf /home/sparks/.rvm/tmp/rvm-tmp.XoQnmXp5w
+++ return 0

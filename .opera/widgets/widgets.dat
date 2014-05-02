@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preferences>
+  <section id="widgets">
+    <value id="version" xml:space="preserve">1</value>
+  </section>
+  <section id="wuid-7e432c90-d12a-11e3-8699-a1adfde7ac5d">
+    <value id="path to widget data" xml:space="preserve">{Preferences}widgets/gismeteo-weather-forecast-in-speed-dial-2.1-1.oex</value>
+    <value id="download_URL" null="yes"/>
+    <value id="content-type" xml:space="preserve">3</value>
+    <value id="class state" xml:space="preserve">enabled</value>
+    <value id="update last modified" xml:space="preserve">0</value>
+    <value id="update expires" xml:space="preserve">0</value>
+  </section>
+</preferences>

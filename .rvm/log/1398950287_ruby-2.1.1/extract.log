@@ -1,0 +1,55 @@
+[2014-05-01 16:19:35] __rvm_package_extract
+__rvm_package_extract () 
+{ 
+    rvm_debug __rvm_package_extract:$#: "$@";
+    typeset __tempdir __path __file __return;
+    __return=0;
+    __tempdir="$( TMPDIR="${rvm_tmp_path}" mktemp -d -t rvm-tmp.XXXXXXXXX )";
+    __rvm_package_extract_run "$1" "$__tempdir" || __return=$?;
+    if (( __return == 0 )); then
+        for __path in "$__tempdir"/*;
+        do
+            __file="${__path##*/}";
+            if [[ -n "${__file}" && -e "$2/${__file}" ]]; then
+                \rm -rf "$2/${__file}" || __return=$?;
+            fi;
+            \mv -f "${__path}" "$2/" || __return=$?;
+        done;
+    fi;
+    if [[ -n "$__tempdir" ]]; then
+        \rm -rf "$__tempdir";
+    fi;
+    return $__return
+}
+current path: /home/sparks/.rvm/src
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin
+command(3): __rvm_package_extract /home/sparks/.rvm/archives/ruby-2.1.1.tar.bz2 /home/sparks/.rvm/tmp/rvm_src_10738
+++ /scripts/functions/utility_package : __rvm_package_extract()  62 > rvm_debug __rvm_package_extract:2: /home/sparks/.rvm/archives/ruby-2.1.1.tar.bz2 /home/sparks/.rvm/tmp/rvm_src_10738
+++ /scripts/functions/logging : rvm_debug()  144 > ((  0  ))
+++ /scripts/functions/logging : rvm_debug()  144 > return 0
+++ /scripts/functions/utility_package : __rvm_package_extract()  63 > typeset __tempdir __path __file __return
+++ /scripts/functions/utility_package : __rvm_package_extract()  64 > __return=0
++++ /scripts/functions/utility_package : __rvm_package_extract()  65 > TMPDIR=/home/sparks/.rvm/tmp
++++ /scripts/functions/utility_package : __rvm_package_extract()  65 > mktemp -d -t rvm-tmp.XXXXXXXXX
+++ /scripts/functions/utility_package : __rvm_package_extract()  65 > __tempdir=/home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A
+++ /scripts/functions/utility_package : __rvm_package_extract()  66 > __rvm_package_extract_run /home/sparks/.rvm/archives/ruby-2.1.1.tar.bz2 /home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  34 > [[ -d /home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A ]]
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  35 > case "$1" in
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  40 > [[ -n '' ]]
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  42 > __rvm_tar xjf /home/sparks/.rvm/archives/ruby-2.1.1.tar.bz2 -C /home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A --no-same-owner
+++ /scripts/functions/support : __rvm_tar()  251 > tar xjf /home/sparks/.rvm/archives/ruby-2.1.1.tar.bz2 -C /home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A --no-same-owner
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  55 > __rvm_fix_group_permissions /home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A/ruby-2.1.1
+++ /scripts/functions/utility_package : __rvm_fix_group_permissions()  6 > umask -S
+++ /scripts/functions/utility_package : __rvm_fix_group_permissions()  6 > __rvm_grep g=rw
+++ /scripts/functions/support : __rvm_grep()  233 > GREP_OPTIONS=
+++ /scripts/functions/support : __rvm_grep()  233 > grep g=rw
+++ /scripts/functions/utility_package : __rvm_fix_group_permissions()  8 > chmod -R g+rwX /home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A/ruby-2.1.1
+++ /scripts/functions/utility_package : __rvm_package_extract()  68 > ((  __return == 0  ))
+++ /scripts/functions/utility_package : __rvm_package_extract()  70 > for __path in '"$__tempdir"/*'
+++ /scripts/functions/utility_package : __rvm_package_extract()  72 > __file=ruby-2.1.1
+++ /scripts/functions/utility_package : __rvm_package_extract()  74 > [[ -n ruby-2.1.1 ]]
+++ /scripts/functions/utility_package : __rvm_package_extract()  74 > [[ -e /home/sparks/.rvm/tmp/rvm_src_10738/ruby-2.1.1 ]]
+++ /scripts/functions/utility_package : __rvm_package_extract()  78 > mv -f /home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A/ruby-2.1.1 /home/sparks/.rvm/tmp/rvm_src_10738/
+++ /scripts/functions/utility_package : __rvm_package_extract()  81 > [[ -n /home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A ]]
+++ /scripts/functions/utility_package : __rvm_package_extract()  82 > rm -rf /home/sparks/.rvm/tmp/rvm-tmp.fbWhksm0A
+++ /scripts/functions/utility_package : __rvm_package_extract()  84 > return 0

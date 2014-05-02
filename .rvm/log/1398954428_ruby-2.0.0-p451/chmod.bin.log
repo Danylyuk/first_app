@@ -1,0 +1,29 @@
+[2014-05-01 17:32:57] __rvm_set_executable
+__rvm_set_executable () 
+{ 
+    for __file in "$@";
+    do
+        [[ -x "${__file}" ]] || chmod +x "${__file}";
+    done
+}
+current path: /home/sparks/.rvm/src/ruby-2.0.0-p451
+GEM_HOME=/home/sparks/.rvm/gems/ruby-2.1.1
+PATH=/home/sparks/.rvm/gems/ruby-2.1.1/bin:/home/sparks/.rvm/gems/ruby-2.1.1@global/bin:/home/sparks/.rvm/rubies/ruby-2.1.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin
+GEM_PATH=/home/sparks/.rvm/gems/ruby-2.1.1:/home/sparks/.rvm/gems/ruby-2.1.1@global
+command(9): __rvm_set_executable /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/erb /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/gem /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/irb /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/rake /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/rdoc /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/ri /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/ruby /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/testrb
+++ for __file in '"$@"'
+++ [[ -x /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/erb ]]
+++ for __file in '"$@"'
+++ [[ -x /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/gem ]]
+++ for __file in '"$@"'
+++ [[ -x /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/irb ]]
+++ for __file in '"$@"'
+++ [[ -x /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/rake ]]
+++ for __file in '"$@"'
+++ [[ -x /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/rdoc ]]
+++ for __file in '"$@"'
+++ [[ -x /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/ri ]]
+++ for __file in '"$@"'
+++ [[ -x /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/ruby ]]
+++ for __file in '"$@"'
+++ [[ -x /home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/testrb ]]

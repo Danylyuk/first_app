@@ -1,0 +1,7 @@
+Сценарий для ibus запущен из run_im.
+Сценарий для auto запущен из run_im.
+Сценарий для default запущен из run_im.
+init: Процесс update-notifier-crash (/var/crash/susres.2014-05-01_21:16:15.672221.crash) main (1208) завершен с кодом 1
+init: Процесс update-notifier-crash (/var/crash/susres.2014-05-01_15:33:17.645959.crash) main (1207) завершен с кодом 1
+init: Процесс update-notifier-crash (/var/crash/susres.2014-05-01_14:24:48.014500.crash) main (1206) завершен с кодом 1
+init: Процесс update-notifier-crash (/var/crash/susres.2014-05-02_10:59:04.681999.crash) main (1209) завершен с кодом 1

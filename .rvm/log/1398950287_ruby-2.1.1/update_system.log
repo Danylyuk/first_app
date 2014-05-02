@@ -1,0 +1,167 @@
+[2014-05-01 16:18:07] requirements_debian_update_system
+requirements_debian_update_system () 
+{ 
+    __rvm_try_sudo apt-get --quiet --yes update || { 
+        typeset __ret=$?;
+        case ${__ret} in 
+            100)
+                rvm_error "There has been error while updating 'apt-get', please give it some time and try again later.
+For 404 errors check your sources configured in:
+    /etc/apt/sources.list
+    /etc/apt/sources.list.d/*.list
+"
+            ;;
+        esac;
+        return ${__ret}
+    }
+}
+current path: /home/sparks/.rvm/src/rvm
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin
+command(2): requirements_debian_update_system ruby-2.1.1
+++ /scripts/functions/requirements/ubuntu : requirements_debian_update_system()  41 > __rvm_try_sudo apt-get --quiet --yes update
+++ /scripts/functions/utility : __rvm_try_sudo()  351 > typeset -a command_to_run
+++ /scripts/functions/utility : __rvm_try_sudo()  352 > typeset sudo_path sbin_path missing_paths
+++ /scripts/functions/utility : __rvm_try_sudo()  353 > command_to_run=("$@")
+++ /scripts/functions/utility : __rvm_try_sudo()  354 > ((  UID == 0  ))
+++ /scripts/functions/utility : __rvm_try_sudo()  355 > case "$rvm_autolibs_flag_number" in
+++ /scripts/functions/utility : __rvm_try_sudo()  370 > [[ Ubuntu 14.04 == \S\o\l\a\r\i\s\ \1\0 ]]
+++ /scripts/functions/utility : __rvm_try_sudo()  375 > sudo_path=
+++ /scripts/functions/utility : __rvm_try_sudo()  378 > __rvm_which sudo
+++ /scripts/functions/utility : __rvm_try_sudo()  380 > missing_paths=
+++ /scripts/functions/utility : __rvm_try_sudo()  381 > for sbin_path in /sbin /usr/sbin /usr/local/sbin
+++ /scripts/functions/utility : __rvm_try_sudo()  383 > [[ -d /sbin ]]
+++ /scripts/functions/utility : __rvm_try_sudo()  383 > [[ ! :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin: =~ :/sbin: ]]
+++ /scripts/functions/utility : __rvm_try_sudo()  381 > for sbin_path in /sbin /usr/sbin /usr/local/sbin
+++ /scripts/functions/utility : __rvm_try_sudo()  383 > [[ -d /usr/sbin ]]
+++ /scripts/functions/utility : __rvm_try_sudo()  383 > [[ ! :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin: =~ :/usr/sbin: ]]
+++ /scripts/functions/utility : __rvm_try_sudo()  381 > for sbin_path in /sbin /usr/sbin /usr/local/sbin
+++ /scripts/functions/utility : __rvm_try_sudo()  383 > [[ -d /usr/local/sbin ]]
+++ /scripts/functions/utility : __rvm_try_sudo()  383 > [[ ! :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin: =~ :/usr/local/sbin: ]]
+++ /scripts/functions/utility : __rvm_try_sudo()  387 > [[ -n '' ]]
+++ /scripts/functions/utility : __rvm_try_sudo()  390 > command_to_run=(${sudo_path}sudo -p "%p password required for '$*': " "${command_to_run[@]}")
+++ /scripts/functions/utility : __rvm_try_sudo()  397 > sudo -p '%p password required for '\''apt-get --quiet --yes update'\'': ' apt-get --quiet --yes update
+Игн http://mirror.mirohost.net trusty InRelease
+Игн http://mirror.mirohost.net trusty-updates InRelease
+Игн http://mirror.mirohost.net trusty-backports InRelease
+Игн http://mirror.mirohost.net trusty-security InRelease
+Игн http://extras.ubuntu.com trusty InRelease
+В кэше http://mirror.mirohost.net trusty Release.gpg
+В кэше http://mirror.mirohost.net trusty-updates Release.gpg
+Получено:1 http://deb.opera.com stable InRelease [1 963 B]
+В кэше http://mirror.mirohost.net trusty-backports Release.gpg
+В кэше http://extras.ubuntu.com trusty Release.gpg
+В кэше http://mirror.mirohost.net trusty-security Release.gpg
+В кэше http://mirror.mirohost.net trusty Release
+В кэше http://extras.ubuntu.com trusty Release
+Получено:2 http://deb.opera.com stable/non-free amd64 Packages [931 B]
+В кэше http://mirror.mirohost.net trusty-updates Release
+В кэше http://mirror.mirohost.net trusty-backports Release
+В кэше http://extras.ubuntu.com trusty/main Sources
+В кэше http://mirror.mirohost.net trusty-security Release
+В кэше http://mirror.mirohost.net trusty/main Sources
+Получено:3 http://deb.opera.com stable/non-free i386 Packages [933 B]
+В кэше http://extras.ubuntu.com trusty/main amd64 Packages
+В кэше http://mirror.mirohost.net trusty/restricted Sources
+В кэше http://mirror.mirohost.net trusty/multiverse Sources
+В кэше http://mirror.mirohost.net trusty/universe Sources
+В кэше http://extras.ubuntu.com trusty/main i386 Packages
+В кэше http://mirror.mirohost.net trusty/main amd64 Packages
+В кэше http://mirror.mirohost.net trusty/restricted amd64 Packages
+В кэше http://mirror.mirohost.net trusty/universe amd64 Packages
+В кэше http://mirror.mirohost.net trusty/multiverse amd64 Packages
+В кэше http://mirror.mirohost.net trusty/main i386 Packages
+В кэше http://mirror.mirohost.net trusty/restricted i386 Packages
+В кэше http://mirror.mirohost.net trusty/universe i386 Packages
+В кэше http://mirror.mirohost.net trusty/multiverse i386 Packages
+В кэше http://mirror.mirohost.net trusty/main Translation-ru
+В кэше http://mirror.mirohost.net trusty/main Translation-en
+В кэше http://mirror.mirohost.net trusty/multiverse Translation-ru
+В кэше http://mirror.mirohost.net trusty/multiverse Translation-en
+В кэше http://mirror.mirohost.net trusty/restricted Translation-ru
+В кэше http://mirror.mirohost.net trusty/restricted Translation-en
+В кэше http://mirror.mirohost.net trusty/universe Translation-ru
+В кэше http://mirror.mirohost.net trusty/universe Translation-en
+В кэше http://mirror.mirohost.net trusty-updates/main Sources
+В кэше http://mirror.mirohost.net trusty-updates/multiverse Sources
+В кэше http://mirror.mirohost.net trusty-updates/universe Sources
+В кэше http://mirror.mirohost.net trusty-updates/restricted Sources
+Игн http://extras.ubuntu.com trusty/main Translation-ru_RU
+В кэше http://mirror.mirohost.net trusty-updates/main amd64 Packages
+В кэше http://mirror.mirohost.net trusty-updates/restricted amd64 Packages
+Игн http://extras.ubuntu.com trusty/main Translation-ru
+В кэше http://mirror.mirohost.net trusty-updates/universe amd64 Packages
+Игн http://deb.opera.com stable/non-free Translation-ru_RU
+В кэше http://mirror.mirohost.net trusty-updates/multiverse amd64 Packages
+Игн http://extras.ubuntu.com trusty/main Translation-en
+В кэше http://mirror.mirohost.net trusty-updates/main i386 Packages
+Игн http://deb.opera.com stable/non-free Translation-ru
+В кэше http://mirror.mirohost.net trusty-updates/restricted i386 Packages
+В кэше http://mirror.mirohost.net trusty-updates/universe i386 Packages
+В кэше http://mirror.mirohost.net trusty-updates/multiverse i386 Packages
+Игн http://deb.opera.com stable/non-free Translation-en
+В кэше http://mirror.mirohost.net trusty-updates/main Translation-en
+В кэше http://mirror.mirohost.net trusty-updates/multiverse Translation-en
+В кэше http://mirror.mirohost.net trusty-updates/restricted Translation-en
+В кэше http://mirror.mirohost.net trusty-updates/universe Translation-en
+В кэше http://mirror.mirohost.net trusty-backports/main Sources
+В кэше http://mirror.mirohost.net trusty-backports/restricted Sources
+В кэше http://mirror.mirohost.net trusty-backports/universe Sources
+В кэше http://mirror.mirohost.net trusty-backports/multiverse Sources
+В кэше http://mirror.mirohost.net trusty-backports/main amd64 Packages
+В кэше http://mirror.mirohost.net trusty-backports/restricted amd64 Packages
+В кэше http://mirror.mirohost.net trusty-backports/universe amd64 Packages
+В кэше http://mirror.mirohost.net trusty-backports/multiverse amd64 Packages
+В кэше http://mirror.mirohost.net trusty-backports/main i386 Packages
+В кэше http://mirror.mirohost.net trusty-backports/restricted i386 Packages
+В кэше http://mirror.mirohost.net trusty-backports/universe i386 Packages
+В кэше http://mirror.mirohost.net trusty-backports/multiverse i386 Packages
+В кэше http://mirror.mirohost.net trusty-backports/main Translation-en
+В кэше http://mirror.mirohost.net trusty-backports/multiverse Translation-en
+В кэше http://mirror.mirohost.net trusty-backports/restricted Translation-en
+В кэше http://mirror.mirohost.net trusty-backports/universe Translation-en
+В кэше http://mirror.mirohost.net trusty-security/main Sources
+В кэше http://mirror.mirohost.net trusty-security/multiverse Sources
+В кэше http://mirror.mirohost.net trusty-security/universe Sources
+В кэше http://mirror.mirohost.net trusty-security/restricted Sources
+В кэше http://mirror.mirohost.net trusty-security/main amd64 Packages
+В кэше http://mirror.mirohost.net trusty-security/restricted amd64 Packages
+В кэше http://mirror.mirohost.net trusty-security/universe amd64 Packages
+В кэше http://mirror.mirohost.net trusty-security/multiverse amd64 Packages
+В кэше http://mirror.mirohost.net trusty-security/main i386 Packages
+В кэше http://mirror.mirohost.net trusty-security/restricted i386 Packages
+В кэше http://mirror.mirohost.net trusty-security/universe i386 Packages
+В кэше http://mirror.mirohost.net trusty-security/multiverse i386 Packages
+В кэше http://mirror.mirohost.net trusty-security/main Translation-en
+В кэше http://mirror.mirohost.net trusty-security/multiverse Translation-en
+В кэше http://mirror.mirohost.net trusty-security/restricted Translation-en
+В кэше http://mirror.mirohost.net trusty-security/universe Translation-en
+Игн http://mirror.mirohost.net trusty/main Translation-ru_RU
+Игн http://mirror.mirohost.net trusty/multiverse Translation-ru_RU
+Игн http://mirror.mirohost.net trusty/restricted Translation-ru_RU
+Игн http://mirror.mirohost.net trusty/universe Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-updates/main Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-updates/main Translation-ru
+Игн http://mirror.mirohost.net trusty-updates/multiverse Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-updates/multiverse Translation-ru
+Игн http://mirror.mirohost.net trusty-updates/restricted Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-updates/restricted Translation-ru
+Игн http://mirror.mirohost.net trusty-updates/universe Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-updates/universe Translation-ru
+Игн http://mirror.mirohost.net trusty-backports/main Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-backports/main Translation-ru
+Игн http://mirror.mirohost.net trusty-backports/multiverse Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-backports/multiverse Translation-ru
+Игн http://mirror.mirohost.net trusty-backports/restricted Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-backports/restricted Translation-ru
+Игн http://mirror.mirohost.net trusty-backports/universe Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-backports/universe Translation-ru
+Игн http://mirror.mirohost.net trusty-security/main Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-security/main Translation-ru
+Игн http://mirror.mirohost.net trusty-security/multiverse Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-security/multiverse Translation-ru
+Игн http://mirror.mirohost.net trusty-security/restricted Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-security/restricted Translation-ru
+Игн http://mirror.mirohost.net trusty-security/universe Translation-ru_RU
+Игн http://mirror.mirohost.net trusty-security/universe Translation-ru
+Получено 3 827 Б за 9с (386 Б/c)
+Чтение списков пакетов…

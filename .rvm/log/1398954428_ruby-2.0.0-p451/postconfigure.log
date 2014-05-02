@@ -1,0 +1,18 @@
+[2014-05-01 17:28:03] __rvm_post_configure_ruby
+__rvm_post_configure_ruby () 
+{ 
+    typeset option;
+    if (( ${rvm_static_flag:-0} == 1 )); then
+        for option in 'option nodynamic' openssl psych zlib readline;
+        do
+            __rvm_update_ext_setup ${option};
+        done;
+    fi
+}
+current path: /home/sparks/.rvm/src/ruby-2.0.0-p451
+GEM_HOME=/home/sparks/.rvm/gems/ruby-2.1.1
+PATH=/home/sparks/.rvm/gems/ruby-2.1.1/bin:/home/sparks/.rvm/gems/ruby-2.1.1@global/bin:/home/sparks/.rvm/rubies/ruby-2.1.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin
+GEM_PATH=/home/sparks/.rvm/gems/ruby-2.1.1:/home/sparks/.rvm/gems/ruby-2.1.1@global
+command(1): __rvm_post_configure_ruby
+++ typeset option
+++ ((  0 == 1  ))

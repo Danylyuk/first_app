@@ -1,0 +1,13 @@
+/home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin/ruby extconf.rb
+rake 0.9.6
+rdoc 4.0.0
+test-unit 2.0.0.0
+
+make "DESTDIR=" clean
+make: *** Нет правила для сборки цели `clean'.  Останов.
+
+make "DESTDIR="
+make: Цель `all' не требует выполнения команд.
+
+make "DESTDIR=" install
+make: Цель `install' не требует выполнения команд.

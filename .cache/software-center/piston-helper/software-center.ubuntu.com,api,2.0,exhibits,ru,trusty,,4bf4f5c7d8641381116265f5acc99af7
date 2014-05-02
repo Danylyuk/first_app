@@ -1,0 +1,12 @@
+status: 200
+content-location: https://software-center.ubuntu.com/api/2.0/exhibits/ru/trusty/
+expires: Wed, 30 Apr 2014 13:02:56 GMT
+vary: Authorization
+server: Apache/2.2.22 (Ubuntu)
+last-modified: Wed, 30 Apr 2014 12:52:56 GMT
+etag: "d751713988987e9331980363e24189ce"
+cache-control: max-age=600
+date: Thu, 01 May 2014 11:49:33 GMT
+content-type: application/json; charset=utf-8
+
+[]

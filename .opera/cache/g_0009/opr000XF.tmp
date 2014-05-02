@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+
+  <title>Git - Downloads</title>
+
+  <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon'>
+  <link rel="alternate" href="/blog.rss" type="application/rss+xml" title="Git - Blog">
+
+  <link href="/assets/git-scm-c6d584847a7dd6bb94d6fe55fccaa7ac.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/assets/modernizr-6caa5d3c04a79bb71ff5bc169599c7bb.js" type="text/javascript"></script>
+<script src="/assets/modernizr-tests-7d276fc9b3f84590beb0bba47cdd823a.js" type="text/javascript"></script>
+  <!--[if (gte IE 6)&(lte IE 8)]>
+  <script src="/javascripts/selectivizr-min.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script src="http://use.typekit.com/jsq2fql.js" type="text/javascript"></script>
+  <script>
+    //<![CDATA[
+      try{Typekit.load();}catch(e){}
+    //]]>
+  </script>
+
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+
+<body id="downloads">
+
+  <div class="inner">
+    <header>
+  <a href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" /></a>
+  <span id="tagline">
+    <em>--</em>local-branching-on-the-cheap
+  </span>
+
+  <form id="search" action="/search/results">
+    <input id="search-text" name="search" placeholder="Search entire site..." autocomplete="off" type="text" />
+  </form>
+  <div id="search-results"></div>
+</header>
+  </div> <!-- .inner -->
+
+    <div class="inner">
+      <div id="content-wrapper">
+        <aside class="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/doc">Documentation</a>
+        <ul class="">
+          <li>
+            <a href="/docs">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+      <li>
+        <a href="/downloads" class="active">Downloads</a>
+        <ul class="expanded">
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+      <hr class="sidebar">
+      <div class="callout">
+  <p>The entire <strong><a href="/book">Pro Git book</a></strong> written
+  by Scott Chacon is available to <a href="/book">read online for free</a>.
+  Dead tree versions are available on <a href="http://www.amazon.com/gp/product/1430218339?ie=UTF8&camp=1789&creative=9325&creativeASIN=1430218339&linkCode=as2&tag=git-sfconservancy-20">Amazon.com</a>. 
+  </p>
+</div>
+
+
+  </nav>
+</aside>
+        <div id="content">
+          <div id='main'>
+<div class='two-column'>
+<div class='column-left'>
+<h1>Downloads</h1>
+<div class='callout'>
+<table class='binaries'>
+<tr>
+<td><a href="/download/mac" class="icon mac">Mac OS X</a></td>
+<td><a href="/download/win" class="icon windows">Windows</a></td>
+</tr>
+<tr>
+<td><a href="/download/linux" class="icon linux">Linux</a></td>
+<td><a href="/download/linux" class="icon solaris">Solaris</a></td>
+</tr>
+</table>
+</div>
+<p>
+<a href="https://www.kernel.org/pub/software/scm/git/">Older releases</a> are available and the <a href="https://github.com/git/git">Git source repository</a> is on GitHub.
+</p>
+</div>
+<div class='column-right'>
+<div class="monitor">
+
+  <h4> Latest source Release </h4>
+
+  <span class="version">
+    1.9.2
+  </span>
+
+  <a href="https://raw.github.com/git/git/master/Documentation/RelNotes/1.9.2.txt">Release Notes</a>
+  <span class="release-date">
+    (2014-04-09)
+  </span>
+
+  <a href="https://www.kernel.org/pub/software/scm/git/" class="button" id="download-link">Download Source Code</a>
+</div>
+
+</div>
+</div>
+<div class='callout' id='more-downloads'>
+<div class='two-column'>
+<div class='column-left'>
+<h2>GUI Clients</h2>
+<p>
+Git comes with built-in GUI tools (<strong>git-gui</strong>, <strong>gitk</strong>), but there are several third-party tools for users looking for a platform-specific experience.
+</p>
+<p>
+<strong><a href="/downloads/guis">View GUI Clients →</a></strong>
+</p>
+</div>
+<div class='column-right'>
+<h2>Logos</h2>
+<p>Various Git logos in PNG (bitmap) and EPS (vector) formats are available for use in online and print projects.</p>
+<p>
+<strong><a href="/downloads/logos">View Logos →</a></strong>
+</p>
+</div>
+</div>
+</div>
+<h2>Git via Git</h2>
+<p>
+If you already have Git installed, you can get the latest development version via Git itself:
+</p>
+<code>git clone https://github.com/git/git</code>
+<p>
+You can also always browse the current contents of the git repository using the <a href="https://github.com/git/git">web interface</a>.
+</p>
+</div>
+
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    This <a href="https://github.com/git/git-scm.com/blob/master/README.md#license">open sourced</a> site is <a href="https://github.com/git/git-scm.com">hosted on GitHub.</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+
+<script src="/assets/jquery-1.7.1.min-02a44017c3f142057ff47b0fc8b6864f.js" type="text/javascript"></script>
+<script src="/assets/jquery-ui-1.8.18.custom.min-4aa46037fd437d36e966a36dab36de44.js" type="text/javascript"></script>
+<script src="/assets/jquery.defaultvalue-b13dd36717cbc6186020f0b40ecacbfe.js" type="text/javascript"></script>
+<script src="/assets/session.min-549579c957b186d468345c54fb3be112.js" type="text/javascript"></script>
+<script src="/assets/site-3dd075acbe877e96db5a97894c829a9a.js" type="text/javascript"></script>
+
+    </div>
+
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "js-agent.newrelic.com/nr-100.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-6.newrelic.com","20c4a8c482",454369,"dl5cQkcLXF9XRBoBW0JfXllUAEMcW1hRAEw=",0,126,new Date().getTime(),"","","","",""]);</script></body>
+</html>

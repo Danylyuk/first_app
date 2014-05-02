@@ -1,0 +1,291 @@
+Zeb	{H(function(ar_ph){
+/* Adriver Flash-AjaxJS code. Last edited A.Fedotov 17.02.2014 */
+
+var ar_img_name		= 'hplaserjet-300x500-1.jpg'||'',
+	ar_swf_name		= ''||'',
+	ar_flashver		= parseInt('8')||0,
+	ar_width		= '300',
+	ar_height		= '500',
+	ar_gif_href		= '',
+	ar_wmode		= 'opaque',
+	ar_flash_pixel	= '',
+	ar_gif_pixel	= '',
+	ar_quality		= 'best';
+
+
+var a = adriver(ar_ph);
+
+new adriver.Plugin.require('pixel.adriver', 'checkFlash.adriver', 'makeFlash.adriver', 'functions.adriver').onLoadComplete(function(){
+	if (typeof(adriver.flashBlock) == 'undefined'){
+		adriver.flashBlock = {
+			id: 'arFB' + a.reply.rnd,
+			delay: 500,
+			ready: new adriver.queue(),
+			onReady: function(f){this.ready.push(f)},
+			createMovie: function(){
+				var fl = !!window.ActiveXObject
+					? '<object><param value="about:blank" name="movie"><param value="high" name="quality"><param value="#ffffff" name="bgcolor"><param value="true" name="play"><param value="always" name="allowScriptAccess"></object>'
+					: '<embed src="about:blank" type="application/x-shockwave-flash" quality="high" bgcolor="#ffffff" swliveconnect="true" allowscriptaccess="always">';
+				var c = a.addDiv(document.body, {width: '1px', height: '1px', overflow: 'hidden'}, fl);
+				c.id = this.id;
+			},
+			tests: [
+				function(){
+					var r = '', quant = '', q = "(?:\"|\')", e = "\\s?=\\s?";
+					if (!!window.ActiveXObject){
+						var movie = "(?:\\s(?:value" + e + q + "about:\\s?blank" + q + "|name" + e + q + "movie" + q + "))",
+							quality = "(?:\\s(?:value" + e + q + "high" + q + "|name" + e + q + "quality" + q + "))",
+							bgcolor = "(?:\\s(?:value" + e + q + "#ffffff" + q + "|name" + e + q + "bgcolor" + q + "))",
+							play = "(?:\\s(?:value" + e + q + "true" + q + "|name" + e + q + "play" + q + "))",
+							allowScriptAccess = "(?:\\s(?:value" + e + q + "always" + q + "|name" + e + q + "allowScriptAccess" + q + "))";
+							quant = "(\\s?<param(?:" + movie + "{2}" + "|" + quality + "{2}" + "|" + bgcolor + "{2}" + "|" + play + "{2}" + "|" + allowScriptAccess + "{2}" + ")\\s?(?:>|/>|></param>))";
+						r = new RegExp("^<object>" + quant + "(?!\\1)" + quant + "(?!\\1\\2)" + quant + "(?!\\1\\2\\3)" + quant + "(?!\\1\\2\\3\\4)" + quant + "</object>$", "i");
+					}
+					else{
+						quant = "(\\s(?:src" + e + q + "about:\\s?blank" + q + "|type" + e + q + "application\/x-shockwave-flash" + q + "|quality" + e + q + "high" + q + "|bgcolor" + e + q + "#ffffff" + q + "|swliveconnect" + e + q + "true" + q + "|allowscriptaccess" + e + q + "always" + q + "))";
+						r = new RegExp("^<embed" + quant + "(?!\\1)" + quant + "(?!\\1\\2)" + quant + "(?!\\1\\2\\3)" + quant + "(?!\\1\\2\\3\\4)" + quant + "(?!\\1\\2\\3\\4\\5)" + quant + "\\s?(?:>|/>|></embed>)$", "i");
+					}
+					return !r.test(document.getElementById(adriver.flashBlock.id).innerHTML);
+				},
+				function(){
+					var swfElement = document.getElementById(adriver.flashBlock.id).firstChild;
+					try{getSVGDocument = swfElement && swfElement['getSVGDocument'] && swfElement['getSVGDocument']()}
+					catch(E){getSVGDocument = false}
+					return getSVGDocument;
+				}
+			],
+			getFB: function(){
+				setTimeout(function(){
+					for (var i = 0, tests = adriver.flashBlock.tests, j = tests.length; i < j; i++){
+						if (a.hasFlash(1) && tests[i]()){
+							adriver.flashBlock.ready.execute();
+							break;
+						}
+					}
+					adriver.flashBlock.clear();
+				}, adriver.flashBlock.delay);
+			},
+			clear: function(){
+				a.removeEvent(window, 'load', this.getFB);
+				var e = document.getElementById(adriver.flashBlock.id);
+				e.parentNode.removeChild(e);
+			}
+		};
+		adriver.flashBlock.createMovie();
+		a.addEvent(window, 'load', adriver.flashBlock.getFB);
+	}
+
+	function makeCap(){
+		a.p.style.textAlign = 'center';
+		a.p.style.margin = '0 auto';
+
+		a.p.innerHTML = '<a href="' + a.reply.cgihref + '&rleurl=' + escape(a.checkRnd(ar_gif_href))
+			+ '" onclick="adriver(\'' + a.reply.ph + '\').sendPixel(\''+unescape(a.reply.pass||'')+'\');" target="' + (a.reply.target || '_blank') + '"><img src="'
+			+ a.checkHttp(a.checkRnd(ar_img_name)) + '" alt="' + (a.reply.alt||'') + '" border=0></a>';
+	}
+
+	a.onDomReady(function(){
+		a.p.style.width = a.normalize(ar_width);
+		a.p.style.height = a.normalize(ar_height);
+
+		var pix;
+		if (ar_swf_name && a.hasFlash(ar_flashver)) {
+			pix = ar_flash_pixel;
+
+			var params = {};
+			if (ar_quality) params.quality = ar_quality;
+			if (ar_wmode) params.wmode = ar_wmode;
+
+			a.p.innerHTML = a.makeFlash(ar_swf_name, params);
+
+			if (ar_img_name) adriver.flashBlock.onReady(makeCap);
+		} else if (ar_img_name) {
+			pix = ar_gif_pixel;
+			makeCap();
+		}
+
+		a.sendPixel(pix);
+		a.loadComplete();
+	});
+});})("adriver_banner_1863387959");
+(function(ar_ph){
+/* Adriver Flash-AjaxJS code. Last edited A.Fedotov 17.02.2014 */
+
+var ar_img_name		= '135x35-hplaserjet-1.png'||'',
+	ar_swf_name		= ''||'',
+	ar_flashver		= parseInt('8')||0,
+	ar_width		= '135',
+	ar_height		= '35',
+	ar_gif_href		= '',
+	ar_wmode		= 'opaque',
+	ar_flash_pixel	= '',
+	ar_gif_pixel	= '',
+	ar_quality		= 'best';
+
+
+var a = adriver(ar_ph);
+
+new adriver.Plugin.require('pixel.adriver', 'checkFlash.adriver', 'makeFlash.adriver', 'functions.adriver').onLoadComplete(function(){
+	if (typeof(adriver.flashBlock) == 'undefined'){
+		adriver.flashBlock = {
+			id: 'arFB' + a.reply.rnd,
+			delay: 500,
+			ready: new adriver.queue(),
+			onReady: function(f){this.ready.push(f)},
+			createMovie: function(){
+				var fl = !!window.ActiveXObject
+					? '<object><param value="about:blank" name="movie"><param value="high" name="quality"><param value="#ffffff" name="bgcolor"><param value="true" name="play"><param value="always" name="allowScriptAccess"></object>'
+					: '<embed src="about:blank" type="application/x-shockwave-flash" quality="high" bgcolor="#ffffff" swliveconnect="true" allowscriptaccess="always">';
+				var c = a.addDiv(document.body, {width: '1px', height: '1px', overflow: 'hidden'}, fl);
+				c.id = this.id;
+			},
+			tests: [
+				function(){
+					var r = '', quant = '', q = "(?:\"|\')", e = "\\s?=\\s?";
+					if (!!window.ActiveXObject){
+						var movie = "(?:\\s(?:value" + e + q + "about:\\s?blank" + q + "|name" + e + q + "movie" + q + "))",
+							quality = "(?:\\s(?:value" + e + q + "high" + q + "|name" + e + q + "quality" + q + "))",
+							bgcolor = "(?:\\s(?:value" + e + q + "#ffffff" + q + "|name" + e + q + "bgcolor" + q + "))",
+							play = "(?:\\s(?:value" + e + q + "true" + q + "|name" + e + q + "play" + q + "))",
+							allowScriptAccess = "(?:\\s(?:value" + e + q + "always" + q + "|name" + e + q + "allowScriptAccess" + q + "))";
+							quant = "(\\s?<param(?:" + movie + "{2}" + "|" + quality + "{2}" + "|" + bgcolor + "{2}" + "|" + play + "{2}" + "|" + allowScriptAccess + "{2}" + ")\\s?(?:>|/>|></param>))";
+						r = new RegExp("^<object>" + quant + "(?!\\1)" + quant + "(?!\\1\\2)" + quant + "(?!\\1\\2\\3)" + quant + "(?!\\1\\2\\3\\4)" + quant + "</object>$", "i");
+					}
+					else{
+						quant = "(\\s(?:src" + e + q + "about:\\s?blank" + q + "|type" + e + q + "application\/x-shockwave-flash" + q + "|quality" + e + q + "high" + q + "|bgcolor" + e + q + "#ffffff" + q + "|swliveconnect" + e + q + "true" + q + "|allowscriptaccess" + e + q + "always" + q + "))";
+						r = new RegExp("^<embed" + quant + "(?!\\1)" + quant + "(?!\\1\\2)" + quant + "(?!\\1\\2\\3)" + quant + "(?!\\1\\2\\3\\4)" + quant + "(?!\\1\\2\\3\\4\\5)" + quant + "\\s?(?:>|/>|></embed>)$", "i");
+					}
+					return !r.test(document.getElementById(adriver.flashBlock.id).innerHTML);
+				},
+				function(){
+					var swfElement = document.getElementById(adriver.flashBlock.id).firstChild;
+					try{getSVGDocument = swfElement && swfElement['getSVGDocument'] && swfElement['getSVGDocument']()}
+					catch(E){getSVGDocument = false}
+					return getSVGDocument;
+				}
+			],
+			getFB: function(){
+				setTimeout(function(){
+					for (var i = 0, tests = adriver.flashBlock.tests, j = tests.length; i < j; i++){
+						if (a.hasFlash(1) && tests[i]()){
+							adriver.flashBlock.ready.execute();
+							break;
+						}
+					}
+					adriver.flashBlock.clear();
+				}, adriver.flashBlock.delay);
+			},
+			clear: function(){
+				a.removeEvent(window, 'load', this.getFB);
+				var e = document.getElementById(adriver.flashBlock.id);
+				e.parentNode.removeChild(e);
+			}
+		};
+		adriver.flashBlock.createMovie();
+		a.addEvent(window, 'load', adriver.flashBlock.getFB);
+	}
+
+	function makeCap(){
+		a.p.style.textAlign = 'center';
+		a.p.style.margin = '0 auto';
+
+		a.p.innerHTML = '<a href="' + a.reply.cgihref + '&rleurl=' + escape(a.checkRnd(ar_gif_href))
+			+ '" onclick="adriver(\'' + a.reply.ph + '\').sendPixel(\''+unescape(a.reply.pass||'')+'\');" target="' + (a.reply.target || '_blank') + '"><img src="'
+			+ a.checkHttp(a.checkRnd(ar_img_name)) + '" alt="' + (a.reply.alt||'') + '" border=0></a>';
+	}
+
+	a.onDomReady(function(){
+		a.p.style.width = a.normalize(ar_width);
+		a.p.style.height = a.normalize(ar_height);
+
+		var pix;
+		if (ar_swf_name && a.hasFlash(ar_flashver)) {
+			pix = ar_flash_pixel;
+
+			var params = {};
+			if (ar_quality) params.quality = ar_quality;
+			if (ar_wmode) params.wmode = ar_wmode;
+
+			a.p.innerHTML = a.makeFlash(ar_swf_name, params);
+
+			if (ar_img_name) adriver.flashBlock.onReady(makeCap);
+		} else if (ar_img_name) {
+			pix = ar_gif_pixel;
+			makeCap();
+		}
+
+		a.sendPixel(pix);
+		a.loadComplete();
+	});
+});})("adriver_banner_318167982");
+/* adriver make flash plugin */
+(function (pluginName){
+	new adriver.Plugin(pluginName);
+
+	function getRhost(){var rh=adriver.redirectHost.match(/\/\/(.+\.adriver\.ru)/i);return rh?rh[1]:'ad.adriver.ru'}
+
+	new adriver.Plugin.require("functions.adriver").onLoadComplete(function(){
+		adriver.prototype.makeFlash = function(src, params, width, height){
+			src = this.checkHttp(this.checkRnd(src));
+			params = params||{};
+
+			params.flashvars = adriver.toQueryString(adriver.extend({}, params.flashvars, typeof(this.reply.xpid) != 'undefined' ? {ar_xpid: this.reply.xpid} : {}, {
+				link1: this.httplize(this.reply.cgihref + '&rleurl='),
+				target: this.reply.target,
+				ar_ph: this.reply.ph,
+				ar_ad: this.reply.adid,
+				ar_bt: this.reply.bt,
+				ar_bid: this.reply.bid,
+				ar_sid: this.reply.sid,
+				ar_rnd: this.reply.rnd,
+				ar_nid: this.reply.netid,
+				ar_pass: unescape(this.reply.pass),
+				ar_geoid: this.reply.geoid,
+				ar_ntype: this.reply.ntype,
+				ar_sliceid: this.reply.sliceid,
+				ar_comppath: this.httplize(this.reply.comppath),
+				ar_rhost: escape(getRhost())
+			}));
+
+			var axo = !!window.ActiveXObject,
+				def_params = {quality: "best", wmode: "opaque", play: true, loop: true, menu: true, allowScriptAccess: "always"},
+				params_done = adriver.extend({}, def_params, params, axo ? {movie: src} : {src: src}),
+				fullsize = ' width="' + (width||'100%') + '" height="' + (height||'100%') + '" ',
+				paramString = '';
+
+			for (var i in params_done){
+				if (!params_done.constructor.prototype.hasOwnProperty(i)) {
+					paramString += axo ? '<param name="' + i + '" value="' + params_done[i] + '">' : i + '="' + params_done[i] + '" ';
+				}
+			}
+
+			return axo ? '<object id="_' + this.reply.bid + '_' + Math.round(Math.random()*999999) + '" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" ' + fullsize + '>' + paramString + '<\/object>' : '<embed type="application/x-shockwave-flash" ' + fullsize + ' ' + paramString + '><\/embed>';
+		}
+		adriver.prototype.makeCenteredFlash = function(src, params, width, height){
+			return '<table border="0" cellpadding="0" cellspacing="0" style="width:100%;line-height:100%;margin:0;padding:0;" id="ar_'
+				+ this.reply.bid + '"><tr><td style="width:50%;"></td><td>'
+				+ this.makeFlash(src, params, width, height)
+				+ '</td><td style="width:50%;"></td></tr></table>';
+		}
+
+		adriver.Plugin(pluginName).loadComplete();
+	});
+})("makeFlash.adriver");‰PNG
+
+   IHDR   ‡   #  F¾3   tEXtSoftware Adobe ImageReadyqÉe<  $iTXtXML:com.adobe.xmp     <?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?> <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.3-c011 66.145661, 2012/02/06-14:56:27        "> <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#" xmp:CreatorTool="Adobe Photoshop CS6 (Macintosh)" xmpMM:InstanceID="xmp.iid:8F9A6417C20A11E3AD22993E1AF6B5D8" xmpMM:DocumentID="xmp.did:8F9A6418C20A11E3AD22993E1AF6B5D8"> <xmpMM:DerivedFrom stRef:instanceID="xmp.iid:8F9A6415C20A11E3AD22993E1AF6B5D8" stRef:documentID="xmp.did:8F9A6416C20A11E3AD22993E1AF6B5D8"/> </rdf:Description> </rdf:RDF> </x:xmpmeta> <?xpacket end="r"?>h–Šˆ  ºIDATxÚbüÿÿ?‰€	ˆ§_"ÿÁƒ@2$$äõë×@ÆÕ«W!"(`åÃ «¦]ûW®\Y¼x1D
+îˆø`ØtğDãÔ«E@288"}âÄ‰ÿ€b	Üeeeãë×¯ãá"p @Œd†$Ğ$ a 	 @•œv­eÕ.x0”——Ãı ”œ:ujZZº¾|ùºãèé›öAô …Ø={°‡ÁéKWáa`kkˆfL @ä„ št\gîe™~’†ƒPEEeÚ´iÀ`c„ „'2vFÆôôtxc·‡u:(	|úüè-±igå¦DN|$±ˆÄD—oÜFNxX0ŠƒÇ2L­ :Æ¬™¶iß…k7!‘/>ıš
+äX…g'äW€3şAÙiã^h–Å¤D0ã s¤´yõê„g%xä2
++`Ê~*	”³uÿÿLÍÙr/cYïÿÉĞ€è¹xñ¢‹‹‹³³³¶¶60Õööö"@òäÉ“ğO\°Á¼ÒµT€4,ßI|j&0ÀešvuÕ#È™˜'€Î ’À@ƒAhå
+€B±få#ğ¼a0O»
+}ÌäÉ1ÀÈ€¸ÄfÏÃ­QŸzÕ³ÈuœÛÖÖóû÷ï´ €è”=é—;‘ÁşSç¤üŒ3Ò3Ïç/ÚñóçÏ¡çç{!E£™áÂíıç~öcÒWyy÷ âÿşıCÓ¹dÉHµ©p åagg©—öîİ,š jà*áêÑ´¹@@^}ÁÍ$¹êÜ÷_
+Èø+$üı× ø,÷†ìRqª{índ‡æYˆ»9éüùóñC‡I`rollf, `‹®±½½(ƒl«©©	Ï—³fÍ"'jÌ§€düâÅÛ!¹óÑ“gğâæÚí»FÒ¼íT)çƒœt7‘U<QåŒõtPëÌm&¨dÛ Zß¾}ƒ0&¬ÛC°y0 Ó‘G`üXğıu™¹ñÿ‰Çx¦_š#÷(Ø±ñpàc¿Y{
+^€!0±¡¥{HšŞ¸q#rÆ ’ÀFš„G« áRT, R<S3jŞ“½ÿ@ÕtÓ{Yq†ïÉŞ²ÓO?a…«ªa`ĞDÓ¼iÓ&`Å}üøqHõw}vv6¼Y Õ `qiié»wïBÄÑîáá¬†
+¾A‹©ı§ÎÉU{*Ì8]³lÇÿ! pgu!MFax[ŸšÎUÛÅÊ•QĞú#¨X+)6¬ÛT^ˆEf7QtáEà…W^Ô&)D?PEPş¬DÉµ™™–?ĞB¨¥’F+š­çÛC‡ÓÔÊ¶ıçœ½çìü½ïó<ïhê-ö/’•@Aã===å²{Út„äJ–»û·T°/»áŸŒk:ã«,!@ ˜µ§Ì/ä|˜ÈL›$ÉE¥¥b—$¼„F›=Çó×•Äb1Ìø‹&ó’yÕ;“ke‹coL%­3{Z­V §ŸŸ/¼F¤`ƒF°2—Ë%:šÍfŠŠ
+¯×ËyÃ-x£
+†ÑPå˜óÄBT¢üatLTå´Ç}•œï¢¤’ËP£( s(Ke­ÚB:Ç¤èHIôúK<
+(=Ø=ºé5Sªb¸-_«"†q­şJŞX¶¢níDì»kÀßŸ¼˜¶*--åŒkkkÅ·9‰ÀDË¹¶²½½İf³É;‹ó„p¿§üÚõæÀsŒRVÿï±ã<"o[àìM•hfyŸ„z’ÎD>A9*3~¿?)Ù&8èD¼yb"M)Ñü4¸¸ZvéÊØéñ½ŞÌThgÏ+ŞÀ÷ãth~MR9]ÔXáŞlÕ~RÓÃ¯—Ö¯Ws9­?VOÚ É…“¶íØrÏğeêÒå¥+™˜àC/ÂLgî;m‡¯‹+'\¸İ´IóYQc]¿Ç¢áãaŞ{ã£©ÿx§(ÿÁyşs%¹	_?tø\î;.G×5©øŒa¤¼èÀĞÛašVï^)÷,..&9¯¬¬du,Å0ƒ2³°$«GÀ‰\Á…ª¤º’‹+Ş;2Æ«î¶hL†
+j¦Â²¦õÙ‹Le	ª›[b4İ³İ*º…B¡ÆÆF^Ğšš€PÅh4òê;Ì/rö°$¥D¯  Â¹ÃOU¥T—ê®ú&´”(*fD H
+_fÇµ	•’Ø¾]“r·p8,Â@  @t»İX•”8{øQ/É+Ğˆ…éõú´İ®©ò¿eRN¤¯‹–ó†È¾Ûd»İÎ4ï†Óéƒœ./ı6>ŸOîÈ‹'ˆ	—A®6±e¹Ú%ÂqYC“ˆÎİ½s¥8‚üÿàB¤ÑNd@ÿÌ"şR±Bb9#Xâ»\&>æÔ9<ş`oÿÒŒ?hßzcÚª¢ø+'ZVˆ-BÅi2]–9‡eÓHÍŒ3‘eÆÅÈ>¸ 0¢A~€ïƒjbLTdÙìşb,û°kéXØ²9ÙÖéšŠÑÔeme «¿×ƒÇ›××H£œ4ä½ûîŸ÷î¹÷ßùÃŠh]ò—dI+ÿ3Y¦Yj¶_±M˜ŞÖû?«R0…ãBÿK×Ô&9/©Íúh«%×`XšÊ…Ú+‘HdÇ¾n]«Çtlä‹ñGJ¤qRI8<¾ıÚòÄÆ#º{÷„Ì´ß‚{ïv.CãÛ5‚ˆÔ
+ğ*#oÜrø˜ˆu€$BNøKu4ƒKD–ˆB!)ù.
+Ş“9}±üİÖ?ÔÊëûº³m?wLÏòõ™Rìä«+ézÛÑ‹ãIvÕ,ŒÓé¾7/Û;ğáÇ]‡$Ü)//çÏ&vƒYšG‹ÅRZZ*9¸E!‘kuuuMMMğÈC Z¨NtëXÈÁPÑ‰XßÀ˜_•¹°à{ç•¡õûÎébñÁ×?l2ââÓ.ç©;…sìîóÛæbù»Ô.!¾¦3E&¼4 eš‹p8LÓDóX__/¶­®®¦hˆ††ÀsÜbñ666¢¨*qDÚ^ÀæÉ^)PşDm‘P–^r~ƒY©WnX/»TücÕ~í Pï¥«Táù6mşè§_|²Û,‹Ó,§‡[)ºdğY¨œƒ­ü”	3¾PåïQCÎUKÌÈ¢†ÜJ5* -J0¢ff‡¨D¤÷H¤šxôZüÊı333x†¿&¹%Íñ„@È!ûÜf·^…¨ä™¶³(©=p’ã}ÔÉÇG’ûpì0sŒ‰ÀÛIKR3[ğ±¸¤ğc“¥¨qMÁĞœJ †Ş)»†´ÈT7+{NÅ|Ï¿ùP›+xçñ]]O=©°oîw´O™7gú{ŞÙŒÛ› ùøHTÒX3öÊse(ilw4‡ÌK!ïnn'''MB1¥·¢ŒÉ_kÖ/:˜Å®¬¬„îÅ@Û-`«ÕšÈVopíÛ–WhTøÇöî‰šßÈòµWoQ(XÏÀº^@,İ¥M±k•ì²9ló¦Œà¹š
+åúm¸¨khZšUpf,šŸe$³Ïƒƒƒéë¯¼– ¦ÛÊáBãj\|Òåì‰¥‰Ão)¹Œ0/÷Ü·'ÿÆ†µ/¢äç9¨d¹=±cµİzÌ3-ås¿;¿§Øëõ2;XRR¢YËÙårõõõ%’ä@byb	@Úúı~ÍğÔétÆ²²²ôR|”¼ÅìüÓÂ_¾î!ÛpÅí¡’ª8UYÑv:Ù9X{À.Z¦Uòù‡&a!Í0$8Í9ELjªÌ;Ycñô'ƒÁÙÏ¢ı œûÔœ".Ú­ÄnÓD”o¸5:Z _Öó/[ş!46Fmn=›¢æª–óSSS)RÚ¤ª`’®D#N´X.j…ÔƒŸès°¦5A)‰t£ù‹–Î†Ê5‚»×¿{¿/Å–ê\3±"'Gùø£«±üdÕ¬Şø±ncVVVêŠCI¼e­èõzŞ˜wÑï¡¨¾˜àñxà@ 7ìöCEI–„ÇşzëèèÀ¡§ÄÀ,‘kXdQÅ$>8l×µ¸UËŸöJôı¢ö–Ê”İÖÎî9.BÀ4ûXÑ|L‰g6¯}Å¦ÀÄìUğşc·q{\¸>"Ô&ßH|§Q|‹T¶_ø2¸Â'å¬Öİr×n¤BãAïmé/ı„4ú~qd×–gïº94s§²Ï!D¨üÍ—üÓq\»Pô"b    IEND®B`‚

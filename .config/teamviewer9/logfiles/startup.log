@@ -1,0 +1,14 @@
+TeamViewer:        9.0.27891 - DEB
+Profile:           /home/sparks (sparks)
+Desktop:           DS: 'ubuntu' 	XDG: 'Unity'
+XServer TTY:       7
+
+DistArch:          x86_64	( Loader:	[X] ld32	[X] ld64 )
+Distribution:
+      Distributor ID:	Ubuntu
+      Description:	Ubuntu 14.04 LTS
+      Release:	14.04
+      Codename:	trusty
+ok (info)
+
+ok (profile)

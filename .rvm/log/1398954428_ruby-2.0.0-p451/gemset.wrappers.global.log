@@ -1,0 +1,90 @@
+[2014-05-01 17:33:56] run_gem_wrappers_regenerate
+run_gem_wrappers_regenerate () 
+{ 
+    gem_install gem-wrappers && gem wrappers regenerate || return $?
+}
+current path: /home/sparks/.rvm/src/ruby-2.0.0-p451
+GEM_HOME=/home/sparks/.rvm/gems/ruby-2.0.0-p451@global
+PATH=/home/sparks/.rvm/gems/ruby-2.0.0-p451@global/bin:/home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin:/home/sparks/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+GEM_PATH=/home/sparks/.rvm/gems/ruby-2.0.0-p451@global
+command(1): run_gem_wrappers_regenerate
+++ gem_install gem-wrappers
+++ typeset gem_name gem_version version_check
+++ gem_version=
+++ __rvm_parse_gems_args gem-wrappers
+++ typeset gem=gem-wrappers
+++ __rvm_string_match gem-wrappers '*.gem$'
+++ typeset _string
+++ _string=gem-wrappers
+++ shift
+++ ((  1  ))
+++ case "${_string}" in
+++ shift
+++ ((  0  ))
+++ return 1
+++ gem_name=gem-wrappers
+++ case "$gem" in
+++ [[ -z '' ]]
+++ __rvm_db gem_gem-wrappers_version gem_version
+++ typeset value key variable
+++ key=gem_gem-wrappers_version
+++ key=gem_gem-wrappers_version
+++ variable=gem_version
+++ [[ -f /home/sparks/.rvm/user/db ]]
++++ __rvm_db_ /home/sparks/.rvm/user/db gem_gem-wrappers_version
++++ typeset __db __key __value
++++ __db=/home/sparks/.rvm/user/db
++++ __key=gem_gem-wrappers_version
++++ shift 2
++++ __value=
++++ case "${__value}" in
++++ __rvm_db_get /home/sparks/.rvm/user/db gem_gem-wrappers_version
++++ [[ -f /home/sparks/.rvm/user/db ]]
++++ __rvm_grep '^gem_gem-wrappers_version=' /home/sparks/.rvm/user/db
++++ GREP_OPTIONS=
++++ grep '^gem_gem-wrappers_version=' /home/sparks/.rvm/user/db
++++ __rvm_sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
++++ sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
++++ return 1
+++ value=
+++ [[ -z '' ]]
+++ [[ -f /home/sparks/.rvm/config/db ]]
++++ __rvm_db_ /home/sparks/.rvm/config/db gem_gem-wrappers_version
++++ typeset __db __key __value
++++ __db=/home/sparks/.rvm/config/db
++++ __key=gem_gem-wrappers_version
++++ shift 2
++++ __value=
++++ case "${__value}" in
++++ __rvm_db_get /home/sparks/.rvm/config/db gem_gem-wrappers_version
++++ [[ -f /home/sparks/.rvm/config/db ]]
++++ __rvm_grep '^gem_gem-wrappers_version=' /home/sparks/.rvm/config/db
++++ __rvm_sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
++++ sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
++++ GREP_OPTIONS=
++++ grep '^gem_gem-wrappers_version=' /home/sparks/.rvm/config/db
+++ value='>=1.2.4'
+++ [[ -n >=1.2.4 ]]
+++ [[ -n gem_version ]]
+++ eval 'gem_version='\''>=1.2.4'\'''
++++ gem_version='>=1.2.4'
+++ true
+++ ((  0 == 0  ))
+++ is_gem_installed
+++ typeset gem_spec
+++ gem_spec='gem '\''gem-wrappers'\'''
+++ [[ -n >=1.2.4 ]]
+++ gem_spec+=', '\''>=1.2.4'\'''
+++ version_check=1.2.4
+++ ls -ld /home/sparks/.rvm/gems/ruby-2.0.0-p451@global/gems/gem-wrappers-1.2.4
+++ rvm_log 'gem gem-wrappers >=1.2.4 is already installed'
+++ rvm_pretty_print stdout
+++ case "${rvm_pretty_print_flag:=auto}" in
+++ case "${TERM:-dumb}" in
+++ case "$1" in
+++ [[ -t 1 ]]
+++ return 1
+++ printf %b 'gem gem-wrappers >=1.2.4 is already installed\n'
+gem gem-wrappers >=1.2.4 is already installed
+++ return 0
+++ gem wrappers regenerate

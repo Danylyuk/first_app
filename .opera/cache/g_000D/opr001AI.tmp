@@ -1,0 +1,1702 @@
+Z	Û=ë(œ\
+‹ìõ	f<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+    <link type="image/x-icon" rel="icon" href="favicon.ico">
+    <link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="pipe.css">
+    <link rel="stylesheet" href="sh_vim-dark.css">
+    <script type="text/javascript" src="//use.typekit.net/mse5tqx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link rel="alternate"
+          type="application/rss+xml"
+          title="node blog"
+          href="http://feeds.feedburner.com/nodejs/123123123">
+    <title>node.js</title>
+  </head>
+  <body id="front">
+    <div id="nav">
+      <ul>
+        <li class="active"><a href="/"><img src="/images/baby-node.svg" width="12"></a></li>
+        <li><a href="/download">Download</a></li>
+        <li><a href="/api">Docs</a></li>
+        <li><a href="http://blog.nodejs.org">Blog</a></li>
+        <li><a href="/community">Community</a></li>
+        <li><a href="http://npmjs.org">Modules</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="http://jobs.nodejs.org">Jobs</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <a href="http://github.com/joyent/node"><img class="forkme" src="/images/fork-me.png" alt="Fork me on GitHub"></a>
+    </div>
+    <div id="intro">
+        <img id="logo" src="/images/logo.svg" alt="node.js">
+
+        <p>Node.js is a platform built on <a
+        href="http://code.google.com/p/v8/">Chrome's JavaScript runtime</a>
+        for easily building fast, scalable network applications.  Node.js
+        uses an event-driven, non-blocking I/O model that makes it
+        lightweight and efficient, perfect for data-intensive real-time
+        applications that run across distributed devices.</p>
+
+        <p>Current Version: v0.10.26</p>
+
+        <div class=buttons>
+        <a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz" class="button downloadbutton" id="downloadbutton">INSTALL</a>
+
+        <a href="download/" class=button id="all-dl-options">Downloads</a
+        ><a href="api/" class="button" id="docsbutton">API Docs</a>
+        </div>
+    </div>
+
+    <div id="promo">
+      <a href="http://www.joyent.com/noderoad"><img src="images/roadshow-promo.png"></a>
+    </div>
+
+    <div id="content-wrap">
+    <div id="content" class="clearfix">
+            <div id="column1">
+                <h2>An example: Webserver</h2>
+                <p>This simple web server written in Node responds with "Hello World" for every request.</p>
+              <pre>
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');</pre>
+
+              <p>To run the server, put the code into a file
+              <code>example.js</code> and execute it with the
+              <code>node</code> program from the command line:</p>
+              <pre class="sh_none">
+% node example.js
+Server running at http://127.0.0.1:1337/</pre>
+
+                <p>Here is an example of a simple TCP server which listens on port 1337 and echoes whatever you send it:</p>
+
+                <pre>
+var net = require('net');
+
+var server = net.createServer(function (socket) {
+  socket.write('Echo server\r\n');
+  socket.pipe(socket);
+});
+
+server.listen(1337, '127.0.0.1');</pre>
+
+        </div>
+        <div id="column2" class="featured">
+            <h2>Featured</h2>
+            <a href="/video/"><img src="/images/walmart-thumb.jpg" width="263"></a>
+            <h3>Node.js at Walmart</h3>
+            <p><a href="http://twitter.com/eranhammer">Eran Hammer</a>, Principal Architect at Walmart, talks about how they use Node.js as a way to reinvent legacy APIs to create modern front end experiences.</p>
+        </div>
+    </div>
+    </div>
+
+    <div id="footer">
+      <a href="http://www.joyent.com"><h5>The Node.js Project is Sponsored by</h5>
+      <img src="/images/joyent-footer.svg" width="200">
+      <p>Production Node + High Performance Infrastructure</p></a>
+      <a href="https://my.joyent.com/landing/signup/701800000015696" class="button getstarted">Get Started</a>
+      <p class="copyright">Copyright <a href="http://joyent.com/">Joyent, Inc</a>, Node.js is a <a href="/trademark-policy.pdf">trademark</a> of Joyent, Inc. <a href="https://raw.github.com/joyent/node/v0.10.26/LICENSE">View license</a>.</p>
+    </div>
+
+    <script src="sh_main.js"></script>
+    <script src="sh_javascript.min.js"></script>
+    <script>highlight(undefined, undefined, 'pre');</script>
+
+    <script>
+      window._gaq = [['_setAccount', 'UA-10874194-2'], ['_trackPageview']];
+      (function(d, t) {
+        var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        g.src = '//www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g, s);
+      }(document, 'script'));
+      ;(function(d,n) {
+        var os = n.platform.match(/(Win|Mac|Linux)/);
+        var x = n.userAgent.match(/x86_64|Win64|WOW64/) ||
+                n.cpuClass === 'x64' ? 'x64' : 'x86';
+        var base = 'http://nodejs.org/dist/v0.10.26/';
+        var href = 'node-v0.10.26.tar.gz';
+        var db = d.getElementById('downloadbutton');
+        var d2;
+        switch (os && os[1]) {
+          case 'Mac':
+            href = 'node-v0.10.26.pkg';
+            break;
+          case 'Win':
+            href = 'node-v0.10.26-' + x + '.msi';
+            if (x === 'x64') href = 'x64/' + href;
+            break;
+
+          // TODO uncomment when we have these
+          // case 'Linux':
+          //   // two buttons: .deb and .rpm
+          //   href = 'node-v0.10.26-' + x + '.rpm';
+          //   var d2 = document.createElement('a');
+          //   d2.href = base + 'node-v0.10.26-' + x + '.deb';
+          //   d2.className = 'button downloadbutton';
+          //   d2.innerHTML = 'INSTALL .deb';
+          //   db.innerHTML = 'INSTALL .rpm';
+          //   db.parentNode.insertBefore(d2, db);
+          //   break;
+        }
+
+        db.href = base + href;
+        // if there's one download option, then download it at #download
+        if (location.hash === '#download' && !d2)
+          location.replace(b.href);
+      })(document,navigator);
+    </script>
+ </body>
+</html>
+/*
+SHJS - Syntax Highlighting in JavaScript
+Copyright (C) 2007, 2008 gnombat@users.sourceforge.net
+License: http://shjs.sourceforge.net/doc/gplv3.html
+*/
+
+if (! this.sh_languages) {
+  this.sh_languages = {};
+}
+var sh_requests = {};
+
+function sh_isEmailAddress(url) {
+  if (/^mailto:/.test(url)) {
+    return false;
+  }
+  return url.indexOf('@') !== -1;
+}
+
+function sh_setHref(tags, numTags, inputString) {
+  var url = inputString.substring(tags[numTags - 2].pos, tags[numTags - 1].pos);
+  if (url.length >= 2 && url.charAt(0) === '<' && url.charAt(url.length - 1) === '>') {
+    url = url.substr(1, url.length - 2);
+  }
+  if (sh_isEmailAddress(url)) {
+    url = 'mailto:' + url;
+  }
+  tags[numTags - 2].node.href = url;
+}
+
+/*
+Konqueror has a bug where the regular expression /$/g will not match at the end
+of a line more than once:
+
+  var regex = /$/g;
+  var match;
+
+  var line = '1234567890';
+  regex.lastIndex = 10;
+  match = regex.exec(line);
+
+  var line2 = 'abcde';
+  regex.lastIndex = 5;
+  match = regex.exec(line2);  // fails
+*/
+function sh_konquerorExec(s) {
+  var result = [''];
+  result.index = s.length;
+  result.input = s;
+  return result;
+}
+
+/**
+Highlights all elements containing source code in a text string.  The return
+value is an array of objects, each representing an HTML start or end tag.  Each
+object has a property named pos, which is an integer representing the text
+offset of the tag. Every start tag also has a property named node, which is the
+DOM element started by the tag. End tags do not have this property.
+@param  inputString  a text string
+@param  language  a language definition object
+@return  an array of tag objects
+*/
+function sh_highlightString(inputString, language) {
+  if (/Konqueror/.test(navigator.userAgent)) {
+    if (! language.konquered) {
+      for (var s = 0; s < language.length; s++) {
+        for (var p = 0; p < language[s].length; p++) {
+          var r = language[s][p][0];
+          if (r.source === '$') {
+            r.exec = sh_konquerorExec;
+          }
+        }
+      }
+      language.konquered = true;
+    }
+  }
+
+  var a = document.createElement('a');
+  var span = document.createElement('span');
+
+  // the result
+  var tags = [];
+  var numTags = 0;
+
+  // each element is a pattern object from language
+  var patternStack = [];
+
+  // the current position within inputString
+  var pos = 0;
+
+  // the name of the current style, or null if there is no current style
+  var currentStyle = null;
+
+  var output = function(s, style) {
+    var length = s.length;
+    // this is more than just an optimization - we don't want to output empty <span></span> elements
+    if (length === 0) {
+      return;
+    }
+    if (! style) {
+      var stackLength = patternStack.length;
+      if (stackLength !== 0) {
+        var pattern = patternStack[stackLength - 1];
+        // check whether this is a state or an environment
+        if (! pattern[3]) {
+          // it's not a state - it's an environment; use the style for this environment
+          style = pattern[1];
+        }
+      }
+    }
+    if (currentStyle !== style) {
+      if (currentStyle) {
+        tags[numTags++] = {pos: pos};
+        if (currentStyle === 'sh_url') {
+          sh_setHref(tags, numTags, inputString);
+        }
+      }
+      if (style) {
+        var clone;
+        if (style === 'sh_url') {
+          clone = a.cloneNode(false);
+        }
+        else {
+          clone = span.cloneNode(false);
+        }
+        clone.className = style;
+        tags[numTags++] = {node: clone, pos: pos};
+      }
+    }
+    pos += length;
+    currentStyle = style;
+  };
+
+  var endOfLinePattern = /\r\n|\r|\n/g;
+  endOfLinePattern.lastIndex = 0;
+  var inputStringLength = inputString.length;
+  while (pos < inputStringLength) {
+    var start = pos;
+    var end;
+    var startOfNextLine;
+    var endOfLineMatch = endOfLinePattern.exec(inputString);
+    if (endOfLineMatch === null) {
+      end = inputStringLength;
+      startOfNextLine = inputStringLength;
+    }
+    else {
+      end = endOfLineMatch.index;
+      startOfNextLine = endOfLinePattern.lastIndex;
+    }
+
+    var line = inputString.substring(start, end);
+
+    var matchCache = [];
+    for (;;) {
+      var posWithinLine = pos - start;
+
+      var stateIndex;
+      var stackLength = patternStack.length;
+      if (stackLength === 0) {
+        stateIndex = 0;
+      }
+      else {
+        // get the next state
+        stateIndex = patternStack[stackLength - 1][2];
+      }
+
+      var state = language[stateIndex];
+      var numPatterns = state.length;
+      var mc = matchCache[stateIndex];
+      if (! mc) {
+        mc = matchCache[stateIndex] = [];
+      }
+      var bestMatch = null;
+      var bestPatternIndex = -1;
+      for (var i = 0; i < numPatterns; i++) {
+        var match;
+        if (i < mc.length && (mc[i] === null || posWithinLine <= mc[i].index)) {
+          match = mc[i];
+        }
+        else {
+          var regex = state[i][0];
+          regex.lastIndex = posWithinLine;
+          match = regex.exec(line);
+          mc[i] = match;
+        }
+        if (match !== null && (bestMatch === null || match.index < bestMatch.index)) {
+          bestMatch = match;
+          bestPatternIndex = i;
+          if (match.index === posWithinLine) {
+            break;
+          }
+        }
+      }
+
+      if (bestMatch === null) {
+        output(line.substring(posWithinLine), null);
+        break;
+      }
+      else {
+        // got a match
+        if (bestMatch.index > posWithinLine) {
+          output(line.substring(posWithinLine, bestMatch.index), null);
+        }
+
+        var pattern = state[bestPatternIndex];
+
+        var newStyle = pattern[1];
+        var matchedString;
+        if (newStyle instanceof Array) {
+          for (var subexpression = 0; subexpression < newStyle.length; subexpression++) {
+            matchedString = bestMatch[subexpression + 1];
+            output(matchedString, newStyle[subexpression]);
+          }
+        }
+        else {
+          matchedString = bestMatch[0];
+          output(matchedString, newStyle);
+        }
+
+        switch (pattern[2]) {
+        case -1:
+          // do nothing
+          break;
+        case -2:
+          // exit
+          patternStack.pop();
+          break;
+        case -3:
+          // exitall
+          patternStack.length = 0;
+          break;
+        default:
+          // this was the start of a delimited pattern or a state/environment
+          patternStack.push(pattern);
+          break;
+        }
+      }
+    }
+
+    // end of the line
+    if (currentStyle) {
+      tags[numTags++] = {pos: pos};
+      if (currentStyle === 'sh_url') {
+        sh_setHref(tags, numTags, inputString);
+      }
+      currentStyle = null;
+    }
+    pos = startOfNextLine;
+  }
+
+  return tags;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// DOM-dependent functions
+
+function sh_getClasses(element) {
+  var result = [];
+  var htmlClass = element.className;
+  if (htmlClass && htmlClass.length > 0) {
+    var htmlClasses = htmlClass.split(' ');
+    for (var i = 0; i < htmlClasses.length; i++) {
+      if (htmlClasses[i].length > 0) {
+        result.push(htmlClasses[i]);
+      }
+    }
+  }
+  return result;
+}
+
+function sh_addClass(element, name) {
+  var htmlClasses = sh_getClasses(element);
+  for (var i = 0; i < htmlClasses.length; i++) {
+    if (name.toLowerCase() === htmlClasses[i].toLowerCase()) {
+      return;
+    }
+  }
+  htmlClasses.push(name);
+  element.className = htmlClasses.join(' ');
+}
+
+/**
+Extracts the tags from an HTML DOM NodeList.
+@param  nodeList  a DOM NodeList
+@param  result  an object with text, tags and pos properties
+*/
+function sh_extractTagsFromNodeList(nodeList, result) {
+  var length = nodeList.length;
+  for (var i = 0; i < length; i++) {
+    var node = nodeList.item(i);
+    switch (node.nodeType) {
+    case 1:
+      if (node.nodeName.toLowerCase() === 'br') {
+        var terminator;
+        if (/MSIE/.test(navigator.userAgent)) {
+          terminator = '\r';
+        }
+        else {
+          terminator = '\n';
+        }
+        result.text.push(terminator);
+        result.pos++;
+      }
+      else {
+        result.tags.push({node: node.cloneNode(false), pos: result.pos});
+        sh_extractTagsFromNodeList(node.childNodes, result);
+        result.tags.push({pos: result.pos});
+      }
+      break;
+    case 3:
+    case 4:
+      result.text.push(node.data);
+      result.pos += node.length;
+      break;
+    }
+  }
+}
+
+/**
+Extracts the tags from the text of an HTML element. The extracted tags will be
+returned as an array of tag objects. See sh_highlightString for the format of
+the tag objects.
+@param  element  a DOM element
+@param  tags  an empty array; the extracted tag objects will be returned in it
+@return  the text of the element
+@see  sh_highlightString
+*/
+function sh_extractTags(element, tags) {
+  var result = {};
+  result.text = [];
+  result.tags = tags;
+  result.pos = 0;
+  sh_extractTagsFromNodeList(element.childNodes, result);
+  return result.text.join('');
+}
+
+/**
+Merges the original tags from an element with the tags produced by highlighting.
+@param  originalTags  an array containing the original tags
+@param  highlightTags  an array containing the highlighting tags - these must not overlap
+@result  an array containing the merged tags
+*/
+function sh_mergeTags(originalTags, highlightTags) {
+  var numOriginalTags = originalTags.length;
+  if (numOriginalTags === 0) {
+    return highlightTags;
+  }
+
+  var numHighlightTags = highlightTags.length;
+  if (numHighlightTags === 0) {
+    return originalTags;
+  }
+
+  var result = [];
+  var originalIndex = 0;
+  var highlightIndex = 0;
+
+  while (originalIndex < numOriginalTags && highlightIndex < numHighlightTags) {
+    var originalTag = originalTags[originalIndex];
+    var highlightTag = highlightTags[highlightIndex];
+
+    if (originalTag.pos <= highlightTag.pos) {
+      result.push(originalTag);
+      originalIndex++;
+    }
+    else {
+      result.push(highlightTag);
+      if (highlightTags[highlightIndex + 1].pos <= originalTag.pos) {
+        highlightIndex++;
+        result.push(highlightTags[highlightIndex]);
+        highlightIndex++;
+      }
+      else {
+        // new end tag
+        result.push({pos: originalTag.pos});
+
+        // new start tag
+        highlightTags[highlightIndex] = {node: highlightTag.node.cloneNode(false), pos: originalTag.pos};
+      }
+    }
+  }
+
+  while (originalIndex < numOriginalTags) {
+    result.push(originalTags[originalIndex]);
+    originalIndex++;
+  }
+
+  while (highlightIndex < numHighlightTags) {
+    result.push(highlightTags[highlightIndex]);
+    highlightIndex++;
+  }
+
+  return result;
+}
+
+/**
+Inserts tags into text.
+@param  tags  an array of tag objects
+@param  text  a string representing the text
+@return  a DOM DocumentFragment representing the resulting HTML
+*/
+function sh_insertTags(tags, text) {
+  var doc = document;
+
+  var result = document.createDocumentFragment();
+  var tagIndex = 0;
+  var numTags = tags.length;
+  var textPos = 0;
+  var textLength = text.length;
+  var currentNode = result;
+
+  // output one tag or text node every iteration
+  while (textPos < textLength || tagIndex < numTags) {
+    var tag;
+    var tagPos;
+    if (tagIndex < numTags) {
+      tag = tags[tagIndex];
+      tagPos = tag.pos;
+    }
+    else {
+      tagPos = textLength;
+    }
+
+    if (tagPos <= textPos) {
+      // output the tag
+      if (tag.node) {
+        // start tag
+        var newNode = tag.node;
+        currentNode.appendChild(newNode);
+        currentNode = newNode;
+      }
+      else {
+        // end tag
+        currentNode = currentNode.parentNode;
+      }
+      tagIndex++;
+    }
+    else {
+      // output text
+      currentNode.appendChild(doc.createTextNode(text.substring(textPos, tagPos)));
+      textPos = tagPos;
+    }
+  }
+
+  return result;
+}
+
+/**
+Highlights an element containing source code.  Upon completion of this function,
+the element will have been placed in the "sh_sourceCode" class.
+@param  element  a DOM <pre> element containing the source code to be highlighted
+@param  language  a language definition object
+*/
+function sh_highlightElement(element, language) {
+  sh_addClass(element, 'sh_sourceCode');
+  var originalTags = [];
+  var inputString = sh_extractTags(element, originalTags);
+  var highlightTags = sh_highlightString(inputString, language);
+  var tags = sh_mergeTags(originalTags, highlightTags);
+  var documentFragment = sh_insertTags(tags, inputString);
+  while (element.hasChildNodes()) {
+    element.removeChild(element.firstChild);
+  }
+  element.appendChild(documentFragment);
+}
+
+function sh_getXMLHttpRequest() {
+  if (window.ActiveXObject) {
+    return new ActiveXObject('Msxml2.XMLHTTP');
+  }
+  else if (window.XMLHttpRequest) {
+    return new XMLHttpRequest();
+  }
+  throw 'No XMLHttpRequest implementation available';
+}
+
+function sh_load(language, element, prefix, suffix) {
+  if (language in sh_requests) {
+    sh_requests[language].push(element);
+    return;
+  }
+  sh_requests[language] = [element];
+  var request = sh_getXMLHttpRequest();
+  var url = prefix + 'sh_' + language + suffix;
+  request.open('GET', url, true);
+  request.onreadystatechange = function () {
+    if (request.readyState === 4) {
+      try {
+        if (! request.status || request.status === 200) {
+          eval(request.responseText);
+          var elements = sh_requests[language];
+          for (var i = 0; i < elements.length; i++) {
+            sh_highlightElement(elements[i], sh_languages[language]);
+          }
+        }
+        else {
+          throw 'HTTP error: status ' + request.status;
+        }
+      }
+      finally {
+        request = null;
+      }
+    }
+  };
+  request.send(null);
+}
+
+/**
+Highlights all elements containing source code on the current page. Elements
+containing source code must be "pre" elements with a "class" attribute of
+"sh_LANGUAGE", where LANGUAGE is a valid language identifier; e.g., "sh_java"
+identifies the element as containing "java" language source code.
+*/
+function highlight(prefix, suffix, tag) {
+  var nodeList = document.getElementsByTagName(tag);
+  for (var i = 0; i < nodeList.length; i++) {
+    var element = nodeList.item(i);
+    var htmlClasses = sh_getClasses(element);
+    var highlighted = false;
+    var donthighlight = false;
+    for (var j = 0; j < htmlClasses.length; j++) {
+      var htmlClass = htmlClasses[j].toLowerCase();
+      if (htmlClass === 'sh_none') {
+        donthighlight = true
+        continue;
+      }
+      if (htmlClass.substr(0, 3) === 'sh_') {
+        var language = htmlClass.substring(3);
+        if (language in sh_languages) {
+          sh_highlightElement(element, sh_languages[language]);
+          highlighted = true;
+        }
+        else if (typeof(prefix) === 'string' && typeof(suffix) === 'string') {
+          sh_load(language, element, prefix, suffix);
+        }
+        else {
+          throw 'Found <' + tag + '> element with class="' + htmlClass + '", but no such language exists';
+        }
+        break;
+      }
+    }
+    if (highlighted === false && donthighlight == false) {
+      sh_highlightElement(element, sh_languages["javascript"]);
+    }
+  }
+}
+
+
+
+function sh_highlightDocument(prefix, suffix) {
+  highlight(prefix, suffix, 'tt');
+  highlight(prefix, suffix, 'code');
+  highlight(prefix, suffix, 'pre');
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: .1px;
+}
+
+.din {
+  font-family: "din-condensed-web","Arial Narrow",Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.node-green {
+  color: #80bd01;
+}
+
+body {
+  background: #1d1d1d;
+  color: #ccc;
+  font-size: 15px;
+  line-height: 200%;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+  margin: 0;
+}
+
+body.alt {
+  color: #46483e;
+}
+
+img {
+  border: 0;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1, h2, h3, h4 {
+  color: #d2d8ba;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 2em;
+  margin-right: 0;
+  margin-bottom: 10px;
+  margin-left: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: Georgia, FreeSerif, Times, serif;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: none;
+  color: #669900;
+  font-weight: normal;
+  margin: 15px 0 11px;
+}
+
+h2 {
+  font-family: "din-condensed-web","Arial Narrow",Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #80bd01;
+  letter-spacing: 1px;
+}
+
+h1 code, h2 code, h3 code, h4 code,
+h1 a, h2 a, h3 a, h4 a {
+  color: inherit;
+  font-size: inherit;
+}
+
+#nav {
+  position: relative;
+  background: #303030;
+  padding-top: 15px;
+  padding-left: 200px;
+}
+
+#nav ul {
+  width: 775px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#nav ul:after {
+  content: ' ';
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+
+#nav ul li {
+  position: relative;
+  background: #303030;
+  display: block;
+  float: left;
+  font-size: 12px;
+  line-height: 12px;
+  padding-bottom: 15px;
+}
+
+#nav ul li.active:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(3, 3, 0, 0);
+  border-top-color: #303030;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+#nav ul li a {
+  padding: 2px 10px 3px 10px;
+  border-left: 1px solid #6f6f6f;
+}
+
+#nav ul li:first-child {
+  padding-bottom: 12px;
+}
+
+#nav ul li:first-child a {
+  border-left: none;
+}
+
+#nav .forkme {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  border: 0;
+  width: 341px;
+}
+
+#intro {
+  padding-top: 30px;
+  width: 775px;
+  margin: 0 auto;
+  text-align: center;
+  color: #d2d8ba;
+}
+
+.blog #intro {
+  text-align: left;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-left: 230px;
+}
+
+#logo {
+  width: 297px;
+}
+
+#intro p {
+  color: #ccc;
+  width: 755px;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+
+#intro p.version {
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+#intro .buttons {
+  height: auto;
+  overflow: hidden;
+  _zoom: 1;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#intro .button {
+  font-family: "din-condensed-web","Arial Narrow",Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 18px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+
+  -webkit-transition: .2s all ease-in-out;
+  -moz-transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
+
+  margin: 10px 4px;
+  display: inline-block;
+  color: #1b1b1b;
+  background-color: rgba(153,153,153,.7);
+  width: 106px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#intro .button:hover {
+  text-decoration: none;
+  background-color: rgba(153,153,153,1);
+}
+
+#intro #docsbutton {
+  clear: left;
+}
+
+#intro .downloadbutton {
+  background-color: #80bd01;
+  width: 220px;
+  font-size: 30px;
+  display: block;
+  margin: 30px auto 0px auto;
+  font-family: "din-condensed-web","Arial Narrow",Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+#intro .downloadbutton:hover {
+  background-color: #73a53e;
+}
+
+#promo {
+  position: relative;
+  margin-top: 30px;
+}
+
+#promo:after {
+  position: absolute;
+  background: url(/images/stripe.png);
+  background-size: 5px auto;
+  content: '';
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+}
+
+#promo img {
+  margin: 0 auto;
+  width: 729px;
+  display: block;
+}
+
+#content-wrap {
+  background: #303030;
+  padding-bottom: 50px;
+}
+
+#content {
+  width: 775px;
+  margin: 0 auto;
+  overflow: visible;
+  clear: both;
+  display: block;
+}
+
+.int #content {
+  padding-top: 50px;
+}
+
+.blog.int #content {
+  padding-top: 10px;
+}
+
+.int #content {
+  width: 953px;
+}
+
+#column1 {
+  width: 460px;
+  float: left;
+}
+
+#content p,
+#content ul {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#content ul {
+  margin-top: 1em;
+}
+
+#content table {
+  font-size: 14px;
+  line-height: 24px;
+  width: 100%;
+}
+
+#download-page #installers {
+  width: 600px;
+  display: table;
+  margin-bottom: 1em;
+}
+
+#download-page #installers ul {
+  width: auto;
+  text-align: center;
+  margin: 0 auto;
+  display: table-row;
+  width: 600px;
+}
+
+#download-page #installers ul img {
+  display: block;
+  margin: 0 auto;
+}
+
+#download-page #installers ul a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  font-size: 16px;
+  padding-top: 1em;
+}
+
+#download-page #installers ul a:hover,
+#download-page #installers ul a:active {
+  background: #666;
+  color: #8cc84b;
+}
+
+#download-page #installers ul li {
+  width: 33%;
+  display: table-cell;
+}
+
+#download-page #installers a small {
+  font-size: 10px;
+  display: block;
+  color: #999;
+}
+
+#download-page #installers a:hover small {
+  color: #eee;
+}
+
+#download-page #content th {
+  text-align: left;
+  width: 33%;
+}
+
+#download-page #content table {
+  table-collapse: separate;
+}
+
+#download-page #content td {
+  border: 1px solid #ccc;
+}
+
+#download-page #content td a {
+  background: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+#download-page #content td a:hover,
+#download-page #content td a:active {
+  background: #666;
+  color: #8cc84b;
+}
+
+#front #content p {
+  color: #fff;
+  font-size: 12px;
+}
+
+#content h1 + p {
+  font-size: 18px;
+  line-height: 30px;
+  font-family: Georgia, FreeSerif, Times, serif;
+}
+
+#column2 {
+  width: 260px;
+  float: right;
+}
+
+#column2.featured h3 {
+  text-transform: none;
+  color: #fff;
+  font-size: 15px;
+  line-height: 15px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#column2.featured p {
+  font-size: 11px;
+  line-height: 18px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#column1.interior {
+  width: 600px;
+  float: right;
+  padding-top: 11px;
+  font-size: 18px;
+  padding-right: 150px;
+}
+
+.row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.row h2 {
+  font-size: 24px;
+  color: white;
+  text-transform: none;
+  font-family: Georgia, FreeSerif, Times, serif;
+  background: url(http://nodejs.org/images/community-icons.png) no-repeat;
+  padding-left: 45px;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.row h2.github { background-position: left -92px; }
+.row h2.mailing { background-position: left -308px; }
+.row h2.periodicals { background-position: left -198px; padding-top: 9px; margin-top: 7px; }
+.row h2.conferences { background-position: left -522px; }
+.row h2.localized { background-position: left -414px; }
+.row h2.irc { background-position: left -626px; }
+.row h2.installers { background-position: left -522px; }
+
+.block {
+  width: 280px;
+  float: left;
+}
+
+.block + .block {
+  margin-left: 20px;
+  width: 300px;
+}
+
+#content .block p {
+  font-size: 13px;
+  line-height: 21px;
+}
+
+#footer {
+  width: 755px;
+  margin: 0 auto;
+  padding: 30px 0 50px 0;
+}
+
+#footer > a {
+  display: block;
+  text-align: center;
+}
+
+#footer img {
+  margin: 0 auto;
+}
+
+#footer a:hover {
+  text-decoration: none;
+}
+
+#footer h5 {
+  font-family: "din-condensed-web","Arial Narrow",Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#footer a p {
+  color: #fff;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 0;
+}
+
+#footer a.getstarted {
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #6b9e00;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: .2s all ease-in-out;
+  -moz-transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
+  color: #fff;
+  width: 120px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+#footer a.getstarted:hover {
+  background-color: #73a53e;
+}
+
+#footer p.copyright {
+  margin-top: 50px;
+  color: rgba(255,255,255,.5);
+  font-size: 12px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+}
+
+#footer p.copyright a {
+  color: rgba(255,255,255,.5);
+}
+
+#footer p.copyright a:hover {
+  text-decoration: underline;
+}
+
+pre, tt, code {
+  color: #d2d8ba;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  margin: 0; padding: 0;
+}
+
+#front pre, #front tt, #front code {
+  font-size: 12px;
+  line-height: 22px;
+}
+
+pre {
+  padding-left: 1em;
+  margin-left: -1em;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #626557;
+}
+
+.alt pre {
+  font-size: 14px;
+  margin-left: 0;
+  border-left: 2px solid #dadad7;
+  background-color: #f4f4f2;
+  color: #46483e;
+  padding: 1em 1.5em;
+  line-height: 2em;
+}
+
+.alt code {
+  color: #996633;
+}
+
+dd {
+  margin: 1em 0;
+  margin-left: 1em;
+}
+
+a {
+  color: #80bd01;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.alt #content-wrap {
+  background: white;
+}
+
+.alt #content a {
+  background-color: #f1fbda;
+  padding: 0 2px;
+}
+
+.alt#logos #content a {
+  background-color: transparent;
+}
+
+.highlight {
+  background: #733;
+  padding: 0.2em 0;
+}
+.desktops {
+  font-size: 12px;
+}
+
+.release {
+  margin: 0 0 0 2em;
+}
+
+.blog p.prev, .blog p.next {
+  font-size: 14px !important;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+}
+
+.blog p.prev{
+  float: left;
+}
+
+.blog p.next {
+  float: right;
+}
+
+/* simpler clearfix */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+if(!this.sh_languages){this.sh_languages={}}sh_languages.javascript=[[[/\/\/\//g,"sh_comment",1],[/\/\//g,"sh_comment",7],[/\/\*\*/g,"sh_comment",8],[/\/\*/g,"sh_comment",9],[/\b(?:abstract|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|false|final|finally|for|function|goto|if|implements|in|instanceof|interface|native|new|null|private|protected|prototype|public|return|static|super|switch|synchronized|throw|throws|this|transient|true|try|typeof|var|volatile|while|with)\b/g,"sh_keyword",-1],[/(\+\+|--|\)|\])(\s*)(\/=?(?![*\/]))/g,["sh_symbol","sh_normal","sh_symbol"],-1],[/(0x[A-Fa-f0-9]+|(?:[\d]*\.)?[\d]+(?:[eE][+-]?[\d]+)?)(\s*)(\/(?![*\/]))/g,["sh_number","sh_normal","sh_symbol"],-1],[/([A-Za-z$_][A-Za-z0-9$_]*\s*)(\/=?(?![*\/]))/g,["sh_normal","sh_symbol"],-1],[/\/(?:\\.|[^*\\\/])(?:\\.|[^\\\/])*\/[gim]*/g,"sh_regexp",-1],[/\b[+-]?(?:(?:0x[A-Fa-f0-9]+)|(?:(?:[\d]*\.)?[\d]+(?:[eE][+-]?[\d]+)?))u?(?:(?:int(?:8|16|32|64))|L)?\b/g,"sh_number",-1],[/"/g,"sh_string",10],[/'/g,"sh_string",11],[/~|!|%|\^|\*|\(|\)|-|\+|=|\[|\]|\\|:|;|,|\.|\/|\?|&|<|>|\|/g,"sh_symbol",-1],[/\{|\}/g,"sh_cbracket",-1],[/\b(?:Math|Infinity|NaN|undefined|arguments)\b/g,"sh_predef_var",-1],[/\b(?:Array|Boolean|Date|Error|EvalError|Function|Number|Object|RangeError|ReferenceError|RegExp|String|SyntaxError|TypeError|URIError|decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|eval|isFinite|isNaN|parseFloat|parseInt)\b/g,"sh_predef_func",-1],[/(?:[A-Za-z]|_)[A-Za-z0-9_]*(?=[ \t]*\()/g,"sh_function",-1]],[[/$/g,null,-2],[/(?:<?)[A-Za-z0-9_\.\/\-_~]+@[A-Za-z0-9_\.\/\-_~]+(?:>?)|(?:<?)[A-Za-z0-9_]+:\/\/[A-Za-z0-9_\.\/\-_~]+(?:>?)/g,"sh_url",-1],[/<\?xml/g,"sh_preproc",2,1],[/<!DOCTYPE/g,"sh_preproc",4,1],[/<!--/g,"sh_comment",5],[/<(?:\/)?[A-Za-z](?:[A-Za-z0-9_:.-]*)(?:\/)?>/g,"sh_keyword",-1],[/<(?:\/)?[A-Za-z](?:[A-Za-z0-9_:.-]*)/g,"sh_keyword",6,1],[/&(?:[A-Za-z0-9]+);/g,"sh_preproc",-1],[/<(?:\/)?[A-Za-z][A-Za-z0-9]*(?:\/)?>/g,"sh_keyword",-1],[/<(?:\/)?[A-Za-z][A-Za-z0-9]*/g,"sh_keyword",6,1],[/@[A-Za-z]+/g,"sh_type",-1],[/(?:TODO|FIXME|BUG)(?:[:]?)/g,"sh_todo",-1]],[[/\?>/g,"sh_preproc",-2],[/([^=" \t>]+)([ \t]*)(=?)/g,["sh_type","sh_normal","sh_symbol"],-1],[/"/g,"sh_string",3]],[[/\\(?:\\|")/g,null,-1],[/"/g,"sh_string",-2]],[[/>/g,"sh_preproc",-2],[/([^=" \t>]+)([ \t]*)(=?)/g,["sh_type","sh_normal","sh_symbol"],-1],[/"/g,"sh_string",3]],[[/-->/g,"sh_comment",-2],[/<!--/g,"sh_comment",5]],[[/(?:\/)?>/g,"sh_keyword",-2],[/([^=" \t>]+)([ \t]*)(=?)/g,["sh_type","sh_normal","sh_symbol"],-1],[/"/g,"sh_string",3]],[[/$/g,null,-2]],[[/\*\//g,"sh_comment",-2],[/(?:<?)[A-Za-z0-9_\.\/\-_~]+@[A-Za-z0-9_\.\/\-_~]+(?:>?)|(?:<?)[A-Za-z0-9_]+:\/\/[A-Za-z0-9_\.\/\-_~]+(?:>?)/g,"sh_url",-1],[/<\?xml/g,"sh_preproc",2,1],[/<!DOCTYPE/g,"sh_preproc",4,1],[/<!--/g,"sh_comment",5],[/<(?:\/)?[A-Za-z](?:[A-Za-z0-9_:.-]*)(?:\/)?>/g,"sh_keyword",-1],[/<(?:\/)?[A-Za-z](?:[A-Za-z0-9_:.-]*)/g,"sh_keyword",6,1],[/&(?:[A-Za-z0-9]+);/g,"sh_preproc",-1],[/<(?:\/)?[A-Za-z][A-Za-z0-9]*(?:\/)?>/g,"sh_keyword",-1],[/<(?:\/)?[A-Za-z][A-Za-z0-9]*/g,"sh_keyword",6,1],[/@[A-Za-z]+/g,"sh_type",-1],[/(?:TODO|FIXME|BUG)(?:[:]?)/g,"sh_todo",-1]],[[/\*\//g,"sh_comment",-2],[/(?:<?)[A-Za-z0-9_\.\/\-_~]+@[A-Za-z0-9_\.\/\-_~]+(?:>?)|(?:<?)[A-Za-z0-9_]+:\/\/[A-Za-z0-9_\.\/\-_~]+(?:>?)/g,"sh_url",-1],[/(?:TODO|FIXME|BUG)(?:[:]?)/g,"sh_todo",-1]],[[/"/g,"sh_string",-2],[/\\./g,"sh_specialchar",-1]],[[/'/g,"sh_string",-2],[/\\./g,"sh_specialchar",-1]]];<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 80.7" enable-background="new 0 0 300 80.7" xml:space="preserve">
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M45,42.9c0-0.9-0.5-1.7-1.2-2.1L23.7,29.2
+		c-0.3-0.2-0.7-0.3-1.1-0.3c0,0-0.2,0-0.2,0c-0.4,0-0.8,0.1-1.1,0.3L1.2,40.8C0.5,41.2,0,42,0,42.9L0,74c0,0.4,0.2,0.8,0.6,1
+		c0.4,0.2,0.8,0.2,1.2,0l11.9-6.8c0.8-0.4,1.2-1.2,1.2-2.1V51.6c0-0.9,0.5-1.7,1.2-2.1l5.1-2.9c0.4-0.2,0.8-0.3,1.2-0.3
+		c0.4,0,0.8,0.1,1.2,0.3l5.1,2.9c0.8,0.4,1.2,1.2,1.2,2.1v14.5c0,0.9,0.5,1.7,1.2,2.1l11.9,6.8c0.4,0.2,0.8,0.2,1.2,0
+		c0.4-0.2,0.6-0.6,0.6-1L45,42.9z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M152.2,0.2c-0.4-0.2-0.8-0.2-1.2,0c-0.4,0.2-0.6,0.6-0.6,1V32
+		c0,0.3-0.2,0.6-0.4,0.7c-0.3,0.2-0.6,0.2-0.8,0l-5-2.9c-0.7-0.4-1.7-0.4-2.4,0l-20.1,11.6c-0.8,0.4-1.2,1.2-1.2,2.1v23.2
+		c0,0.9,0.5,1.7,1.2,2.1l20.1,11.6c0.8,0.4,1.7,0.4,2.4,0l20.1-11.6c0.7-0.4,1.2-1.2,1.2-2.1V8.9c0-0.9-0.5-1.7-1.2-2.1L152.2,0.2z
+		 M150.3,59.1c0,0.2-0.1,0.4-0.3,0.5l-6.9,4c-0.2,0.1-0.4,0.1-0.6,0l-6.9-4c-0.2-0.1-0.3-0.3-0.3-0.5v-8c0-0.2,0.1-0.4,0.3-0.5
+		l6.9-4c0.2-0.1,0.4-0.1,0.6,0l6.9,4c0.2,0.1,0.3,0.3,0.3,0.5V59.1z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M224,50.9c0.7-0.4,1.2-1.2,1.2-2.1v-5.6c0-0.9-0.5-1.7-1.2-2.1
+		L204,29.5c-0.8-0.4-1.7-0.4-2.4,0l-20.1,11.6c-0.7,0.4-1.2,1.2-1.2,2.1v23.2c0,0.9,0.5,1.7,1.2,2.1l19.9,11.4
+		c0.7,0.4,1.6,0.4,2.4,0l12.1-6.7c0.4-0.2,0.6-0.6,0.6-1.1c0-0.4-0.2-0.8-0.6-1.1l-20.2-11.6c-0.4-0.2-0.6-0.6-0.6-1.1v-7.3
+		c0-0.4,0.2-0.8,0.6-1.1l6.3-3.6c0.4-0.2,0.8-0.2,1.2,0l6.3,3.6c0.4,0.2,0.6,0.6,0.6,1.1v5.7c0,0.4,0.2,0.8,0.6,1
+		c0.4,0.2,0.8,0.2,1.2,0L224,50.9z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#80BD01" d="M81.5,29.4c0.7-0.4,1.7-0.4,2.4,0L104,41c0.8,0.4,1.2,1.2,1.2,2.1
+		v23.2c0,0.9-0.5,1.7-1.2,2.1L83.9,80c-0.8,0.4-1.7,0.4-2.4,0L61.4,68.4c-0.7-0.4-1.2-1.2-1.2-2.1V43.1c0-0.9,0.5-1.7,1.2-2.1
+		L81.5,29.4z"/>
+	<path fill="#80BD01" d="M263,80.3c-0.7,0-1.4-0.2-2-0.5l-6.3-3.7c-0.9-0.5-0.5-0.7-0.2-0.8c1.3-0.4,1.5-0.5,2.9-1.3
+		c0.1-0.1,0.3,0,0.5,0l4.9,2.9c0.2,0.1,0.4,0.1,0.6,0l18.9-10.9c0.2-0.1,0.3-0.3,0.3-0.5V43.6c0-0.2-0.1-0.4-0.3-0.5l-18.9-10.9
+		c-0.2-0.1-0.4-0.1-0.6,0L243.8,43c-0.2,0.1-0.3,0.3-0.3,0.5v21.8c0,0.2,0.1,0.4,0.3,0.5l5.2,3c2.8,1.4,4.5-0.2,4.5-1.9V45.4
+		c0-0.3,0.2-0.5,0.6-0.5h2.4c0.3,0,0.5,0.2,0.5,0.5V67c0,3.8-2,5.9-5.6,5.9c-1.1,0-2,0-4.4-1.2l-5-2.9c-1.2-0.7-2-2-2-3.5V43.6
+		c0-1.4,0.8-2.7,2-3.5L261,29.2c1.2-0.7,2.8-0.7,4,0l18.9,10.9c1.2,0.7,2,2,2,3.5v21.8c0,1.4-0.8,2.7-2,3.5L265,79.8
+		C264.3,80.1,263.7,80.3,263,80.3z"/>
+	<path fill="#80BD01" d="M268.8,65.3c-8.3,0-10-3.8-10-7c0-0.3,0.2-0.5,0.5-0.5h2.4c0.3,0,0.5,0.2,0.5,0.5c0.4,2.5,1.5,3.7,6.5,3.7
+		c4,0,5.7-0.9,5.7-3c0-1.2-0.5-2.1-6.7-2.7c-5.2-0.5-8.4-1.7-8.4-5.8c0-3.8,3.2-6.1,8.6-6.1c6.1,0,9.1,2.1,9.4,6.6
+		c0,0.2,0,0.3-0.1,0.4c-0.1,0.1-0.2,0.2-0.4,0.2h-2.5c-0.3,0-0.5-0.2-0.5-0.4c-0.6-2.6-2-3.5-5.9-3.5c-4.4,0-4.9,1.5-4.9,2.7
+		c0,1.4,0.6,1.8,6.5,2.6c5.8,0.8,8.6,1.9,8.6,5.9C278.2,62.9,274.8,65.3,268.8,65.3z"/>
+	<g>
+		<path fill="#80BD01" d="M294.9,29.2v0.6h-1.6v4.2h-0.6v-4.2h-1.6v-0.6H294.9z"/>
+		<path fill="#80BD01" d="M295.5,29.2h0.9l1.4,4l1.3-4h0.9v4.7h-0.6v-2.8c0-0.1,0-0.3,0-0.5c0-0.2,0-0.5,0-0.7l-1.3,4h-0.6l-1.4-4
+			v0.1c0,0.1,0,0.3,0,0.5c0,0.2,0,0.4,0,0.5v2.8h-0.6V29.2z"/>
+	</g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#80BD01" d="M202.5,49.8c0.1-0.1,0.3-0.1,0.5,0l3.9,2.2
+		c0.1,0.1,0.2,0.2,0.2,0.4v4.4c0,0.2-0.1,0.3-0.2,0.4l-3.9,2.2c-0.1,0.1-0.3,0.1-0.5,0l-3.8-2.2c-0.1-0.1-0.2-0.2-0.2-0.4v-4.4
+		c0-0.2,0.1-0.3,0.2-0.4L202.5,49.8z"/>
+</g>
+</svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 494.8 134.4" enable-background="new 0 0 494.8 134.4" xml:space="preserve">
+<g id="Background">
+</g>
+<g id="Guides">
+</g>
+<g id="Foreground">
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M121.3,85.4c4.1,3.2,8.9,6.1,15.4,6.1c9.7,0,12.3-5.9,12.3-13.6
+		V10.2h10.5v55.3c0,4.8,0,10-0.3,14.8c-0.5,12.8-7.1,20.3-22.2,20.3c-10.4,0-18-4.3-21.1-7.6L121.3,85.4z M221.5,66.1
+		c0-16-4.7-27.2-17.6-27.2c-12.7,0-18.4,10.7-18.4,25.1c0,13.2,2.7,28.8,17.9,28.8C216,92.8,221.5,80.6,221.5,66.1z M204.7,30.7
+		c9.2,0,27.4,2.9,27.4,33.1c0,26-12.9,37-29.6,37c-17,0-27.4-11.5-27.4-35.5C175.1,37.7,191.5,30.7,204.7,30.7z M296,96.3V32.6
+		h-10.1v39.8c0,9.2-6.1,15.6-16.3,15.6c-14.2,0-15.1-7.7-15.1-17.9V32.6h-10.4v40.3c0,15.2,7.3,20.7,18.7,21.9
+		c-6.5,4.3-14.7,12-14.7,22.8c0,10.3,6.5,16.8,20.2,16.8c14.1,0,22.7-6.8,26-19.8C295.5,110,296,102.1,296,96.3z M269.3,126.4
+		c12.1,0,16.4-10.5,16.4-25.1V89.7c-16,6.7-27.6,13.9-27.6,26.6C258.1,122.8,262,126.4,269.3,126.4z M339,30.7
+		c-20.3,0-31,16.3-31,36c0,19.9,8.8,34,29.6,34c10.7,0,18.4-4.8,21.8-7.6l-4-6.8c-2.5,1.9-8.1,6.1-17.1,6.1
+		c-14.1,0-19.5-11.5-20-22.4c1.1,0,2.1,0.1,3.5,0.1c12.9,0,36.7-3.2,36.7-23C358.5,37.4,351.4,30.7,339,30.7z M338.4,38.5
+		c-14.3,0-19.8,13.5-20.2,24c0.8,0,1.6,0.1,2.7,0.1c9.1,0,27.8-2.1,27.8-14.1C348.7,42.2,344.5,38.5,338.4,38.5z M382.6,98.9V55.4
+		c0-8,7.7-16.4,18-16.4c11.2,0,13.3,8,13.3,17.9v42h10.4V53.7c0-15.2-7.5-23-21.2-23c-8.7,0-16.4,4-21.5,11.5l-1.2-9.6h-8.9l0.7,10
+		v56.3H382.6z M439.8,6.2v74.6c0,9.7,0.5,20,18.3,20c5.3,0,11.2-1.7,15.1-4.4l-3.1-6.9c-2.3,1.3-5.6,3.2-10.1,3.2
+		c-6.3,0-9.7-2.8-9.7-11.6V41.5h19v-8.9h-19V6.2H439.8z M53,105.9c29.3,0,53-23.7,53-53c0-29.3-23.7-53-53-53C23.7,0,0,23.7,0,53
+		C0,82.2,23.7,105.9,53,105.9z M43.5,24.6c0-1.1,0.9-2,2-2h14.9c1.1,0,2,0.9,2,2v18.9h18.9c1.1,0,2,0.9,2,2v14.9c0,1.1-0.9,2-2,2
+		H62.4v18.9c0,1.1-0.9,2-2,2H45.5c-1.1,0-2-0.9-2-2V62.4H24.6c-1.1,0-2-0.9-2-2V45.5c0-1.1,0.9-2,2-2h18.9V24.6z M481.3,12.2
+		c0,3.9,3.1,6.8,6.8,6.8c3.7,0,6.8-2.9,6.8-6.8c0-3.8-3.1-6.7-6.8-6.7C484.4,5.6,481.3,8.5,481.3,12.2z M482.5,12.2
+		c0-3.2,2.4-5.7,5.6-5.7c3.1,0,5.5,2.5,5.5,5.7c0,3.3-2.4,5.8-5.5,5.8C484.9,18,482.5,15.5,482.5,12.2z M485.4,16.2h1.2v-3.4h1.3
+		l2.1,3.4h1.3l-2.3-3.5c1.2-0.1,2.1-0.7,2.1-2.1c0-1.5-0.9-2.3-2.8-2.3h-3V16.2z M486.7,9.3h1.6c0.8,0,1.7,0.2,1.7,1.2
+		c0,1.2-1,1.3-2.1,1.3h-1.3V9.3z"/>
+</g>
+</svg>
+‰PNG
+
+   IHDR   Z   d   Ø'ß   tEXtSoftware Adobe ImageReadyqÉe<  IDATxÚì]yp]ÕyÿÎ¹ÛÛ¥§}ÃÂ‹lÇ€IÓb%04	†˜Ğ	“Ú$M
+™i&Óa’şÑië”N—,M™N:Ói'	S3(dOh1¡­ 1˜©ãza#Y–líÛ[î»÷óõ;÷éYÂ–e]¡gIWïÈßH¾ºz÷ßùÎïü¾ï,!"TJù¯@Pºt¥T€® ]ºR*@‡©èAn¾ãÎ÷_t%@ó¦$$˜vÀL0p³¤Í‚ã <I÷00¢ ƒÀ9qa¼Ë€úõä§<0ª\(L"ôÍ [DÓ¡ù1°,˜† \ôŸgON¿ú¿Ç­ñ&¸)ŞïZ]O²OKÆŞã<Q WS!kI]…O¶ÉÏDk±S³À¢k„S<B ÈØ
+ôèÕPP-q5Ş]Ó­‘Û}àéštÕôÏc©FÓc|…RÇjğâH·Ö]#ÿ1Õ†V¼6»(.LÁ™ÜÑ˜^: ½5ŞÍ7ŠYIhÎ%î% Iö € ƒÍ Ö€w¶ÿ®x„~L]du+a›Âƒ#àJæÓô•â’Œ¾t]¬:¨:#Øt~™Œ(~¾TQ¯ífaÂÍ°‘*€5ÇÑÊ³ô™Å}N]¨D5WkÛ6| '¾\ÈÇTÛ©~xnìMy_ášë+Ä¡	hUM&äF|Yvùô;O€µùøÇÚùèbösÆŞàßÑ¨Öš±Æi5 ›Ê•eqÄZ€Œk|-ÕŠïò
+©¦Ù!81xÌû™ò|×	öÏó9.rVÌ`¨<ÔJSPd'äü÷eT·ów7í€/xŒÁé}	ÿÆÍƒ­™—§² Œ3?šÕ”¨^¤1?Â]Õªƒiª.œ‚œ—§ĞÛõ?ç:qú¼Y;~Š=3|¿ëƒÌæîV8®c`D¸ŸF0¢Ü¿ë°Mê&aÀÄYw!nË;ªh¢Ö'séî©º}¬¶ÕmÁ;âYªñ¼<Ëô¾Àï7L³A¬ÊÕ¨géÔ fjšÂ"Åß»yôéLˆi~›nŒU¯£U%Q 89,‚o¥ )ÔtÀ'uËr3İ¯¾®§äıgÛÇu‹M'ÂĞX3ÄkI®$5º'¯-ÌPâÌÏğ6s"+.`Qà1
+“3sŠŠ#u4Rmğ{R\æuX‘2z_„¿ë}ÙİKç7 ÂÌ Kk`%tšûë,/hØ0G†ª²V‚Ğ¦ÙO±·ş.’†ÍÑo«¼L`Â8Âà!óËçâ€6O‘òh©AÃV¢Äµ¹1á'›P®Ñ\­5QyeNàÌ¦ÅÏÑ¼– ]*8Q¬ºûÀÿò/b_V¬+Õh*¥ƒG¥?İ!®Å|.ÀØLW`˜d$qËEŠ„Í9¹!öÒÈkü©3ğŒº®x·~Sâ5:½¦ğQåF®tY±@ûa¹àdÉóV=R1ì`ä¥|XD1";Ì~äßï†ÿ@Á<_]D„?ÓšVí—±¶WşÑ8#«Jßç€Ô %Å×èßçåØ›™>ş¼peF ×É°Ã™øUaœı&–&ÍËHƒÅ[ñ¯šÆê	LV¡º½d¥÷
+ U¸\ª7É¿H²Ğ5Ò¬‚´n*œõïqß:8!IBN‚=P˜”3°â&%0¹¯“E¡ˆ”W˜NæcÑûĞzÚ"iÜnÆq›™€¶d«¢ï®td¯1„GÈûOÒóz<&|Ş_ª£4¢“Rxg²wYÕ¸Óˆ‰4ú×ÃNÏ`\hÄ™HœÙGÊ	âØÉK_ôFáøô¼Ÿ^ª•C!I^©æùtéó¬
+‡ç*=ìÙ¤½³¤X’¤ê’¸#Z‹·Ejğv«
+¯×,H•x]…ÔÅ†”P»E5ˆ$íÎå†Ùü0üp²‡ı'=wr!‰­eÚŸ·£ŠQeß[½÷$šå.‹Ãì  DÄE ª!‰í±zè¬Ş€÷R÷víQv0s–=l³§q
+º…šUO°"5€Ò.¦¨@5ynk¢oOoÀÏ¸7Ğ5Å§1£ràÔ»Zª×ã]ÊÒ¡käÿ«©3ì»¾‡›+hÕõÉs·7^_I¶Ê;Ÿ51z©Ôİ?ÒßñFÜ©Œºô”=Æ^Í°}dÏ¸ îî'†ªÈs7¨tß.¢‡÷`éï_.7=×˜¡ŠU­;åãS}ì¾ÁÃlOa^))›4NÏÛ¥·É?©Û&¿¢E é6ŞâÌPÄçÉD3Ş¢Œ®}•h¥K:0¢GqyqK)wÜËõFúNTwk¼	o9Æ¿>t”ı5]Ë´™‚­ùİò_®ÅÏÍëÁ‹xíóÅT*;è{GÉ—ÜK%¯ˆ×†rUÍn8{ÆµahÑqÁRxô¦´ºÎ£õ²pËÒÎæÜ2æ%f7²ªÖáîö[ÄY	Ø,Å šûIğS_VL³ZnôöÆ[¼»Ëå]Ë]”óDjàºO[Õòw£»ÍÔº¹Y’ÃÖš_kº>åÏÙ…x;ŒêE4ğ¶ƒá¾áÕz°®4Ã	
+ØæëÌÛ›n€ûI„º(Mí9`÷Ğîèa1­Ì@›Vñv5¿K±ôÆ[ù¿{ğ0oì*FlììËü‰ÓìéÅ.SôgV¬¨ŞI^AûÍ°'^/×‡Ù›}Ï•9÷rä®Âˆ|V3=âkV~ Ó-QŸ«Œ„ØRMáóÂ	1Èjò ˜|íIñ‡CÇ2Ï2¡ªÑôCø²]Èx¾¾¬İî}Q‹`T†hV\VĞõ”üãî_~ìOä ÛƒTM”ÀÖü€vBåêmâãè…×›ÕŒxÿ!ñè©_9©õ%/V)×ñÁ<h/¯G+oN¶ánîiá†—2(Ì;ó"ì1#úÜk¨±ÌÔ¡”T]-?f)§&ÎßÈb_º)¯@@Gk .^R„×›í	:ÂşÍ_¡´„9é`::‰[ˆ£ÓaÕÍŠ&&OóË2cKÌûAnTC‡je#?³b˜=Ş?Rs‹œãò­E ±ÒÕË³ÙTa©5%À–Ñ£õ6‡7B!ùšÃ^àl˜TÕÒKÆ@!x’Õ©‚aõhQàÃ² yL[f ¥ÕRîPÕrméõ
+àÆ2­z1ÙÂâ/ñHíÕZq½ßrr4×À«´SõÒ""a5Û*í+Ùrz4½¡ºXhÓÏjÉY—eCmÀ¤’´C+ïüO8ƒºî/-XNêĞt˜3uè1l2âXçd¡o©wÕËGOÁH2¤­¦CõÄ¹%¯Í÷AßRoøÔnÂ…sR §{µBi·Z0©v|]ÎÊÇÑèóD¬P³Gü#ƒ‡øÂ‰ùè#hàh'ÃOAXs¤PL*EÓØšj÷îé=à}SíO¿˜Ë‹ë®“uFù¨C:Ğ#]ğÂL
+ÄæøŸFSf‚¡Ÿ1N~©ë&Ô®#2¯ÕÊt~O»yv–…ø75]oÀÍm;ñoíŒ…œNŞ;ë‚‚ f«ÑÏ†‚¬0…Y{³Ÿ–§–Q´üûBË;ùïÛ6­Y ©&Ãß«¨¶Îjq´Ñ¡0.0&v…èâ®d[>¤=Ì¸™=‰?MÕ›şf£Å®”¸ÈÕ™qÏùy%n¯.æÎĞ$°[ÿóNá±·µ90	Ø£ìU'Ë†XÈ.1$ã¢õ×‰ï¥×ãGEá
+¡°ëlÌ™dÙ9ÕÔ?Á„HëNñhzŞWÚ›XV Çú=íÀà	ù[CÇÇ*ÉGõ5¯ê”µŞˆ‘Òkºè>\VÄ€HÂ {HÒËAv-ĞÇlÏVË•Óò¾«nò^I­Ã{Ë´¿-)†Ş©~öÓam•égV®‹7ÊO”hµ%¸dãoj{a~²ˆ¢’Áÿcß(_î¢o*ŞŸìaûì1v²3Æ+¹¨ÕL¹!v4ÓÏ÷•háJß¤')J”öh{„¯1úP"`ğ0{ĞÍƒS6 ˜vŞÔOİÚ·ÌüéÄĞyó0t—ß—ˆòÇ‘ş©™–%óNC_j½ñïë:µ/ª B4Ñäàøg{³šUÆ|tMcò"É3Ñ…æ¶zw›	hAbÊ iLêêÑö¦Xà˜:Ğ¹‰‹iijú­ØŸmÚÍCM}¯Êïê¢²F†Jm\hš‰Ôäc§ñÍ/Èùavj¼Kû¶ÓÕŠ-ßÊ´ëˆ‹ÍPÈ	Ùó¼üQ†1ZTÜÜÿ*şCvTd=Oø›¦”•hİĞæ43N
+¤‡ï:Â¿6¯V'Ï°‡ao)‹8£4uÈ¹­xä³„Sÿ#ş‚äÏÜÈJ¶¢`n÷~¸_?äŸèÀf¬l@{7§¹d‚âÒì˜7ÖõùYŞƒ¶öÏ6}I~uøïeämÌ¶òqtÁ›×”ˆï?l?ûæ~¹GÜµÚA¦È÷gİÏ‹¿Gç£âÙV6 Ï¢<qzƒ'÷;_:?(Ã¼ê@6ü|ÆkGè~Ò³¥ë³âÅV.­iË ©	ëzJ|.Z¥·Æq§\E»¸üSÙ=–{ıçŞM&Ôå¥Ø%\&U‡^g‡½‘#ß—v'µ#«E‰ø™HdÎ‰'Ä'Î³_*¾ïùzp™€–lÀ%d†İÁ#?pîÊãÉ·6›>QW)@\howğõ÷O
+p^±>5v’ÿD4»”%àŠÿ`GR"¯{o8»·ß£ÿ<VÏ6.øŒéOšğwHµFœIvÔW²SÂæcê‰´¨l2bx}¬;Õ9x>`2Ø)b¼x8ìD÷óOCFÿi9z`y³Éêƒ	,Sçğõ“¿Ä]›nÕÖÉ›.u^]ñ$óiwÁµÇØa{”ı2; û	¸CùQ6 ¦ü­*âÍ<÷ä¦ú< µ8‘§	ğß5ÀmÑZ¼ÙLâ5jöº´#v®™kõ,ÕKò#ì7‡´ÏNöàÁª¦ò@qEÒö¾ÇØ©îıüıäyPÓ#0ŞEŞgÎò:t20¨ÀÍ³ıTùçÜ<ó÷ÿyş>t¿{—¨§Ï&)Qİ3æ±}ÙAØÇµ,7Çà&«oÕÁ=†­ôZ|6¹Yvz¢‡ıdø8{Æùl9-†¸F'ş®t(_ tèJ© ]ºt¥T€® ])Ëÿ0 £_¶[\Y©³    IEND®B`‚‰PNG
+
+   IHDR   *  —   ôØÙ   tEXtSoftware Adobe ImageReadyqÉe<  —IDATxÚì	˜ÕµÇOÏÂ€
+¢€ €+Á•(
+î¸ÆÔÇ‹KBâ‚KÀÜ£‚Ï5!
+—¸FÜDDƒ5¨ >£ŠˆÂ0K¿ûÏı×ë;—îªîê¡cÎı¾ó1]U]õ«sÏ=÷Ü¢Ï©D2™”q³“ˆ­ÂÈ¡FúFøNÂH‘{Œ,û¥‘ı§şëß2‰ŞZyØÈ^<jƒV1²(Ê—Jr¸Ğ9Ft ëBH½óıİ<`¤s”‹æ¢Ñ£4ãß_y¦Í´»‘}ÙhƒŒL6rŠ‘%…İÊùû#7…øÎŞ´ç–Î6ÀN22ÔÈ²Btı+F^72ÍÈ—!¿³1•ò½‘íûçİ@d¶3ÒŞH­·ı.#å´»ÕF¶áöR#?ù&ÃùJ©¹_cä`nfä[#W©
+×s¼‘#t¥KqÛ:#IçâeÎ¹ y‘¿e¸^sjô4#÷9„Û/â¿W©
+ZB×ñgÀDm½œhä½¦¶¥‘ÏŒ\bd{Çæ[iäê0 ]ŒŒğ Wxî%“­·â¿ÛP[§;°e<Ìéh2ëÒ(ãÀ° ›éÉ¿×oä%vu&„}ŒÜêøÆ=Ø%4©Fg¹áª°6štì¶9ƒ#¼±ÖÆÈ*o`ï5r‚‘÷a¤u×uq.£>éÌÍEp?åõ‹lÇí»PÓĞìù¸È‰¯•Ñ½\kd‚³ÁËDÚgº@¥ESƒî
+Óê…Ft®q8a;äzâ8Aë8òá#Ï W:šÂ™(çîŠ£%Ùí°ÓSœL¸º¥J[j½nC~ÇîŞÉ›Éª8úÇ1 âhğ¹ÏRüö³8@ãL»FS€Š‚*¨‚¾%—6™Òê÷–RQ]½ ¥h@“\Ów Xï&ŠT8Sµõ¶aêZl ‰4Kk¹|)*ĞÓùĞ!Éµş\>œX[L ¥Şóªú|G}Â9Y"“È°=™O˜—tî»FV2rÏÅ­1Ò+®™Û`/sŒtâç”¸ÚÒ\¢ût3Ó×FîdÄw›Æç±Eø52ÜÈy1BÎû liœ ÂQùŒ%
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+Z„­´Õ!³Ã‡œ#d|uûkEüæ®>‡ëá§tİŒl!6fec_xûë)²W—“Bÿ,ó #Oòo¤RâÇ[ŠÍFDÛTìïA]xüÊ±’²¹Ø\»3Åş0í9±©C¡ZXP\$ø‰å¤T"#	®¨¥ïÜŒ|Ä=Â;'~ÛŒ„Áµq‚n/ëÿ¦pwf‡®Çïœ—Ä9˜
+ñëÇzY?İ8oĞO%â/hÃä(^'Ìèòİ%÷ŸgjH8)NPdo*@×o"ö7ªıã Å¨¼P
+÷ër$XŸè¶’G.gÈ¶5’—{ê—áøÇ?‰Mÿrì{ğ¦j¹Éı_Ğ·&8#@0_«}Œ|h…7ˆ Äiü^ù±)>%<¦ÏLµ’*äşûÄÖŒ8Æ9'¶7ÏW£¾KBV÷HÎõøm~wjZ«Îr>œ×ŠMøGşNÎ5’ùÚè—Î´¸†ÚÀ¿¨Z#øÍş¥¸®¼É °·:û‘A¾4ŒF[r:+wºm¤j:Ô:3Éşİ–¾İ¶§Ø´õÊ×8”ûaF?7òÎÿA«æuÛy“Aà ºÁ*Àœ-6M¢µ…ƒŞ¥‘£{—‹ÍèJ8¶TÃYE?J*‡¹Ê±}7ô»‚ÛJ½MJzÚÈı EÆÁ'8(§ZQ«£iSØ*3i·ˆM,xDRipâ]8Úƒ
+÷Ğ©£vÎ‹T„[^¥î "VRªÓu=ºlKÇ½tg ÜMRE&Ş£«:‰.zÅ=×^<æº›zšÏ¡ßÊ¿?á÷Æ°·  ¤¬àÍ®¤\TÆX±µ‚ƒæòß;A¢4ùûr"¼ıÔñ¦§2ÆL·@ißÑÔtŸKŠcûØ×™½ÍN@'d±¯¶´+¸¥ãiK‡qx–‘ùkÙû2ğÍiï¨q*•ò”‘ÛdıBoóïÇÃúÑ.¼ã™Ôò§¼JËÉ(ÿ`j?A®áÀú“¼
+Ú/nìÚuu”y6hØXjà5vÃ,ôv0r¹‘}²œ9R§ğf¿Ê5 ÈŠ¹z<úÓîĞ5Au¡oèûz4r¨éœ!Ã®™.›0Õ+È>œIÚ3DÛÂ;¾Š]]î€ç9ê	ŠYêFnçô÷*í®3ˆĞ~tİ]GöÀ¦L‰Bkm2]Ó9’Ê5.w¾„h¥aöãy/cÂ‚b„¢ŞÍCœUz2ÌÛŠëu·Î
+>p/ÌkĞÀöfĞÅ4ã¼<Š n¶HRY±-sY­£”fĞT}–Öy=Í+!l¦ Û?6¹!@Kø˜g°·Ô4šp|q=b|“ë;q2èÉQÎ¾Œtf8A4&‡¿ÓMrl·Il4ğğ ãsÑ+›0d<AÊ¾kšt9W”A´>™ÑĞÇÜv;ƒäŞìş¯òL‰Ëz6YÊzê6(¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*¨‚*hö†œÏ—Åæå.h¾•°Š<{d1 _d?±ï\~RbÎÀÉW£;Hª¢Yğ’rd9·Yås2¤²¹Õ"¯Û>JbL¼Ê÷®İîEæXŠ‰äÕ)„-ºQLÇó%•Ô_AØ£‹i@HÅüµÛœfğ‹	ŠÜ¤t¯+|Llîr ‹øIùÂfrO(Pßˆmf«†ñ8¿
+HnI7–/Ë;WĞ½›á•û¸c–c‚BV›ş×uŸs#9ƒÂÕÜ@'K«È í#?¹÷mÄ–ZHĞDr²QäË÷Í—a¦VTÛúÈt(Épv®­T'êŠ €ÄÊçÁqïeÙÿØ"›¦	»½‰&q]TĞzÇ.‘‘ø„Ø¼ø¸Ú„LXØËh×çêp­$şö>aç:®°£Š1,
+|ìÄ(Ïpq1Î0ƒSœØ š½Š°‰b‹ğ{šØÂAÁ`ÆÀº@&oÅRä}Â x‰¤J,Õš	8ŸÛÓ×Æº‰#(:NlÍ¨ }!¶HKQ¢ìÍœZÑ–0LœWL]¢‰Ü|Ôè{®˜F}:È³Œ<[L~4(êv7êŸLÍ%pFÕŒå€Ê`§-?£HÀ™Aú %†{ÑñV†¸8"}T¾zER5Ç2AŞî¸Ôˆ­»3®á:¨‚‘ûÕ’ªú–­•Rû#ÆeêîÛ$UÉÇŸià4ú:çŞ=©ÙŠ]Ô2Ë¤É[èÈÑV0(y!×Ày	íwß3ÍqWÊG:Û9ví7RCå ¶NÏÿBTãö–×0šiì		éŒv@ı­İ,¶œ
++¶ÚF,Ëå5!#{˜Çê,7yX×¿÷º>LËTãÖïî òåB<€È¥Á•æÀé—&ãu]×i\gupÀ‹2_Ğ¤÷ìiwçïå´Óãê®|æzTJW#ç[®‡^ˆÑ¬òJfsútƒ^L‹ÏÇ$”Å Š‡j#Ä–Vº“OY¤Ø@Ñ¦S
+¾fù·h
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª l~ ¼ª­šÿJ»’b„LÇó¯ò©ş”@Ã¾^±,îæk‹yk´ƒ-Ê9K
+uâ¸Ï¥¯áT÷¤ 
+ª 1Æ£$6‹¦n))qÿ/Ù/ÿÊ‡ˆ­)²¡@×ŠMí@ÜK>(
+¨ FÉqEĞË(µp€‘®F–	@‘væ×ºA<jd>o¤P-¨æq ‘~Îömi†@KeırøŒüb”˜ARy ±¼@Ò,^v~Zšı-ü®w×#H÷©å€:XlB4ÒÉ—H£ˆˆLØ)ƒ¶3º'¤ép´ŠÂR¨,Ô® GğÜ[ğó#W†õ£u(&uY
+9¼ °ş9?¢R>ZF×t#İU=a‡¹_R9Èùj*‚ôuWAı²ïÅf—Gš™`ä¨q3–öĞ<5›pº»‰mŸ;ÇDB¡YTd¹†&áj6*l‰hr.M`A\s=`Q•%ÈiÂ®Û,"äD¯»1âÆ”\ES¨æçC	Û!dwÿÑƒ<",d.Ñ“;„ ²|#ù>òÈ0İo˜w5}]ã°ïv|¡Ûá¾Àçüó¦ŠGg¥q7¨–ÑÅÙ†¤ÿ	;›—d¤G:N;˜nò!±¥’ª‰Q½¥ØjA! dßvæœ>?Óì'èÇQŸ'¶Rf”k¹¶·¿Ø‚~A{Wly/h	¯à$2¶P]Ly›9B·5Ú9Î…œ)¶pêgb«v •E1ÆPb×(lğ^Ú›´hûˆ­q‚o0ÀùÌ9nƒó'œîh ¹9!oÏW¢ßóô«˜Å–f8ßLéOÑBÁ–„èîûÈ	’½ö- ¿ÊéÂÂ[”jl> ‡Ñ™w ïŒyÁ÷Z£ØdØ®Gí‘]xlF-v¼Ä…àÙâïhÛŸ†=Hlá‰ ò"‰·tb:X¸½gh‹Â‚v¢L¢‘c9²q—ÈÒu="iJÑ¹ Õ4ì6Î¾a”Õ0¾ñÓ×Cƒ÷xXœ:'Fké+«¸m¶A§rÍ¶:“N¡ècGUPUPUPUPUPUPUPUPUPUPUPUPUPUPUPUPUPUPUPUPUPUPUPUĞÿoù¾Ø)Dî[¯‘Š„”uÅ Š
+xw8^µ½•Ø|OôL=Ï‡×½ÿSlF-’U¿§–CS€"Õr_±Yàx#{¯FGõFÁ{í‘MóIS€¢^È¯év5.wÖ÷12@l
+å¶<©pQ:Yl
+ñ÷… ÔYFF²‹›5ˆ]úßbsæÎ 9Œg7#ë1ÈıDşòFvå¿WÓ$bõ€D>ı„œ&6/î5ÂŒ"$Z9ÏUÊ¸ˆÚ^Ã½™Çáû÷°bMä|B $ÂpÚ´ˆ·T?í_*©ê0Hò¿İ@šÜ™bs@Š-ÒÒ+P”‹¹€ÿ½Ø,Û…„ìÄ›pù7ZílC¦ÙÇ¼Y$¥"¯âÆ›¯÷›¼Q> ;9WlV7ìàFzˆÍ¥Gš:2·¤ …½MîªÿÅ÷_5ò3Ú4ÒŠß6r¯so<çÁ›
+r3weã8$nMûœ-©"AĞ&Ò4[qT×poMğ‰œÜknÄAègŒ‡İMl­%húz 
+vİQÔŞoŒ¬’Tá“•F[éF:ûà;µ´U˜ÄMœ±jyc—S!øîuQAa;Ûp4ß'Ësäç§í­7µÿª¬_-“DÄ•ÜÖÜÈöbS€ÓU…µQ¤ıîÎmHØ_âİlwN–y¼4ƒÍÏ¦İÆÙ¶†7µÂ¹ÉĞƒikÎßĞÖLi˜X.ïLßµVíÚ£_xe>fg*!4(œz7ø“4Çµ’Ì•Zê$UËo˜Í–ÉúÙ»Ğæ<ş½Mİ˜.¦n§ İlJç½µ4¬ ”ä4YÁ}¥Îş$Ï…‰ «÷İçhu0­c÷OäßeoÉîG™K¼¨å>hüšëº*‹Š¿åw“níœ#hONc—¹w"ÙWŞwp#;sş~™#ÛÕhK(o9!ISØ“½Tt5ï,*–y#®ëVÂúí$#çpª­LÜ D´éŞ¾›9sÕELßP[ˆ'ûyÇuâ@é—á<­8²;¦Ù×‡A·_õ #Ï—”õu\Ğÿ[(]µ‹·ï¼İ$C).^0™ae€æ—³ëNm¢ç>Œº‚ÎY¹~o]É@ëÙ}éÅŒ˜xaá^ô$_8×=a0,¦‘ïïíû»±M–6F÷fĞñ­³­íZhó?Dõïˆ-3ƒ ùb·#DoÎ"ãio%ÎtØ›]y/{¦Ü1™½yñ<ßĞæûÑ6'åæ­åbívY7†nõt/€>’ÇT8 Uìö´å2n@gş¤sÌ@úêgN®ñè›bO^JÍÁ]İÂ}•Ë.wÖêõì¡\c}é<ˆx„ÿ¢îÃj‚®ê–°±Cºh§–qåƒ<áHÎ(ğ³·ñæÎ¤öV>ˆO«èğW°kwålõ%Ã½8•B‹J„r#™ÖL¸ğvMk®oäS’G¸ÆßÓ;O‰ÓCÍ9e¢ÜÌë\M¡×À:ê¿88cY.Wr¶¹‘Z>Kåvc¹6
+ÜUãƒr®İs°ÜÅ(¿5G8Ê~ı=îUBŞeWíÌ	—,ĞÒ¼My3ÛIª ÚPúWtñİ\&/.ä#Ç¸‚<œİ¶5Ú JĞnr¢¦JÊ_Å–dšÕTÉ¾¦VşÌ)vÿíÈ ¥ç«ä`ù—‹%†–ËcÇ*º–éúÄYATATATATATATATATATATATATATATATATATATATATATATATAÿ3@Ëb8T‘0ˆT"¤±Õ(¾‹” d#"™aÏŠ-ğE±€"±¹JHÌêälGŠ&j‘ ı
+–m(P$µBÀşA2›dˆT¡&+úƒã}ˆ*G¥Ù
+HÄÚÙÙ†l1¼îõI<ÓŠÂ€"u÷Tvi+oJ# dÈ©CÚå	’J'F42 ›\ˆâEâßÙF•õK,£¦Ñø¾³P(™4Œ74@™š}¨]TÑ¨É©’¿ähŞ#Íşû©ÅiÎù’Ø4¶çx}½Ş¦vŸÌå?à·›4¬ë„öºØÌXØZc‰§pUÈpDñab3 »:û1 ûÑ$00WEíÊ»ÜÉ;>µP‘hQDÓÂw'päŸLà çysÚ~m;ôº¹‰$i$¢¢›Y”Ç Enş5bÿôö!6=´FİÿE¼û§¥aa•|Ú#x!W¯Û"× ¤Šn$.Hß~á5‚,ğL%BGO…Œ¬J
+şGTATAZ XúVğºkâİ‚n¡†nÕ¬Ò( n`€
+c$U%®v —ÑÇ:×FÉ¯o£€¢úÅ,/>Ê%¢şvy nËõÕd.CZ:û°´ş.*èŒäÅ[˜Ë%ñˆˆë/TyƒËg·ØÕZ.m.
+³îw/ZÏÀö8®sæ:ûÊ©hö5va¢‘sŸÎóÇŞqÛ3|0ZÖ/¶z0U±»wa4¾Ø¹chh /ô'Â»¡WXB£HU7I©‚'™Ã‡PÆü(£?S7&yìé+¶Î÷Ği\eB+›ú/\F÷u q“¨šu1—ßÏÉúÕ6cqøßñÁÂ>´_·~ QŒ
+¥‘ŞåBÍmKù`gÚcÎ¾9ÊÀ˜ËõxP©Úó­ÏËySs)¼tCL¡ÏòÅU„¯÷f<¨ø5oêı¸p®ÏGaÃ7Ğ¢¦îöÜş¦¤J)ÅÚÉdRşš†y
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª 
+ª ?eĞ²q³‹ú7‰ßßoâìC‚R4uƒÿP™ŞAÙjfĞç@‚
+’¥4…¢)ÈÀé‘¥Gíğ©Ø\5!P>!çò5"-ehPÒ6ZG8÷”ßˆ}õöFûşædœ6ÚEl9$°\œÚAbË
+OÒ€öo52›7½qE7£ÊËÂºv‡Ü$dÓ ?ï±‰Y	©C?'²r¶t¾ÏÈ/Á±‘kòÏ\AQñâ·Ôd3g;²jğ÷—hsï4rŞ	üåDP\e?šPĞ`F(\q2Í"(F,²½®ğARÒÖ"WkáAPÍèR#¿pL¹¡ˆÍïû1Š”igH¹—¤Û>›!y®4Ì0Ã›Ú/‹2˜ğşùë½}“Ø5Æè·ï›”õƒgÂ€ÂGŠMª`]¦Krhy=ÿ|eĞt®M^ !²_óhwyrIe™e=†m%O²°ÀS7ÜØã‡·9°1Ğ¡Îg Nn¢8ãEÇÿn$«o¥íå|~ZmŠ¶ZRY	i¤ğO‰3òWÇ<ÂÃŒåÎçfaıèª(SZLÍÍİ_tcz€¦j¨yÖÎ\óF^o>.tæ(
+©ë3ã|Ş‰ÑO¡[{ÎHÁ¨ÿOVP×mÇ)®ƒf,aƒöŠ7­¦}^R™İì’=
+	Eœåt;âÙ›Ã¸ˆÏÈºÑ8BºŞ1CVpY2ÎÄ·3ºjt-£mwÔíÆèipL=Ùİ7KÃÚP~%ÌÃÒb¸çGwcu¥ä^ú£CEÈ—xû–õòÒEøo³kn3Òİñ­cx#÷H¸òœ¨GÚ—ÑĞ‚)´Óê\@Ñáq)/´^<v?#ì@ğÅÔ\)][‚¶Os=ôØx#ÅVïÈk:štA— ×RQ‰´É·âz Ñšë'·½E­çR:lû€½„›ŸáôHŞ ­øDÃøs	İ3M¾È™‚Kù ëı¹<ÖY 1T"vAÛpwŠççÚ92Íƒˆs¨%·Õ2t«”˜Ë$—y~xšÇ<Í½ÏŸp!1éÍåÙÓªFæ[<Ü:ŸO=¦7%¤¯Ñù|’:#»ÒöÒ¿â1Îë¼‘:Ù Më”üÇ‚şŸ  aêãLŞĞŸ‰    IEND®B`‚<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link type="image/x-icon" rel="icon" href="../favicon.ico">
+    <link type="image/x-icon" rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../pipe.css">
+    <link rel="stylesheet" href="../sh_vim-dark.css">
+    <script type="text/javascript" src="//use.typekit.net/mse5tqx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link rel="alternate"
+          type="application/rss+xml"
+          title="node blog"
+          href="http://feeds.feedburner.com/nodejs/123123123">
+    <title>node.js</title>
+  </head>
+  <body class="int alt" id="download-page">
+    <div id="nav">
+      <ul>
+        <li><a href="/"><img src="/images/baby-node.svg" width="12"></a></li>
+        <li class="active"><a href="/download">Download</a></li>
+        <li><a href="/api">Docs</a></li>
+        <li><a href="http://blog.nodejs.org">Blog</a></li>
+        <li><a href="/community">Community</a></li>
+        <li><a href="http://npmjs.org">Modules</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="http://jobs.nodejs.org">Jobs</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <a href="http://github.com/joyent/node"><img class="forkme" src="/images/fork-me.png" alt="Fork me on GitHub"></a>
+    </div>
+    <div id="content-wrap">
+    <div id="content" class="clearfix">
+      <div id="column1" class="interior row">
+        <div class="interior row">
+          <p>
+            Download the Node.js source code or a pre-built installer for your platform, and start developing today.
+          </p>
+          <p>Current version: <b>v0.10.26</b></p>
+        </div>
+
+        <div class="interior row">
+          <div id="installers">
+            <ul>
+              <li>
+                <a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-x86.msi">
+                  <img src="http://nodejs.org/images/platform-icon-win.png"
+                    height=50 width=45 alt="">
+                  Windows Installer
+                  <small>node-v0.10.26-x86.msi</small>
+                </a>
+              </li>
+              <li>
+                <a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26.pkg">
+                  <img src="http://nodejs.org/images/platform-icon-osx.png"
+                    height=50 width=45 alt="">
+                  Macintosh Installer
+                  <small>node-v0.10.26.pkg</small>
+                </a>
+              </li>
+              <li id="source">
+                <a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz">
+                  <img src="http://nodejs.org/images/platform-icon-generic.png"
+                    height=50 width=45 alt="">
+                  Source Code
+                  <small>node-v0.10.26.tar.gz</small>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <table style="font-size:14px">
+            <tr>
+              <th>Windows Installer (.msi)</th>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-x86.msi">32-bit</a></td>
+              <td><a href="http://nodejs.org/dist/v0.10.26/x64/node-v0.10.26-x64.msi">64-bit</a></td>
+            </tr>
+
+            <tr>
+              <th>Windows Binary (.exe)</th>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node.exe">32-bit</a></td>
+              <td><a href="http://nodejs.org/dist/v0.10.26/x64/node.exe">64-bit</a></td>
+            </tr>
+
+            <tr>
+              <th>Mac OS X Installer (.pkg)</th>
+              <td colspan=2><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26.pkg">Universal</a></td>
+            </tr>
+
+            <tr>
+              <th>Mac OS X Binaries (.tar.gz)</strong></th>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-darwin-x86.tar.gz">32-bit</a></td>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-darwin-x64.tar.gz">64-bit</a></td>
+            </tr>
+
+            <!-- TODO Uncomment when we have these
+            <tr>
+              <th>Linux Installer (.deb)</th>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x86.deb">32-bit</a></td>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x64.deb">64-bit</a></td>
+            </tr>
+
+            <tr>
+              <th>Linux Installer (.rpm)</th>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x86.rpm">32-bit</a></td>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x64.rpm">64-bit</a></td>
+            </tr>
+            -->
+
+            <tr>
+              <th>Linux Binaries (.tar.gz)</th>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x86.tar.gz">32-bit</a></td>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x64.tar.gz">64-bit</a></td>
+            </tr>
+
+            <tr>
+              <th>SunOS Binaries (.tar.gz)</th>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-sunos-x86.tar.gz">32-bit</a></td>
+              <td><a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26-sunos-x64.tar.gz">64-bit</a></td>
+            </tr>
+
+            <tr>
+              <th>Source Code</th>
+              <td colspan=2>
+                <a href="http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz">node-v0.10.26.tar.gz</a>
+              </td>
+            </tr>
+          </table>
+          <p>
+            Note: Python 2.6 or 2.7 is required to build from source tarballs.
+          </p>
+
+          <h2 style="margin-top:1em" id=other-info>Other Info</h2>
+          <ul>
+            <li><a href="http://nodejs.org/dist/v0.10.26/SHASUMS.txt">Shasums</a></li>
+            <li><a href="https://raw.github.com/joyent/node/v0.10.26/ChangeLog">Change Log</a></li>
+
+            <li><a href="http://nodejs.org/docs/v0.10.26/api/">Documentation</a></li>
+
+            <li><a href="https://github.com/joyent/node">Git Repository</a></li>
+            <li><a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">Installing from package managers</a>
+
+            <li><a href="http://nodejs.org/dist/v0.10.26">Other release files</a></li>
+            <li><a href="http://nodejs.org/dist/">Other releases</a></li>
+            <li><a href="http://jenkins.nodejs.org/html/nightlies.html">Nightly builds</a></li>
+        </ul>
+        </div>
+
+        <div class="interior row">
+          <h2 id="license">License</h2>
+          <p>
+            Node.js is released under the MIT
+            license, and bundles other liberally licensed OSS components.
+          <a
+            href="https://raw.github.com/joyent/node/v0.10.26/LICENSE">Download the license</a></p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div id="footer">
+      <a href="http://www.joyent.com"><h5>The Node.js Project is Sponsored by</h5>
+      <img src="/images/joyent-footer.svg" width="200">
+      <p>Production Node + High Performance Infrastructure</p></a>
+      <a href="https://my.joyent.com/landing/signup/701800000015696" class="button getstarted">Get Started</a>
+      <p class="copyright">Copyright <a href="http://joyent.com/">Joyent, Inc</a>, Node.js is a <a href="/trademark-policy.pdf">trademark</a> of Joyent, Inc. <a href="https://raw.github.com/joyent/node/v0.10.26/LICENSE">View license</a>.</p>
+    </div>
+
+    <script>
+      window._gaq = [['_setAccount', 'UA-10874194-2'], ['_trackPageview']];
+      (function(d, t) {
+        var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        g.src = '//www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g, s);
+      }(document, 'script'));
+    </script>
+ </body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"><html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="robots" content="nofollow" />
+<style type="text/css">html, body {padding: 0; margin: 0; border: 0;}</style>
+ 
+<style type="text/css">
+#mainContainer {
+	position: relative;
+	width: 298px;
+    height: 124px;
+    border-right: 1px solid #e3e3e3;
+ border-left: 1px solid #e3e3e3;
+ border-bottom: 1px solid #e3e3e3;
+ border-top: none;
+    background-color: #f0f0f0;
+	overflow: hidden;
+	border-radius: 0 0 5px 5px;
+}
+
+*html .mainContainer{
+	width: 300px;
+	}
+
+.advBlock {
+	width: 300px;
+	height: 155px;
+	border: none;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+
+.advHeader {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 160px;
+	height: 34px;
+	border: 0px solid #666666;
+	overflow: hidden;
+	text-align: left;
+	color: #565656;
+}
+
+.advHeader, .advHeader:hover, .advHeader:visited, .advHeader:active, .advHeader:link {
+	line-height: 16px;
+	text-decoration: none;
+	color: #565656;
+	font-size: 14px;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;;
+}
+
+	
+.advDescription {
+	position: absolute;
+	top: 42px;
+	left: 10px;
+	width: 160px;
+	height: 65px;
+	border: 0px solid #ff6666;
+	overflow: hidden;		
+	text-align: left;
+}
+
+.advDescription, .advDescription:hover, .advDescription:visited, .advDescription:active, .advDescription:link {
+	line-height: 16px;
+	height: 49px;
+	text-decoration: none;
+	color: #565656;
+	font-size: 14px;
+	font-family:Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;;
+	text-decoration: none;
+}
+
+
+.advCost {
+	position: absolute;
+	top: 104px;
+	left: 2px;
+	width: 100%;
+	height: 14px;
+	border: 0px solid #9f9feb;
+	overflow: hidden;
+	text-align: center;
+	display: none;
+}
+
+.advCost, .advCost:link, .advCost:hover, .advCost:visited, .advCost:active {
+	color: #008000;
+	font-size: 12px;
+	font-family:Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+.advImage {
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 12px;
+	left: 184px;
+	border: 0px solid #d6d6d6;
+}
+
+.nav {
+	cursor:pointer;	
+	position: absolute;
+	width: 11px;
+	height: 16px;
+
+	bottom: 1px;
+	left: 14px;
+
+}
+
+.nav a, .nav a:hover, .nav a:link, .nav a:visited, .nav a:active {
+	font-size: 15px;
+	text-decoration: none;
+	/*color: #f0f0f0;*/
+	/*background-color: #f0f0f0;*/
+	font-family: Arial, "Helvetica CY",  sans-serif;
+	display: block;
+	/*border: 1px solid #000;*/
+	width: 11px;	
+}
+
+/*.nav a:hover {
+	color: #f0f0f0;
+	background-color: #f0f0f0;
+}*/
+
+
+.navr {
+	cursor:pointer;	
+	position: absolute;
+	width: 11px;
+	height: 16px;
+	bottom: 1px;
+	left: 1px;
+}
+
+.navr a, .nav a:hover, .navr a:link, .navr a:visited, .navr a:active {
+	font-size: 15px;
+	text-decoration: none;
+	font-family: Arial, "Helvetica CY",  sans-serif;
+	display: block;
+	width: 11px;	
+}
+
+#adInfo {
+	position: absolute;
+	top: 3px;
+	left: 1px;
+	background-repeat: no-repeat;
+	overflow:hidden;
+
+
+
+	background-image: url('http://cdnt.yottos.com/getmyad/logos/colorLogo.gif');
+	height: 10px;
+	width: 100px;
+	display: none;
+}	
+
+
+#adInfo a {
+	width:100%;
+	height:100%;
+	display: block;
+
+}
+
+.c {position: absolute; overflow-x: hidden; overflow-y: hidden; width: 1px; height: 1px;background-color:#f0f0f0;}
+.c1 {position: absolute; overflow-x: hidden; overflow-y: hidden; width: 1px; height: 1px;background-color:#f0f0f0;}
+.c2 {position: absolute; overflow-x: hidden; overflow-y: hidden; width: 1px; height: 1px;background-color:#f0f0f0;}
+.b {position: absolute; overflow-x: hidden; overflow-y: hidden; width: 1px; height: 1px;background-color:#f0f0f0;}
+.b1 {position: absolute; overflow-x: hidden; overflow-y: hidden; width: 1px; height: 1px;background-color:#f0f0f0;}
+.b2 {position: absolute; overflow-x: hidden; overflow-y: hidden; width: 1px; height: 1px;background-color:#f0f0f0;}
+
+</style>
+ 
+</head> 
+<body> 
+  <div id="mainContainer" class="mainContainer"> 
+  
+  	<div id='adsContainer'></div> 
+              <div id="adInfo"><a href="http://blog.yottos.com/proekty-yottos/adload/" target="_blank" title="Реклама от Yottos"></a></div> 
+              <a href='javascript:prev();'> <div class="navr" id='nav_r' style="display:none" onmouseover="change('b');" onmouseout="change1('b');" > <div id="leftArrow" style="width:12;height:16px;"> 
+  <div class="b1" style="left:3px;top:7px;"></div><div class="b1" style="left:3px;top:8px;"></div><div class="b1" style="left:4px;top:6px;"></div><div class="b1" style="left:4px;top:7px;"></div><div class="b1" style="left:4px;top:8px;"></div><div class="b1" style="left:4px;top:9px;"></div><div class="b1" style="left:5px;top:5px;"></div><div class="b1" style="left:5px;top:6px;"></div><div class="b1" style="left:5px;top:7px;"></div><div class="b1" style="left:5px;top:8px;"></div><div class="b1" style="left:5px;top:9px;"></div><div class="b1" style="left:5px;top:10px;"></div><div class="b1" style="left:6px;top:4px;"></div><div class="b1" style="left:6px;top:5px;"></div><div class="b1" style="left:6px;top:6px;"></div><div class="b1" style="left:6px;top:9px;"></div><div class="b1" style="left:6px;top:10px;"></div><div class="b1" style="left:6px;top:11px;"></div><div class="b1" style="left:7px;top:3px;"></div><div class="b1" style="left:7px;top:4px;"></div><div class="b1" style="left:7px;top:5px;"></div><div class="b1" style="left:7px;top:10px;"></div><div class="b1" style="left:7px;top:11px;"></div><div class="b1" style="left:7px;top:12px;"></div><div class="b1" style="left:8px;top:2px;"></div><div class="b1" style="left:8px;top:3px;"></div><div class="b1" style="left:8px;top:4px;"></div><div class="b1" style="left:8px;top:11px;"></div><div class="b1" style="left:8px;top:12px;"></div><div class="b1" style="left:8px;top:13px;"></div> 
+  <div class="b" style="left:0px;top:7px;"></div><div class="b" style="left:0px;top:8px;"></div><div class="b" style="left:1px;top:6px;"></div><div class="b" style="left:1px;top:7px;"></div><div class="b" style="left:1px;top:8px;"></div><div class="b" style="left:1px;top:9px;"></div><div class="b" style="left:2px;top:5px;"></div><div class="b" style="left:2px;top:6px;"></div><div class="b" style="left:2px;top:7px;"></div><div class="b" style="left:2px;top:8px;"></div><div class="b" style="left:2px;top:9px;"></div><div class="b" style="left:2px;top:10px;"></div><div class="b" style="left:3px;top:4px;"></div><div class="b" style="left:3px;top:5px;"></div><div class="b" style="left:3px;top:6px;"></div><div class="b" style="left:3px;top:9px;"></div><div class="b" style="left:3px;top:10px;"></div><div class="b" style="left:3px;top:11px;"></div><div class="b" style="left:4px;top:3px;"></div><div class="b" style="left:4px;top:4px;"></div><div class="b" style="left:4px;top:5px;"></div><div class="b" style="left:4px;top:10px;"></div><div class="b" style="left:4px;top:11px;"></div><div class="b" style="left:4px;top:12px;"></div><div class="b" style="left:5px;top:2px;"></div><div class="b" style="left:5px;top:3px;"></div><div class="b" style="left:5px;top:4px;"></div><div class="b" style="left:5px;top:11px;"></div><div class="b" style="left:5px;top:12px;"></div><div class="b" style="left:5px;top:13px;"></div><div class="b" style="left:6px;top:1px;"></div><div class="b" style="left:6px;top:2px;"></div><div class="b" style="left:6px;top:3px;"></div><div class="b" style="left:6px;top:7px;"></div><div class="b" style="left:6px;top:8px;"></div><div class="b" style="left:6px;top:12px;"></div><div class="b" style="left:6px;top:13px;"></div><div class="b" style="left:6px;top:14px;"></div><div class="b" style="left:7px;top:0px;"></div><div class="b" style="left:7px;top:1px;"></div><div class="b" style="left:7px;top:2px;"></div><div class="b" style="left:7px;top:6px;"></div><div class="b" style="left:7px;top:7px;"></div><div class="b" style="left:7px;top:8px;"></div><div class="b" style="left:7px;top:9px;"></div><div class="b" style="left:7px;top:13px;"></div><div class="b" style="left:7px;top:14px;"></div><div class="b" style="left:7px;top:15px;"></div><div class="b" style="left:8px;top:0px;"></div><div class="b" style="left:8px;top:1px;"></div><div class="b" style="left:8px;top:5px;"></div><div class="b" style="left:8px;top:6px;"></div><div class="b" style="left:8px;top:7px;"></div><div class="b" style="left:8px;top:8px;"></div><div class="b" style="left:8px;top:9px;"></div><div class="b" style="left:8px;top:10px;"></div><div class="b" style="left:8px;top:14px;"></div><div class="b" style="left:8px;top:15px;"></div><div class="b" style="left:9px;top:0px;"></div><div class="b" style="left:9px;top:1px;"></div><div class="b" style="left:9px;top:2px;"></div><div class="b" style="left:9px;top:3px;"></div><div class="b" style="left:9px;top:4px;"></div><div class="b" style="left:9px;top:5px;"></div><div class="b" style="left:9px;top:6px;"></div><div class="b" style="left:9px;top:7px;"></div><div class="b" style="left:9px;top:8px;"></div><div class="b" style="left:9px;top:9px;"></div><div class="b" style="left:9px;top:10px;"></div><div class="b" style="left:9px;top:11px;"></div><div class="b" style="left:9px;top:12px;"></div><div class="b" style="left:9px;top:13px;"></div><div class="b" style="left:9px;top:14px;"></div><div class="b" style="left:9px;top:15px;"></div><div class="b" style="left:10px;top:0px;"></div><div class="b" style="left:10px;top:1px;"></div><div class="b" style="left:10px;top:2px;"></div><div class="b" style="left:10px;top:3px;"></div><div class="b" style="left:10px;top:4px;"></div><div class="b" style="left:10px;top:5px;"></div><div class="b" style="left:10px;top:6px;"></div><div class="b" style="left:10px;top:7px;"></div><div class="b" style="left:10px;top:8px;"></div><div class="b" style="left:10px;top:9px;"></div><div class="b" style="left:10px;top:10px;"></div><div class="b" style="left:10px;top:11px;"></div><div class="b" style="left:10px;top:12px;"></div><div class="b" style="left:10px;top:13px;"></div><div class="b" style="left:10px;top:14px;"></div><div class="b" style="left:10px;top:15px;"></div> 
+               </div>  </div> </a> 
+  
+  
+             <a href='javascript:next();'> <div class="nav" id="nav_l" onmouseover="change('c');" onmouseout="change1('c');" > <div id="rightArrow" style="width:12;height:16px;"> 
+  <div class="c1" style="left:2px;top:2px;"></div><div class="c1" style="left:2px;top:3px;"></div><div class="c1" style="left:2px;top:4px;"></div><div class="c1" style="left:2px;top:11px;"></div><div class="c1" style="left:2px;top:12px;"></div><div class="c1" style="left:2px;top:13px;"></div><div class="c1" style="left:3px;top:3px;"></div><div class="c1" style="left:3px;top:4px;"></div><div class="c1" style="left:3px;top:5px;"></div><div class="c1" style="left:3px;top:10px;"></div><div class="c1" style="left:3px;top:11px;"></div><div class="c1" style="left:3px;top:12px;"></div><div class="c1" style="left:4px;top:4px;"></div><div class="c1" style="left:4px;top:5px;"></div><div class="c1" style="left:4px;top:6px;"></div><div class="c1" style="left:4px;top:9px;"></div><div class="c1" style="left:4px;top:10px;"></div><div class="c1" style="left:4px;top:11px;"></div><div class="c1" style="left:5px;top:5px;"></div><div class="c1" style="left:5px;top:6px;"></div><div class="c1" style="left:5px;top:7px;"></div><div class="c1" style="left:5px;top:8px;"></div><div class="c1" style="left:5px;top:9px;"></div><div class="c1" style="left:5px;top:10px;"></div><div class="c1" style="left:6px;top:6px;"></div><div class="c1" style="left:6px;top:7px;"></div><div class="c1" style="left:6px;top:8px;"></div><div class="c1" style="left:6px;top:9px;"></div><div class="c1" style="left:7px;top:7px;"></div><div class="c1" style="left:7px;top:8px;"></div> 
+  <div class="c" style="left:0px;top:0px;"></div><div class="c" style="left:0px;top:1px;"></div><div class="c" style="left:0px;top:2px;"></div><div class="c" style="left:0px;top:3px;"></div><div class="c" style="left:0px;top:4px;"></div><div class="c" style="left:0px;top:5px;"></div><div class="c" style="left:0px;top:6px;"></div><div class="c" style="left:0px;top:7px;"></div><div class="c" style="left:0px;top:8px;"></div><div class="c" style="left:0px;top:9px;"></div><div class="c" style="left:0px;top:10px;"></div><div class="c" style="left:0px;top:11px;"></div><div class="c" style="left:0px;top:12px;"></div><div class="c" style="left:0px;top:13px;"></div><div class="c" style="left:0px;top:14px;"></div><div class="c" style="left:0px;top:15px;"></div><div class="c" style="left:1px;top:0px;"></div><div class="c" style="left:1px;top:1px;"></div><div class="c" style="left:1px;top:2px;"></div><div class="c" style="left:1px;top:3px;"></div><div class="c" style="left:1px;top:4px;"></div><div class="c" style="left:1px;top:5px;"></div><div class="c" style="left:1px;top:6px;"></div><div class="c" style="left:1px;top:7px;"></div><div class="c" style="left:1px;top:8px;"></div><div class="c" style="left:1px;top:9px;"></div><div class="c" style="left:1px;top:10px;"></div><div class="c" style="left:1px;top:11px;"></div><div class="c" style="left:1px;top:12px;"></div><div class="c" style="left:1px;top:13px;"></div><div class="c" style="left:1px;top:14px;"></div><div class="c" style="left:1px;top:15px;"></div><div class="c" style="left:2px;top:0px;"></div><div class="c" style="left:2px;top:1px;"></div><div class="c" style="left:2px;top:5px;"></div><div class="c" style="left:2px;top:6px;"></div><div class="c" style="left:2px;top:7px;"></div><div class="c" style="left:2px;top:8px;"></div><div class="c" style="left:2px;top:9px;"></div><div class="c" style="left:2px;top:10px;"></div><div class="c" style="left:2px;top:14px;"></div><div class="c" style="left:2px;top:15px;"></div><div class="c" style="left:3px;top:0px;"></div><div class="c" style="left:3px;top:1px;"></div><div class="c" style="left:3px;top:2px;"></div><div class="c" style="left:3px;top:6px;"></div><div class="c" style="left:3px;top:7px;"></div><div class="c" style="left:3px;top:8px;"></div><div class="c" style="left:3px;top:9px;"></div><div class="c" style="left:3px;top:13px;"></div><div class="c" style="left:3px;top:14px;"></div><div class="c" style="left:3px;top:15px;"></div><div class="c" style="left:4px;top:1px;"></div><div class="c" style="left:4px;top:2px;"></div><div class="c" style="left:4px;top:3px;"></div><div class="c" style="left:4px;top:7px;"></div><div class="c" style="left:4px;top:8px;"></div><div class="c" style="left:4px;top:12px;"></div><div class="c" style="left:4px;top:13px;"></div><div class="c" style="left:4px;top:14px;"></div><div class="c" style="left:5px;top:2px;"></div><div class="c" style="left:5px;top:3px;"></div><div class="c" style="left:5px;top:4px;"></div><div class="c" style="left:5px;top:11px;"></div><div class="c" style="left:5px;top:12px;"></div><div class="c" style="left:5px;top:13px;"></div><div class="c" style="left:6px;top:3px;"></div><div class="c" style="left:6px;top:4px;"></div><div class="c" style="left:6px;top:5px;"></div><div class="c" style="left:6px;top:10px;"></div><div class="c" style="left:6px;top:11px;"></div><div class="c" style="left:6px;top:12px;"></div><div class="c" style="left:7px;top:4px;"></div><div class="c" style="left:7px;top:5px;"></div><div class="c" style="left:7px;top:6px;"></div><div class="c" style="left:7px;top:9px;"></div><div class="c" style="left:7px;top:10px;"></div><div class="c" style="left:7px;top:11px;"></div><div class="c" style="left:8px;top:5px;"></div><div class="c" style="left:8px;top:6px;"></div><div class="c" style="left:8px;top:7px;"></div><div class="c" style="left:8px;top:8px;"></div><div class="c" style="left:8px;top:9px;"></div><div class="c" style="left:8px;top:10px;"></div><div class="c" style="left:9px;top:6px;"></div><div class="c" style="left:9px;top:7px;"></div><div class="c" style="left:9px;top:8px;"></div><div class="c" style="left:9px;top:9px;"></div><div class="c" style="left:10px;top:7px;"></div><div class="c" style="left:10px;top:8px;"></div> 
+  
+               </div> </div> </a>
+  
+      </div> 
+  
+  <script type='text/javascript' language='JavaScript'>     var initads=[{"id": "794a6cd3-e8f7-4786-8005-29ac47b2c6d0","title": "Наилучшая методика для похудения!","description": "Теперь возможно создать идеальную фигуру ДОМА и без усилий!","price": "","image": "http:\/\/cdnt.yottos.com\/getmyad\/img\/2ce823fecf8211e38081002590d75952.png","swf": "","url": "http:\/\/rg.yottos.com\/redirect?aWQ9Nzk0YTZjZDMtZThmNy00Nzg2LTgwMDUtMjlhYzQ3YjJjNmQwCmluZj1iNmMwNzYzYy0wMGY1LTExZTMtOTZlNy0wMGUwODFiYWQ4MDEKdG9rZW49NGM0ZmZmNWIKdXJsPWh0dHA6Ly9saXZlLWJsb2dzLm9yZy9pbm5hX2dpbmdlci8_c3JjPVlUJnRpZD0x0YcKc2VydmVyPTIxMi4xMTMuMzIuMTUwCmxvYz0=","token": "4c4fff5b","rating": "3561","width": "-1","height": "-1","campaign_id": "cc3cd256-a6b5-496d-85c0-034fb2c2c561","branch": "L30"}];     function init() { 
+      if (arguments.callee.done) return; 
+      arguments.callee.done = true; 
+  	JsonToAds(initads); 
+  	showAds(cursor,cursor + count); 
+  	k=ads.length; 
+  	cursor+=count; 
+  	document.getElementById('nav_l').style.display='block'; 
+  	arrowBgColor = document.getElementById('nav_l').style.backgroundColor; 
+  	arrowColor = document.getElementById('nav_l').style.color; 
+  	hoverColor = (arrowBgColor/2 + arrowColor/2); 
+  } 
+  
+  if (document.addEventListener) { 
+      document.addEventListener("DOMContentLoaded", init, false); 
+  } 
+  
+  if (/WebKit/i.test(navigator.userAgent)) { 
+      var _timer = setInterval(function() { 
+          if (/loaded|complete/.test(document.readyState)) { 
+              clearInterval(_timer); 
+              delete _timer; 
+              init(); 
+          } 
+      }, 10); 
+  } 
+  window.onload = init; 
+  
+  var count=1; 
+  var cursor=0; 
+  var k=0; 
+  var t=Math.floor(10/count); 
+  var _sem=false; 
+  var _click = true; 
+  var ads=new Array(); 
+  var guids=""; 
+  var adsView=""; 
+  var imgs = new Image(); 
+  var _m=false;
+  function showAds(start,end){ 
+  	adsView=""; 
+  	document.getElementById('adsContainer').innerHTML =""; 
+  	if (end >= ads.length) { 
+  		start = ads.length - (end - start); 
+  		end = ads.length; 
+  	} 
+  
+  	for (i = start; i < end; i++) { 
+  		if(ads[i]) 
+  			adsView+=ads[i]; 
+  	} 
+  	document.getElementById('adsContainer').innerHTML = adsView; 
+  } 
+  function JsonToAds(r){ 
+  	for(i=0;i<r.length;i++) 
+  	{ 
+  	if (r[i]['title'] != "") { 
+  		ads[i + k] = '<div class="advBlock" onmousemove="_mv(this);"><a class="advHeader" onmousedown="_md(this);" href="' + r[i]['url'] + '&p=h&m=0&h=0" target="_blank" >' + r[i]['title'] + 
+  		'</a><a class="advDescription" onmousedown="_md(this);" href="' + 
+  		r[i]['url'] + 
+  		'&p=d&m=0&h=0" target="_blank" >' + 
+  		r[i]['description'] + 
+  		'</a><a class="advCost" onmousedown="_md(this);" href="' + 
+  		r[i]['url'] + 
+  		'&p=p&m=0&h=0" target="_blank" >' + 
+  		r[i]['price'] + 
+  		'</a><a href="' + 
+  		r[i]['url'] + 
+  		'&p=i&m=0&h=0" target="_blank" onmousedown="_md(this);" ><img class="advImage" src="' + 
+  		r[i]['image'] + 
+  		'" alt="' + 
+  		r[i]['title'] + 
+  		'"></a></div>'; 
+  		guids += r[i]['id'] + "_"; 
+  		imgs.src = r[i]['image']; 
+  	} 
+  	else 
+  	k-=1; 
+  	} 
+  	 k=ads.length; 
+  
+  	if(k>=t*count)k=t*count; 
+  } 
+  function getXmlHttp(){ 
+  	try { 
+  		return new ActiveXObject("Msxml2.XMLHTTP"); 
+  	} catch (e) { 
+          try { 
+              return new ActiveXObject("Microsoft.XMLHTTP"); 
+          } catch (ee) { } 
+      } 
+      if (typeof XMLHttpRequest!='undefined') { 
+          return new XMLHttpRequest(); 
+  
+      } 
+  } 
+  
+  function pre_load(){ 
+  	var params = 'exclude=' + encodeURIComponent(guids) + "&rand=" + Math.floor(Math.random() * 1000000); 
+  	var xmlhttp = getXmlHttp(); 
+  	xmlhttp.open("GET", "/adshow.fcgi?scr=b6c0763c-00f5-11e3-96e7-00e081bad801&show=json&"+params, true) 
+  
+  	xmlhttp.onreadystatechange=function(){ 
+    if (xmlhttp.readyState != 4) return 
+  
+    clearTimeout(timeout) 
+  
+    if (xmlhttp.status == 200) { 
+  	eval("var responsedata = (" + xmlhttp.responseText + ")"); 
+  	if (responsedata.length > 0) { 
+  		JsonToAds(responsedata); 
+  		showAds(cursor, cursor + count); 
+  		_sem = true; 
+  		cursor += count; 
+  		if (cursor > count) 
+  			document.getElementById('nav_r').style.display = 'block'; 
+  		if ((cursor) >= t * count) { 
+  			document.getElementById('nav_l').style.display = 'none'; 
+  		} 
+  		else 
+  			document.getElementById('nav_l').style.display = 'block'; 
+  	} 
+    } 
+    else { 
+  	handleError("Опаньки"); 
+    } 
+  } 
+  
+  xmlhttp.send(null); 
+  
+  var timeout = setTimeout( function(){ xmlhttp.abort(); handleError("Time over") },10000); 
+  function handleError(message){if(ads.length>0) return; /*document.getElementById('nav_l').style.display='block';*/document.getElementById('adsContainer').innerHTML ="<div>Опаньки!<br />Загрузка данных прервана:(</div>";pre_load();} 
+  
+  } 
+  
+  function next(){ 
+   document.getElementById('nav_l').style.display='none'; 
+  	adsView=""; 
+  
+  	if (true || ads.length < t * count && cursor >= ads.length) { 
+  		pre_load(); 
+  	} 
+  	else 
+  	{ 
+  		if (cursor >= count) 
+  			document.getElementById('nav_l').style.display = 'none'; 
+  		else 
+  			document.getElementById('nav_l').style.display = 'block'; 
+  
+  		if ((cursor) >= ads.length) { 
+  			cursor = ads.length - count; 
+  			document.getElementById('nav_l').style.display = 'none'; 
+  		} 
+  
+  		showAds(cursor,cursor + count); 
+  		cursor += count; 
+  		document.getElementById('nav_r').style.display = 'block'; 
+  		_sem = false; 
+  		_click = false; 
+  	} 
+  } 
+  function prev(){ 
+  	adsView=""; 
+  	cursor-=count; 
+  	if(cursor-count<0)cursor=0+count; 
+  	var start=cursor-count; 
+  	if(start<0)start=0; 
+  	showAds(start,start+count); 
+  	if(count>=cursor)document.getElementById('nav_r').style.display='none'; 
+  	if(cursor<ads.length)document.getElementById('nav_l').style.display='block'; 
+  } 
+  function change(cl){ 
+  	var divs = document.getElementsByTagName("DIV"); 
+  	for (var i = 0; i < divs.length; i++) { 
+  		if (divs[i].className == cl) 
+  		divs[i].className=cl+'2'; 
+  	} 
+  } 
+  
+  function change1(cl){ 
+  	var divs = document.getElementsByTagName("DIV"); 
+  	for (var i = 0; i < divs.length; i++) { 
+  		if (divs[i].className == cl+"2") 
+  			divs[i].className=cl; 
+  		if (divs[i].className == cl + "2") 
+  			divs[i].className=cl+'1'; 
+  	} 
+  } 
+function _mv(obj){
+	_m=true;
+}
+function _md(obj){
+if(_m) obj.setAttribute('href',obj.getAttribute('href').replace('&m=0','&m=1'));obj.setAttribute('href',obj.getAttribute('href').replace('&h=0','&h=1'));
+}  </script> </body>
+</html>
+

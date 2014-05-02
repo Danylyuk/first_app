@@ -1,0 +1,13 @@
+[2014-05-01 17:27:13] __rvm_patch
+__rvm_patch () 
+{ 
+    \patch "$@" || return $?
+}
+current path: /home/sparks/.rvm/src/ruby-2.0.0-p451
+GEM_HOME=/home/sparks/.rvm/gems/ruby-2.1.1
+PATH=/home/sparks/.rvm/gems/ruby-2.1.1/bin:/home/sparks/.rvm/gems/ruby-2.1.1@global/bin:/home/sparks/.rvm/rubies/ruby-2.1.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin
+GEM_PATH=/home/sparks/.rvm/gems/ruby-2.1.1:/home/sparks/.rvm/gems/ruby-2.1.1@global
+command(8): __rvm_patch -F 25 -p1 -N -f -i /home/sparks/.rvm/patches/ruby/changeset_r45225.diff
+++ patch -F 25 -p1 -N -f -i /home/sparks/.rvm/patches/ruby/changeset_r45225.diff
+patching file ext/readline/readline.c
+Hunk #1 succeeded at 1883 (offset -91 lines).

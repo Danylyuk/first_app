@@ -1,0 +1,10 @@
+[2014-05-01 16:19:41] __rvm_patch
+__rvm_patch () 
+{ 
+    \patch "$@" || return $?
+}
+current path: /home/sparks/.rvm/src/ruby-2.1.1
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sparks/.rvm/bin
+command(8): __rvm_patch -F 25 -p1 -N -f -i /home/sparks/.rvm/patches/ruby/changeset_r45225.diff
+++ /scripts/functions/support : __rvm_patch()  281 > patch -F 25 -p1 -N -f -i /home/sparks/.rvm/patches/ruby/changeset_r45225.diff
+patching file ext/readline/readline.c

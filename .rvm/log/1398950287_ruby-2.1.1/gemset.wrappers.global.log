@@ -1,0 +1,90 @@
+[2014-05-01 16:26:51] run_gem_wrappers_regenerate
+run_gem_wrappers_regenerate () 
+{ 
+    gem_install gem-wrappers && gem wrappers regenerate || return $?
+}
+current path: /home/sparks/.rvm/src/ruby-2.1.1
+GEM_HOME=/home/sparks/.rvm/gems/ruby-2.1.1@global
+PATH=/home/sparks/.rvm/gems/ruby-2.1.1@global/bin:/home/sparks/.rvm/rubies/ruby-2.1.1/bin:/home/sparks/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+GEM_PATH=/home/sparks/.rvm/gems/ruby-2.1.1@global
+command(1): run_gem_wrappers_regenerate
+++ /scripts/functions/gemset : run_gem_wrappers_regenerate()  316 > gem_install gem-wrappers
+++ /scripts/functions/gemset : gem_install()  137 > typeset gem_name gem_version version_check
+++ /scripts/functions/gemset : gem_install()  139 > gem_version=
+++ /scripts/functions/gemset : gem_install()  140 > __rvm_parse_gems_args gem-wrappers
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  94 > typeset gem=gem-wrappers
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  96 > __rvm_string_match gem-wrappers '*.gem$'
+++ /scripts/functions/support : __rvm_string_match()  32 > typeset _string
+++ /scripts/functions/support : __rvm_string_match()  33 > _string=gem-wrappers
+++ /scripts/functions/support : __rvm_string_match()  34 > shift
+++ /scripts/functions/support : __rvm_string_match()  35 > ((  1  ))
+++ /scripts/functions/support : __rvm_string_match()  37 > case "${_string}" in
+++ /scripts/functions/support : __rvm_string_match()  40 > shift
+++ /scripts/functions/support : __rvm_string_match()  35 > ((  0  ))
+++ /scripts/functions/support : __rvm_string_match()  42 > return 1
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  101 > gem_name=gem-wrappers
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  102 > case "$gem" in
+++ /scripts/functions/gemset : gem_install()  142 > [[ -z '' ]]
+++ /scripts/functions/gemset : gem_install()  143 > __rvm_db gem_gem-wrappers_version gem_version
+++ /scripts/functions/db : __rvm_db()  7 > typeset value key variable
+++ /scripts/functions/db : __rvm_db()  8 > key=gem_gem-wrappers_version
+++ /scripts/functions/db : __rvm_db()  9 > key=gem_gem-wrappers_version
+++ /scripts/functions/db : __rvm_db()  10 > variable=gem_version
+++ /scripts/functions/db : __rvm_db()  12 > [[ -f /home/sparks/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db()  13 > __rvm_db_ /home/sparks/.rvm/user/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  57 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  58 > __db=/home/sparks/.rvm/user/db
++++ /scripts/functions/db : __rvm_db_()  59 > __key=gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  60 > shift 2
++++ /scripts/functions/db : __rvm_db_()  61 > __value=
++++ /scripts/functions/db : __rvm_db_()  62 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  67 > __rvm_db_get /home/sparks/.rvm/user/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_get()  49 > [[ -f /home/sparks/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db_get()  50 > __rvm_sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  251 > sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
++++ /scripts/functions/db : __rvm_db_get()  50 > __rvm_grep '^gem_gem-wrappers_version=' /home/sparks/.rvm/user/db
++++ /scripts/functions/support : __rvm_grep()  233 > GREP_OPTIONS=
++++ /scripts/functions/support : __rvm_grep()  233 > grep '^gem_gem-wrappers_version=' /home/sparks/.rvm/user/db
++++ /scripts/functions/support : __rvm_grep()  233 > return 1
+++ /scripts/functions/db : __rvm_db()  13 > value=
+++ /scripts/functions/db : __rvm_db()  15 > [[ -z '' ]]
+++ /scripts/functions/db : __rvm_db()  15 > [[ -f /home/sparks/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db()  16 > __rvm_db_ /home/sparks/.rvm/config/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  57 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  58 > __db=/home/sparks/.rvm/config/db
++++ /scripts/functions/db : __rvm_db_()  59 > __key=gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  60 > shift 2
++++ /scripts/functions/db : __rvm_db_()  61 > __value=
++++ /scripts/functions/db : __rvm_db_()  62 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  67 > __rvm_db_get /home/sparks/.rvm/config/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_get()  49 > [[ -f /home/sparks/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db_get()  50 > __rvm_sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  251 > sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
++++ /scripts/functions/db : __rvm_db_get()  50 > __rvm_grep '^gem_gem-wrappers_version=' /home/sparks/.rvm/config/db
++++ /scripts/functions/support : __rvm_grep()  233 > GREP_OPTIONS=
++++ /scripts/functions/support : __rvm_grep()  233 > grep '^gem_gem-wrappers_version=' /home/sparks/.rvm/config/db
+++ /scripts/functions/db : __rvm_db()  16 > value='>=1.2.4'
+++ /scripts/functions/db : __rvm_db()  18 > [[ -n >=1.2.4 ]]
+++ /scripts/functions/db : __rvm_db()  19 > [[ -n gem_version ]]
+++ /scripts/functions/db : __rvm_db()  20 > eval 'gem_version='\''>=1.2.4'\'''
++++ /scripts/functions/db : __rvm_db()  20 > gem_version='>=1.2.4'
+++ /scripts/functions/db : __rvm_db()  23 > true
+++ /scripts/functions/gemset : gem_install()  147 > ((  0 == 0  ))
+++ /scripts/functions/gemset : gem_install()  147 > is_gem_installed
+++ /scripts/functions/gemset : is_gem_installed()  119 > typeset gem_spec
+++ /scripts/functions/gemset : is_gem_installed()  120 > gem_spec='gem '\''gem-wrappers'\'''
+++ /scripts/functions/gemset : is_gem_installed()  122 > [[ -n >=1.2.4 ]]
+++ /scripts/functions/gemset : is_gem_installed()  124 > gem_spec+=', '\''>=1.2.4'\'''
+++ /scripts/functions/gemset : is_gem_installed()  125 > version_check=1.2.4
+++ /scripts/functions/gemset : is_gem_installed()  129 > ls -ld /home/sparks/.rvm/gems/ruby-2.1.1@global/gems/gem-wrappers-1.2.4
+++ /scripts/functions/gemset : gem_install()  149 > rvm_log 'gem gem-wrappers >=1.2.4 is already installed'
+++ /scripts/functions/logging : rvm_log()  161 > rvm_pretty_print stdout
+++ /scripts/functions/logging : rvm_pretty_print()  73 > case "${rvm_pretty_print_flag:=auto}" in
+++ /scripts/functions/logging : rvm_pretty_print()  78 > case "${TERM:-dumb}" in
+++ /scripts/functions/logging : rvm_pretty_print()  81 > case "$1" in
+++ /scripts/functions/logging : rvm_pretty_print()  82 > [[ -t 1 ]]
+++ /scripts/functions/logging : rvm_pretty_print()  82 > return 1
+++ /scripts/functions/logging : rvm_log()  163 > printf %b 'gem gem-wrappers >=1.2.4 is already installed\n'
+gem gem-wrappers >=1.2.4 is already installed
+++ /scripts/functions/gemset : gem_install()  150 > return 0
+++ /scripts/functions/gemset : run_gem_wrappers_regenerate()  317 > gem wrappers regenerate

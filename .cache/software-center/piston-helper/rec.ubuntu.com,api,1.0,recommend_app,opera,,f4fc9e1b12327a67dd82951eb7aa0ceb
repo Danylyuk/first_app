@@ -1,0 +1,18 @@
+status: 301
+content-length: 339
+content-location: http://rec.ubuntu.com/api/1.0/recommend_app/opera/
+server: Apache/2.2.22 (Ubuntu)
+location: https://rec.ubuntu.com/api/1.0/recommend_app/opera/
+date: Thu, 01 May 2014 11:57:34 GMT
+-x-permanent-redirect-url: https://rec.ubuntu.com/api/1.0/recommend_app/opera/
+content-type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://rec.ubuntu.com/api/1.0/recommend_app/opera/">here</a>.</p>
+<hr>
+<address>Apache/2.2.22 (Ubuntu) Server at rec.ubuntu.com Port 80</address>
+</body></html>

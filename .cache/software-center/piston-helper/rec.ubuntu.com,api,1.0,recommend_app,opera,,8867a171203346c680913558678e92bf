@@ -1,0 +1,20 @@
+status: 200
+content-length: 87
+via: 1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)
+content-location: https://rec.ubuntu.com/api/1.0/recommend_app/opera/
+x-cache: HIT from sumac.canonical.com
+x-cache-lookup: HIT from sumac.canonical.com:3128
+expires: Thu, 01 May 2014 11:50:38 GMT
+server: Apache/2.2.22 (Ubuntu)
+last-modified: Thu, 01 May 2014 11:45:38 GMT
+etag: "a710f04fa4ec970e4804cb10fc966e58"
+strict-transport-security: max-age=2592000
+cache-control: max-age=300
+date: Thu, 01 May 2014 11:57:34 GMT
+content-type: application/json; charset=utf-8
+
+{
+    "rid": "64ca84c06319ff17a17b9d296e66a5e1", 
+    "data": [], 
+    "app": "opera"
+}

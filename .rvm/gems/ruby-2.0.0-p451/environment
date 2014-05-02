@@ -1,0 +1,7 @@
+export PATH="/home/sparks/.rvm/gems/ruby-2.0.0-p451/bin:/home/sparks/.rvm/gems/ruby-2.0.0-p451@global/bin:/home/sparks/.rvm/rubies/ruby-2.0.0-p451/bin:$PATH"
+export GEM_HOME='/home/sparks/.rvm/gems/ruby-2.0.0-p451'
+export GEM_PATH='/home/sparks/.rvm/gems/ruby-2.0.0-p451:/home/sparks/.rvm/gems/ruby-2.0.0-p451@global'
+export MY_RUBY_HOME='/home/sparks/.rvm/rubies/ruby-2.0.0-p451'
+export IRBRC='/home/sparks/.rvm/rubies/ruby-2.0.0-p451/.irbrc'
+unset MAGLEV_HOME
+unset RBXOPT
